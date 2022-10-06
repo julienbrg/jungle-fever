@@ -22,6 +22,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
   const [userAddress, setUserAddress] = useState("");
+  const [etherscanLink, setEtherscanLink] = useState("");
 
   useEffect(() => {
     const init = async () => {
@@ -104,6 +105,8 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     const address = await rpc.getAccounts();
     console.log(address);
     setUserAddress(shortenAddress(address));
+    setEtherscanLink("https://goerli.etherscan.io/address/" + address);
+
   };
   getAccounts();
 
@@ -160,7 +163,8 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
     userAddressBox={{
       props: {
-        children: (!provider ? "" : userAddress)
+        children: (!provider ? "" : userAddress),
+        href:etherscanLink
       }
     }}
   

@@ -134,7 +134,8 @@ function PlasmicHeader__RenderFunc(props: {
             projectcss.__wab_text,
             sty.userAddressBox
           )}
-          href={`/`}
+          href={"" as const}
+          target={"_blank" as const}
         >
           {"0x093D...6f36"}
         </a>
