@@ -1,25 +1,26 @@
-This is a React project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).
+# Jungle Fever
 
-## Getting Started
+A Web3 boilerplate that includes:
 
-First, run the development server:
+- [Plasmic](https://www.plasmic.app/)
+- [Web3Auth](https://web3auth.io/)
+- [Ethers](https://docs.ethers.io/)
+- [UseDapp](https://usedapp-docs.netlify.app/)
 
-```bash
-npm run start
+Plasmic project ID: [neKnaqAFQgtkJjtbXthdKd](https://studio.plasmic.app/projects/neKnaqAFQgtkJjtbXthdKd)
+
+## Install
+
+```shell
+npm i
 ```
 
-Open your browser to see the result.
+## Run
 
-You can start editing your project in Plasmic Studio. The page auto-updates as you edit the project.
+```shell
+npm start
+```
 
-## Learn More
+## Support
 
-With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.
-
-To learn more about Plasmic, take a look at the following resources:
-
-- [Plasmic Website](https://www.plasmic.app/)
-- [Plasmic Documentation](https://docs.plasmic.app/learn/)
-- [Plasmic Slack Community](https://www.plasmic.app/slack)
-
-You can check out [the Plasmic GitHub repository](https://github.com/plasmicapp/plasmic) - your feedback and contributions are welcome!
+You can contact us via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg) [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/xw9dCeQ94Y), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).

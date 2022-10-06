@@ -61,7 +61,7 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<typeof Header>;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
-  button?: p.Flex<typeof Button>;
+  play?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -153,46 +153,52 @@ function PlasmicHomepage__RenderFunc(props: {
                     {"Jungle Fever"}
                   </h1>
                 </Reveal>
-
-                <Reveal
-                  big={true}
-                  cascade={false}
-                  className={classNames("__wab_instance", sty.reveal___8PoCm)}
-                  delay={4000 as const}
-                  duration={2000 as const}
-                  effect={"fade" as const}
-                  triggerOnce={true}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bxLMe
-                    )}
-                  >
-                    {"\"We've got jungle fever, \nwe're in love.\""}
-                  </div>
-                </Reveal>
               </p.Stack>
+
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__sUgiD)}
+                delay={4000 as const}
+                effect={"fade" as const}
+                triggerOnce={true}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aLy0X
+                  )}
+                >
+                  {"Plasmic Web3 boilerplate."}
+                </div>
+              </Reveal>
 
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox__sbEpv)}>
-                  <Button
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames("__wab_instance", sty.button)}
-                    link={`/play`}
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__l1UXa)}
+                    delay={5000 as const}
+                    direction={"vertical" as const}
+                    duration={500 as const}
+                    effect={"flip" as const}
+                    triggerOnce={true}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tfKi0
-                      )}
+                    <Button
+                      data-plasmic-name={"play"}
+                      data-plasmic-override={overrides.play}
+                      className={classNames("__wab_instance", sty.play)}
+                      link={`/play`}
                     >
-                      {"Play"}
-                    </div>
-                  </Button>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tfKi0
+                        )}
+                      >
+                        {"Play"}
+                      </div>
+                    </Button>
+                  </Reveal>
                 </div>
               ) : null}
             </div>
@@ -210,11 +216,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "section", "h1", "button", "footer"],
+  root: ["root", "header", "section", "h1", "play", "footer"],
   header: ["header"],
   section: ["section", "h1"],
   h1: ["h1"],
-  button: ["button"],
+  play: ["play"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -225,7 +231,7 @@ type NodeDefaultElementType = {
   header: typeof Header;
   section: "section";
   h1: "h1";
-  button: typeof Button;
+  play: typeof Button;
   footer: typeof Footer;
 };
 
@@ -293,7 +299,7 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
-    button: makeNodeComponent("button"),
+    play: makeNodeComponent("play"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

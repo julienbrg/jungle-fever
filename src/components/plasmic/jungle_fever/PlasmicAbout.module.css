@@ -85,15 +85,15 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 448px;
   color: var(--token-UpYVGsqeDTxlKV);
-  padding-bottom: 3px;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 2;
   min-width: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text {
-    text-align: center;
+    font-size: 14px;
   }
 }
 .footer:global(.__wab_instance) {

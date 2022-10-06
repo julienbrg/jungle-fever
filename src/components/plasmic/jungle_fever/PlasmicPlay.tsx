@@ -158,7 +158,7 @@ function PlasmicPlay__RenderFunc(props: {
                       sty.textBox
                     )}
                   >
-                    {"Your wallet is currently holding 10,000 EUR."}
+                    {"Your current balance is: 1 ETH"}
                   </div>
                 </div>
 
