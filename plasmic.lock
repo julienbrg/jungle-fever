@@ -18,34 +18,34 @@
       "projectId": "neKnaqAFQgtkJjtbXthdKd",
       "version": "latest",
       "dependencies": {
-        "58GpZjZCWTaJ8AUhpCwt2K": "3.3.0"
+        "58GpZjZCWTaJ8AUhpCwt2K": "3.4.0"
       },
       "lang": "ts",
       "fileLocks": [
         {
           "type": "globalVariant",
           "assetId": "W2fpJ_6d-WBvL",
-          "checksum": "06ccde23e7903aa0a033b11bb8abd064"
+          "checksum": "a4922c371e28bcd43a4a474326338f94"
         },
         {
           "type": "renderModule",
           "assetId": "ObYxGyTLMBD9Z",
-          "checksum": "8297dabeb849fbeaee05d4c6332af4b6"
+          "checksum": "84982f2dc8847480cfd4d2c598d0569a"
         },
         {
           "type": "cssRules",
           "assetId": "ObYxGyTLMBD9Z",
-          "checksum": "8297dabeb849fbeaee05d4c6332af4b6"
+          "checksum": "84982f2dc8847480cfd4d2c598d0569a"
         },
         {
           "type": "renderModule",
           "assetId": "-5kvBjMJU6nse",
-          "checksum": "fbd39674432c4f3c76f15b9f87d8998e"
+          "checksum": "5d2f880ba350a182101d4ec274fc4710"
         },
         {
           "type": "cssRules",
           "assetId": "-5kvBjMJU6nse",
-          "checksum": "fbd39674432c4f3c76f15b9f87d8998e"
+          "checksum": "5d2f880ba350a182101d4ec274fc4710"
         },
         {
           "type": "renderModule",
@@ -60,12 +60,12 @@
         {
           "type": "renderModule",
           "assetId": "BA2F0F7GwETKN",
-          "checksum": "348b67332b2c10b058bfca7b230f4b0a"
+          "checksum": "68fea52352a8f8772992e10a07af2a7a"
         },
         {
           "type": "cssRules",
           "assetId": "BA2F0F7GwETKN",
-          "checksum": "348b67332b2c10b058bfca7b230f4b0a"
+          "checksum": "68fea52352a8f8772992e10a07af2a7a"
         },
         {
           "type": "renderModule",
@@ -80,12 +80,12 @@
         {
           "type": "renderModule",
           "assetId": "GEPIXA075Fn-g",
-          "checksum": "7a70dbf86c3e38dbe8ad77dcef98c7fc"
+          "checksum": "989a28b0b26483355e97ce15e699cf9c"
         },
         {
           "type": "cssRules",
           "assetId": "GEPIXA075Fn-g",
-          "checksum": "7a70dbf86c3e38dbe8ad77dcef98c7fc"
+          "checksum": "989a28b0b26483355e97ce15e699cf9c"
         },
         {
           "type": "renderModule",

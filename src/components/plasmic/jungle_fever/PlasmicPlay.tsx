@@ -145,7 +145,9 @@ function PlasmicPlay__RenderFunc(props: {
                     sty.text
                   )}
                 >
-                  {"Hello, let's play! "}
+                  {
+                    "Please click on the button so we can verify if you own the right NFT."
+                  }
                 </div>
 
                 <div className={classNames(projectcss.all, sty.freeBox__mebt6)}>
@@ -158,17 +160,18 @@ function PlasmicPlay__RenderFunc(props: {
                       sty.textBox
                     )}
                   >
-                    {"Your current balance is: 1 ETH"}
+                    {"\"We've got jungle fever, we're in love.\""}
                   </div>
                 </div>
 
-                <TextInput
-                  data-plasmic-name={"amountInput"}
-                  data-plasmic-override={overrides.amountInput}
-                  className={classNames("__wab_instance", sty.amountInput)}
-                  name={"amountInput" as const}
-                />
-
+                {true ? (
+                  <TextInput
+                    data-plasmic-name={"amountInput"}
+                    data-plasmic-override={overrides.amountInput}
+                    className={classNames("__wab_instance", sty.amountInput)}
+                    name={"amountInput" as const}
+                  />
+                ) : null}
                 {true ? (
                   <p.Stack
                     as={"div"}
@@ -180,17 +183,19 @@ function PlasmicPlay__RenderFunc(props: {
                       data-plasmic-override={overrides.play}
                       className={classNames("__wab_instance", sty.play)}
                     >
-                      {"Play"}
+                      {"Verify"}
                     </Button>
 
-                    <Button
-                      data-plasmic-name={"action"}
-                      data-plasmic-override={overrides.action}
-                      className={classNames("__wab_instance", sty.action)}
-                      color={"blue" as const}
-                    >
-                      {"Action"}
-                    </Button>
+                    {true ? (
+                      <Button
+                        data-plasmic-name={"action"}
+                        data-plasmic-override={overrides.action}
+                        className={classNames("__wab_instance", sty.action)}
+                        color={"blue" as const}
+                      >
+                        {"Action"}
+                      </Button>
+                    ) : null}
                   </p.Stack>
                 ) : null}
               </p.Stack>
