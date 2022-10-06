@@ -106,4 +106,57 @@ export default class EthereumRpc {
       return error as string;
     }
   }
+
+  async verifyOwnership(): Promise<boolean> {
+    try {
+      const ethersProvider = new ethers.providers.Web3Provider(this.provider);
+      const signer = ethersProvider.getSigner();
+
+      // Get user's Ethereum public address
+      const address = await signer.getAddress();
+
+      // // Get user's balance in ether
+      // const check = await signer.ownerOf({
+      //   to: destination,
+      //   value: amount,
+      //   maxPriorityFeePerGas: "5000000000", // Max priority fee per gas
+      //   maxFeePerGas: "6000000000000", // Max fee per gas
+      // });
+
+      // return isOwner;
+      return false
+    } catch (error) {
+      return error as any;
+    }
+  }
+
+  // async mint(name:any, symbol:any, uri:any): Promise<any> {
+
+  //   try {
+
+  //     // console.log("step 1")
+  //     const ethersProvider = new ethers.providers.Web3Provider(this.provider);
+  //     const signer = ethersProvider.getSigner();
+  //     const factory = new ethers.ContractFactory(nft.abi, nft.bytecode, signer);
+  //     const tx = await factory.deploy(name, symbol, uri);
+  //     // console.log("step 2")
+
+  //     await ethersProvider.waitForTransaction(tx.deployTransaction.hash);
+
+  //     // console.log("provider.waitForTransaction :" + contract.address);
+  //     // console.log("step 3")
+
+  //     console.log("mint tx:", tx)
+
+  //     return tx.deployTransaction.hash;
+
+  //   } catch (error:any) {
+  //     console.log("An error occured during the minting process.")
+  //     console.error(`${error.message} ${error.error}`);
+  //     return null;
+  //   }
+  // }
+
+
+
 }
