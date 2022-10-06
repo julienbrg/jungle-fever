@@ -33,6 +33,8 @@ import {
 } from "@plasmicapp/react-web";
 import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
 
+import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: neKnaqAFQgtkJjtbXthdKd/projectcss
@@ -87,6 +89,10 @@ function PlasmicHeader__RenderFunc(props: {
     ...variants
   };
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsw2FpJ6DWBvL()
+  });
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -128,9 +134,10 @@ function PlasmicHeader__RenderFunc(props: {
             projectcss.__wab_text,
             sty.userAddressBox
           )}
-          href={`/`}
+          href={"" as const}
+          target={"_blank" as const}
         >
-          {"0x..."}
+          {"0x093D...6f36"}
         </a>
       </p.Stack>
 
@@ -150,43 +157,44 @@ function PlasmicHeader__RenderFunc(props: {
               )}
               href={`/play`}
             >
-              {"Play"}
-            </a>
-          </div>
-        ) : null}
-        {true ? (
-          <div className={classNames(projectcss.all, sty.freeBox__tohkz)}>
-            <a
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__r47Tv
-              )}
-              href={`/about`}
-            >
-              {"About"}
+              {"Watch"}
             </a>
           </div>
         ) : null}
 
-        <Button
-          data-plasmic-name={"login"}
-          data-plasmic-override={overrides.login}
-          className={classNames("__wab_instance", sty.login)}
+        <a
+          className={classNames(
+            projectcss.all,
+            projectcss.a,
+            projectcss.__wab_text,
+            sty.link__r47Tv
+          )}
+          href={`/about`}
         >
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
-          >
-            {"Login"}
+          {"About"}
+        </a>
+
+        {true ? (
+          <div className={classNames(projectcss.all, sty.freeBox__tohkz)}>
+            <Button
+              data-plasmic-name={"login"}
+              data-plasmic-override={overrides.login}
+              className={classNames("__wab_instance", sty.login)}
+            >
+              <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text
+                )}
+              >
+                {"Login"}
+              </div>
+            </Button>
           </div>
-        </Button>
+        ) : null}
       </p.Stack>
     </div>
   ) as React.ReactElement | null;
