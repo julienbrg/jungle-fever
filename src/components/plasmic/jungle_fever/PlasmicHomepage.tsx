@@ -168,8 +168,8 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__aLy0X
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Plasmic Web3 boilerplate."
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "Sit back, relax, and watch the show."
                     : "Sit back, relax, and watch the show."}
                 </div>
               </Reveal>

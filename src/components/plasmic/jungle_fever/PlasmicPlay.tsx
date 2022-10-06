@@ -160,7 +160,7 @@ function PlasmicPlay__RenderFunc(props: {
                       sty.textBox
                     )}
                   >
-                    {'"We got jungle fever."'}
+                    {"\"We've got jungle fever, we're in love.\""}
                   </div>
                 </div>
 

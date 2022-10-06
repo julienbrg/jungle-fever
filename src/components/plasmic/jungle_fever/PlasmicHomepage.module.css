@@ -32,9 +32,9 @@
   min-height: 0;
   padding: 168px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 350px) {
   .freeBox__gWw5Q {
-    padding-top: 83px;
+    padding-top: 0px;
   }
 }
 .section {
@@ -66,12 +66,12 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 350px) {
   .section {
     width: 95%;
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 350px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -79,7 +79,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 350px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -98,7 +98,7 @@
   position: relative;
   transform-origin: -110% 50%;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 350px) {
   .reveal__n2Vgq:global(.__wab_instance) {
     text-align: center;
   }
@@ -116,6 +116,11 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .reveal__sUgiD:global(.__wab_instance) {
+    width: 302px;
+  }
 }
 .text__aLy0X {
   position: relative;
