@@ -1,0 +1,202 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "files",
+    "publicDir": "../../public",
+    "publicUrlPrefix": "/static/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src/components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": "3.3.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ]
+    },
+    {
+      "projectId": "neKnaqAFQgtkJjtbXthdKd",
+      "projectApiToken": "zphwwkFwECIJCmV2MXZV2ZBsnTEnx2tM2EbU0Jnc8BR77b8cW4B3TzsqGtAGSZkKJnyB5KKYOBfXMbHe3xQ",
+      "projectName": "jungle-fever",
+      "version": "latest",
+      "cssFilePath": "plasmic/jungle_fever/plasmic_jungle_fever.module.css",
+      "components": [
+        {
+          "id": "ObYxGyTLMBD9Z",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "Homepage.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "-5kvBjMJU6nse",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicHeader.tsx",
+          "importSpec": {
+            "modulePath": "Header.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "LYimf7BcZyc4G",
+          "name": "Footer",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicFooter.tsx",
+          "importSpec": {
+            "modulePath": "Footer.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "BA2F0F7GwETKN",
+          "name": "About",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "About.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "TmMHvKz8624iV",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "GEPIXA075Fn-g",
+          "name": "Play",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicPlay.tsx",
+          "importSpec": {
+            "modulePath": "Play.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicPlay.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "_oRzGL_a2z00t",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        }
+      ],
+      "icons": [
+        {
+          "id": "QIFkDJ_ce_gClo",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/jungle_fever/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "wIv3yetKUg72by",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/jungle_fever/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "9x2RT-jPTsI_B4",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/jungle_fever/icons/PlasmicIcon__Searchsvg.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "qWuRwWiv9lBu4M",
+          "name": "strat-logo-white.png",
+          "filePath": "plasmic/jungle_fever/images/stratLogoWhitepng.png"
+        },
+        {
+          "id": "xJ1YuS0U87ZcpE",
+          "name": "favicon.png",
+          "filePath": "plasmic/jungle_fever/images/faviconpng.png"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "p6J_pbDVtQXsA",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "RliV1-ikyJQyr",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "W2fpJ_6d-WBvL",
+        "name": "Screen",
+        "projectId": "neKnaqAFQgtkJjtbXthdKd",
+        "contextFilePath": "plasmic/jungle_fever/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "cliVersion": "0.1.186",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.186/dist/plasmic.schema.json"
+}
