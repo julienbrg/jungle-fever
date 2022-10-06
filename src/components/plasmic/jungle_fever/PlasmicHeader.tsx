@@ -150,7 +150,7 @@ function PlasmicHeader__RenderFunc(props: {
               )}
               href={`/play`}
             >
-              {"Play"}
+              {"Watch"}
             </a>
           </div>
         ) : null}
