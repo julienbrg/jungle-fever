@@ -22,29 +22,36 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   } = useGlobalContext()
 
   const verifyOwnership = async () => {
-    if (!provider) {
-      console.log("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const verifyOwnership = await rpc.verifyOwnership();
-    console.log("ownership verified:", verifyOwnership);
+    // if (!provider) {
+    //   console.log("provider not initialized yet");
+    //   return;
+    // }
+    // const rpc = new RPC(provider);
+    // const verifyOwnership = await rpc.verifyOwnership();
+    // console.log("ownership verified:", verifyOwnership);
 
-    // setIsOwner(verifyOwnership);
+    setIsOwner(true);
+    
   }
+
+  // console.log("isOwner:", isOwner)
 
   return <PlasmicPlay root={{ ref }} {...props} 
   
     textBox={{
       props: {
-        children: ( isOwner === true ? "You're the happy owner of the NFT" : "Current balance: " + bal + " ETH" )
+        // children: ( isOwner === true ? "You're the happy owner of the NFT" : "Current balance: " + bal + " ETH" )
+        children: (!provider ? "" : "You're the happy owner of the NFT! 🎉")
       }
     }}
 
     play={{
-      props: {
-        onClick: () => verifyOwnership()
-      }
+      // props: {
+      //   // onClick: () => verifyOwnership()
+      //   render = () => null
+      // }
+      
+      render: () => null
     }}
   
   />;

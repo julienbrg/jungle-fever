@@ -124,7 +124,8 @@ export default class EthereumRpc {
       // });
 
       // return isOwner;
-      return false
+      return true
+
     } catch (error) {
       return error as any;
     }

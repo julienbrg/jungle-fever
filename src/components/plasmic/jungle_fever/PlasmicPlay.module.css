@@ -45,6 +45,7 @@
   display: flex;
   width: 60%;
   height: auto;
+  padding-top: 156px;
 }
 .section > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -89,30 +90,14 @@
     margin-top: 0px;
   }
 }
-.text {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 1065px;
-  color: var(--token-UpYVGsqeDTxlKV);
-  min-width: 0;
-  padding: 102px 50px 0px;
-}
-@media (min-width: 0px) and (max-width: 350px) {
-  .text {
-    text-align: left;
-    padding-bottom: 15px;
-    padding-top: 62px;
-  }
-}
 .freeBox__mebt6 {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 796px;
-  height: 137px;
+  width: 728px;
+  height: 119px;
   max-width: 100%;
   flex-shrink: 0;
   border-radius: 20px;
