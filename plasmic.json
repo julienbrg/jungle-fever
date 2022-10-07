@@ -140,6 +140,19 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "text-input"
+        },
+        {
+          "id": "ODTH0GNSW1H",
+          "name": "Soon",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicSoon.tsx",
+          "importSpec": {
+            "modulePath": "Soon.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicSoon.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

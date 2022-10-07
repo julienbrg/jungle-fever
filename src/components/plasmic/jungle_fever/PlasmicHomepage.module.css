@@ -116,6 +116,7 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
+  display: flex;
 }
 @media (min-width: 0px) and (max-width: 350px) {
   .reveal__sUgiD:global(.__wab_instance) {
@@ -154,6 +155,7 @@
   max-width: 100%;
   width: 87px;
   height: 40px;
+  display: none;
 }
 .svg__u6Ylo {
   position: relative;
@@ -169,6 +171,23 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
+}
+.text__lXmJs {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-size: 24px;
+  min-width: 0;
+}
+.link__ag7I {
+  color: var(--token-7haCtBUPWgd76T);
+  font-weight: 700;
+}
+.link__cSIt {
+  color: var(--token-nHhgpMB0JLvcyx);
+  font-weight: 700;
 }
 .footer:global(.__wab_instance) {
   max-width: 100%;

@@ -1,6 +1,8 @@
 import Homepage from "./components/Homepage";
 import Play from "./components/Play";
 import About from "./components/About";
+import Soon from "./components/Soon";
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from "react";
 import { Web3Context } from './components/Web3Context'
@@ -40,7 +42,7 @@ function Index() {
           <Route path="/" element={<Homepage />} />
           <Route path="/play" element={<Play />} />
           <Route path="/about" element={<About />} />
-
+          <Route path="/soon" element={<Soon />} />
 
         </Routes>
       </Router>

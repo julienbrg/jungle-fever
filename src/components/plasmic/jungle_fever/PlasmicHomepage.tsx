@@ -155,51 +155,101 @@ function PlasmicHomepage__RenderFunc(props: {
                 </Reveal>
               </p.Stack>
 
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__sUgiD)}
-                delay={4000 as const}
-                effect={"fade" as const}
-                triggerOnce={true}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aLy0X
-                  )}
+              {true ? (
+                <Reveal
+                  className={classNames("__wab_instance", sty.reveal__sUgiD)}
+                  delay={4000 as const}
+                  effect={"fade" as const}
+                  triggerOnce={true}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "Sit back, relax, and watch the show."
-                    : "Sit back, relax, and watch the show."}
-                </div>
-              </Reveal>
-
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aLy0X
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "Sit back, relax, and watch the show."
+                      : "Sit back, relax, and watch the show."}
+                  </div>
+                </Reveal>
+              ) : null}
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox__sbEpv)}>
                   <Reveal
                     className={classNames("__wab_instance", sty.reveal__l1UXa)}
-                    delay={5000 as const}
+                    delay={6000 as const}
                     direction={"vertical" as const}
-                    duration={500 as const}
-                    effect={"flip" as const}
+                    duration={1500 as const}
+                    effect={"fade" as const}
                     triggerOnce={true}
                   >
-                    <Button
-                      data-plasmic-name={"play"}
-                      data-plasmic-override={overrides.play}
-                      className={classNames("__wab_instance", sty.play)}
-                      link={`/play`}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__tfKi0
-                        )}
+                    {true ? (
+                      <Button
+                        data-plasmic-name={"play"}
+                        data-plasmic-override={overrides.play}
+                        className={classNames("__wab_instance", sty.play)}
+                        link={`/play`}
                       >
-                        {"Watch"}
-                      </div>
-                    </Button>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__tfKi0
+                          )}
+                        >
+                          {"Watch"}
+                        </div>
+                      </Button>
+                    ) : null}
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lXmJs
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <a
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__ag7I
+                            )}
+                            href={
+                              "https://foundation.app/collection/mholefnc" as const
+                            }
+                            target={"_blank" as const}
+                          >
+                            {"Foundation"}
+                          </a>
+                        }
+                        <React.Fragment>{" | "}</React.Fragment>
+                        {
+                          <a
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__cSIt
+                            )}
+                            href={
+                              "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                            }
+                          >
+                            {"OpenSea"}
+                          </a>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
                   </Reveal>
                 </div>
               ) : null}

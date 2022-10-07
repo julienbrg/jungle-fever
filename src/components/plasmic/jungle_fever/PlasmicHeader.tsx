@@ -155,7 +155,7 @@ function PlasmicHeader__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.link__pkXan
               )}
-              href={`/play`}
+              href={`/soon`}
             >
               {"Watch"}
             </a>
