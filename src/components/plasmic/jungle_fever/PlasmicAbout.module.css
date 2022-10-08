@@ -17,6 +17,11 @@
   left: auto;
   top: auto;
 }
+@media (min-width: 0px) and (max-width: 350px) {
+  .header:global(.__wab_instance) {
+    flex-shrink: 0;
+  }
+}
 .freeBox {
   display: flex;
   position: relative;

@@ -124,7 +124,7 @@ function PlasmicHomepage__RenderFunc(props: {
           />
 
           {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__gWw5Q)}>
+            <div className={classNames(projectcss.all, sty.freeBox__rmw1Q)}>
               <p.Stack
                 as={"section"}
                 data-plasmic-name={"section"}
@@ -134,7 +134,7 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 <Reveal
                   big={true}
-                  className={classNames("__wab_instance", sty.reveal__n2Vgq)}
+                  className={classNames("__wab_instance", sty.reveal___39KnM)}
                   direction={"down" as const}
                   duration={5000 as const}
                   effect={"fade" as const}
@@ -155,51 +155,152 @@ function PlasmicHomepage__RenderFunc(props: {
                 </Reveal>
               </p.Stack>
 
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__sUgiD)}
-                delay={4000 as const}
-                effect={"fade" as const}
-                triggerOnce={true}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aLy0X
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "Sit back, relax, and watch the show."
-                    : "Sit back, relax, and watch the show."}
-                </div>
-              </Reveal>
-
               {true ? (
-                <div className={classNames(projectcss.all, sty.freeBox__sbEpv)}>
+                <Reveal
+                  className={classNames("__wab_instance", sty.reveal__kOnjS)}
+                  delay={4000 as const}
+                  effect={"fade" as const}
+                  triggerOnce={true}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aUcBt
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "Sit back, relax, \nand watch the show."
+                      : "Sit back, relax, and watch the show."}
+                  </div>
+                </Reveal>
+              ) : null}
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox___5Ud8)}>
                   <Reveal
-                    className={classNames("__wab_instance", sty.reveal__l1UXa)}
-                    delay={5000 as const}
+                    className={classNames("__wab_instance", sty.reveal__jrpJy)}
+                    delay={6000 as const}
                     direction={"vertical" as const}
-                    duration={500 as const}
-                    effect={"flip" as const}
+                    duration={1500 as const}
+                    effect={"fade" as const}
                     triggerOnce={true}
                   >
-                    <Button
-                      data-plasmic-name={"play"}
-                      data-plasmic-override={overrides.play}
-                      className={classNames("__wab_instance", sty.play)}
-                      link={`/play`}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__tfKi0
-                        )}
+                    {true ? (
+                      <Button
+                        data-plasmic-name={"play"}
+                        data-plasmic-override={overrides.play}
+                        className={classNames("__wab_instance", sty.play)}
+                        link={`/play`}
                       >
-                        {"Watch"}
-                      </div>
-                    </Button>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__seEpw
+                          )}
+                        >
+                          {"Watch"}
+                        </div>
+                      </Button>
+                    ) : null}
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lXmJs
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__ag7I
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{"\n"}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__cSIt
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__ag7I
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{" | "}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__cSIt
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      )}
+                    </div>
                   </Reveal>
                 </div>
               ) : null}

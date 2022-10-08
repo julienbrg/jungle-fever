@@ -56,6 +56,7 @@ export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
 export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
   userAddressBox?: p.Flex<"a">;
+  userAddressBox2?: p.Flex<"a">;
   login?: p.Flex<typeof Button>;
   text?: p.Flex<"div">;
 };
@@ -146,6 +147,40 @@ function PlasmicHeader__RenderFunc(props: {
         hasGap={true}
         className={classNames(projectcss.all, sty.freeBox__y3Zwc)}
       >
+        {false ? (
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__hjd5X)}
+          >
+            <a
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__krLAb
+              )}
+              href={`/`}
+            >
+              {"Jungle Fever"}
+            </a>
+
+            <a
+              data-plasmic-name={"userAddressBox2"}
+              data-plasmic-override={overrides.userAddressBox2}
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.userAddressBox2
+              )}
+              href={"" as const}
+              target={"_blank" as const}
+            >
+              {"0x093D...6f36"}
+            </a>
+          </p.Stack>
+        ) : null}
         {true ? (
           <div className={classNames(projectcss.all, sty.freeBox__jf90P)}>
             <a
@@ -155,7 +190,7 @@ function PlasmicHeader__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.link__pkXan
               )}
-              href={`/play`}
+              href={`/soon`}
             >
               {"Watch"}
             </a>
@@ -201,8 +236,9 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "userAddressBox", "login", "text"],
+  root: ["root", "userAddressBox", "userAddressBox2", "login", "text"],
   userAddressBox: ["userAddressBox"],
+  userAddressBox2: ["userAddressBox2"],
   login: ["login", "text"],
   text: ["text"]
 } as const;
@@ -212,6 +248,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   userAddressBox: "a";
+  userAddressBox2: "a";
   login: typeof Button;
   text: "div";
 };
@@ -278,6 +315,7 @@ export const PlasmicHeader = Object.assign(
   {
     // Helper components rendering sub-elements
     userAddressBox: makeNodeComponent("userAddressBox"),
+    userAddressBox2: makeNodeComponent("userAddressBox2"),
     login: makeNodeComponent("login"),
     text: makeNodeComponent("text"),
 

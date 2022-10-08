@@ -61,7 +61,6 @@ export type PlasmicPlay__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
   section?: p.Flex<"section">;
-  text?: p.Flex<"div">;
   textBox?: p.Flex<"div">;
   amountInput?: p.Flex<typeof TextInput>;
   play?: p.Flex<typeof Button>;
@@ -136,20 +135,6 @@ function PlasmicPlay__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.section)}
               >
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text
-                  )}
-                >
-                  {
-                    "Please click on the button so we can verify if you own the right NFT."
-                  }
-                </div>
-
                 <div className={classNames(projectcss.all, sty.freeBox__mebt6)}>
                   <div
                     data-plasmic-name={"textBox"}
@@ -218,7 +203,6 @@ const PlasmicDescendants = {
     "root",
     "header",
     "section",
-    "text",
     "textBox",
     "amountInput",
     "play",
@@ -226,8 +210,7 @@ const PlasmicDescendants = {
     "footer"
   ],
   header: ["header"],
-  section: ["section", "text", "textBox", "amountInput", "play", "action"],
-  text: ["text"],
+  section: ["section", "textBox", "amountInput", "play", "action"],
   textBox: ["textBox"],
   amountInput: ["amountInput"],
   play: ["play"],
@@ -241,7 +224,6 @@ type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
   section: "section";
-  text: "div";
   textBox: "div";
   amountInput: typeof TextInput;
   play: typeof Button;
@@ -312,7 +294,6 @@ export const PlasmicPlay = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     section: makeNodeComponent("section"),
-    text: makeNodeComponent("text"),
     textBox: makeNodeComponent("textBox"),
     amountInput: makeNodeComponent("amountInput"),
     play: makeNodeComponent("play"),

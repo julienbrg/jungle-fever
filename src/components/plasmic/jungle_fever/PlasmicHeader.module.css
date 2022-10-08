@@ -14,7 +14,8 @@
 }
 @media (min-width: 0px) and (max-width: 350px) {
   .root {
-    padding-bottom: 30px;
+    padding-bottom: 0px;
+    height: 104px;
   }
 }
 .freeBox__yAb7J {
@@ -142,6 +143,76 @@
     > picture
     > img {
     margin-left: 0px;
+  }
+}
+.freeBox__hjd5X {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox__hjd5X > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 15px);
+  width: calc(100% + 15px);
+}
+.freeBox__hjd5X > :global(.__wab_flex-container) > *,
+.freeBox__hjd5X > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__hjd5X > :global(.__wab_flex-container) > picture > img,
+.freeBox__hjd5X
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 15px;
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .freeBox__hjd5X {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .freeBox__hjd5X > :global(.__wab_flex-container) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .freeBox__hjd5X > :global(.__wab_flex-container) > *,
+  .freeBox__hjd5X > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__hjd5X > :global(.__wab_flex-container) > picture > img,
+  .freeBox__hjd5X
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+  }
+}
+.link__krLAb {
+  height: auto;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-weight: 700;
+  width: auto;
+}
+.userAddressBox2 {
+  height: auto;
+  max-width: 800px;
+  color: var(--token-nHhgpMB0JLvcyx);
+  font-weight: 400;
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .userAddressBox2 {
+    font-size: 12px;
   }
 }
 .freeBox__jf90P {
