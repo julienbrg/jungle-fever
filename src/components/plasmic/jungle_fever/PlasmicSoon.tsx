@@ -187,7 +187,7 @@ function PlasmicSoon__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
                         ? "Coming soon.."
-                        : "Coming soon."}
+                        : "Coming soon"}
                     </div>
                   </div>
                 </Reveal>
