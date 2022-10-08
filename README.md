@@ -1,6 +1,13 @@
 # Jungle Fever
 
-A Web3 boilerplate that includes:
+An NFT-gated video content web app.
+
+- Live: [https://junglefever.io/](https://junglefever.io/)
+- Staging (dev branch): [https://jungle-fever.netlify.app/](https://jungle-fever.netlify.app/)
+- Github: [https://github.com/julienbrg/jungle-fever](https://github.com/julienbrg/jungle-fever)
+- Plasmic: [https://studio.plasmic.app/projects/neKnaqAFQgtkJjtbXthdKd](https://studio.plasmic.app/projects/neKnaqAFQgtkJjtbXthdKd)
+
+We're using:
 
 - [Plasmic](https://www.plasmic.app/)
 - [Web3Auth](https://web3auth.io/)
@@ -18,6 +25,8 @@ npm i
 ```
 
 ## Run
+
+Create a `.env` file with your own keys and:
 
 ```shell
 npm start

@@ -61,10 +61,10 @@ export const PlasmicSoon__ArgProps = new Array<ArgPropType>();
 export type PlasmicSoon__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  textBox2?: p.Flex<"div">;
   textBox?: p.Flex<"div">;
   amountInput?: p.Flex<typeof TextInput>;
   play?: p.Flex<typeof Button>;
-  textBox2?: p.Flex<"div">;
   amountInput2?: p.Flex<typeof TextInput>;
   play2?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
@@ -127,6 +127,38 @@ function PlasmicSoon__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames("__wab_instance", sty.header)}
           />
+
+          <Reveal
+            className={classNames("__wab_instance", sty.reveal___5LJi)}
+            delay={500 as const}
+            duration={5000 as const}
+            triggerOnce={true}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___8OdRt)}>
+              <div
+                data-plasmic-name={"textBox2"}
+                data-plasmic-override={overrides.textBox2}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.textBox2
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "Coming soon"
+                  : (() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "Coming soon..";
+                        }
+                        throw e;
+                      }
+                    })()}
+              </div>
+            </div>
+          </Reveal>
 
           {(hasVariant(globalVariants, "screen", "mobile") ? true : true) ? (
             <div className={classNames(projectcss.all, sty.freeBox___2ZNPe)}>
@@ -304,29 +336,6 @@ function PlasmicSoon__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.section__yiAJv)}
             >
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal___5KsIv)}
-                delay={500 as const}
-                duration={5000 as const}
-                triggerOnce={true}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__lrdh6)}>
-                  <div
-                    data-plasmic-name={"textBox2"}
-                    data-plasmic-override={overrides.textBox2}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.textBox2
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "Coming soon.."
-                      : "Coming soon."}
-                  </div>
-                </div>
-              </Reveal>
-
               {true ? (
                 <TextInput
                   data-plasmic-name={"amountInput2"}
@@ -480,19 +489,19 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
+    "textBox2",
     "textBox",
     "amountInput",
     "play",
-    "textBox2",
     "amountInput2",
     "play2",
     "footer"
   ],
   header: ["header"],
+  textBox2: ["textBox2"],
   textBox: ["textBox"],
   amountInput: ["amountInput"],
   play: ["play"],
-  textBox2: ["textBox2"],
   amountInput2: ["amountInput2"],
   play2: ["play2"],
   footer: ["footer"]
@@ -503,10 +512,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  textBox2: "div";
   textBox: "div";
   amountInput: typeof TextInput;
   play: typeof Button;
-  textBox2: "div";
   amountInput2: typeof TextInput;
   play2: typeof Button;
   footer: typeof Footer;
@@ -574,10 +583,10 @@ export const PlasmicSoon = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    textBox2: makeNodeComponent("textBox2"),
     textBox: makeNodeComponent("textBox"),
     amountInput: makeNodeComponent("amountInput"),
     play: makeNodeComponent("play"),
-    textBox2: makeNodeComponent("textBox2"),
     amountInput2: makeNodeComponent("amountInput2"),
     play2: makeNodeComponent("play2"),
     footer: makeNodeComponent("footer"),
