@@ -1,5 +1,6 @@
 import type { SafeEventEmitterProvider } from "@web3auth/base";
 import { ethers } from "ethers";
+import { abi } from "./nftAbi"
 
 export default class EthereumRpc {
   private provider: SafeEventEmitterProvider;
@@ -107,7 +108,7 @@ export default class EthereumRpc {
     }
   }
 
-  async verifyOwnership(): Promise<boolean> {
+  async verifyOwnership(nftNetwork:number, nftContractAddress:string, nftId:number): Promise<boolean> {
     try {
       const ethersProvider = new ethers.providers.Web3Provider(this.provider);
       const signer = ethersProvider.getSigner();
@@ -115,16 +116,19 @@ export default class EthereumRpc {
       // Get user's Ethereum public address
       const address = await signer.getAddress();
 
-      // // Get user's balance in ether
-      // const check = await signer.ownerOf({
-      //   to: destination,
-      //   value: amount,
-      //   maxPriorityFeePerGas: "5000000000", // Max priority fee per gas
-      //   maxFeePerGas: "6000000000000", // Max fee per gas
-      // });
+      
 
-      // return isOwner;
-      return true
+      const contract = new ethers.Contract(nftContractAddress, abi, signer)
+
+      const isOwner = await contract.ownerOf(nftId);
+
+      if (address === isOwner) {
+        return true
+      } else {
+        return false
+      }
+      
+      
     } catch (error) {
       return error as any;
     }
