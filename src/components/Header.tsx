@@ -11,6 +11,7 @@ import { CHAIN_NAMESPACES } from "@web3auth/base";
 import RPC from "../ethersRPC";
 import { shortenAddress } from '@usedapp/core'
 import { useGlobalContext } from './Web3Context';
+import loader from './loader.svg';
 
 export interface HeaderProps extends DefaultHeaderProps {}
 
@@ -18,18 +19,16 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
   const clientId = String(process.env.REACT_APP_WEB3_AUTH_CLIENT_ID);
   const endpoint = String(process.env.REACT_APP_GOERLI_RPC_URL);
+  // REACT_APP_YOUTUBE_VIDEO_ID=nNbM781v7M0
 
-  // const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
-  // const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
-  // const [userAddress, setUserAddress] = useState("");
   const [etherscanLink, setEtherscanLink] = useState("");
 
   const { 
     web3auth, setWeb3auth,
     provider, setProvider,
     userAddress, setUserAddress,
-    setBal,
-    // userShortenAddr, setShortenAddr,
+    // bal, setBal,
+    userShortenAddr, setShortenAddr,
     // etherscanLink, setEtherscanLink,
     // txHash, setTxHash,
     // net, setNet,
@@ -53,9 +52,13 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
       setWeb3auth(web3auth);
 
       await web3auth.initModal();
+
         if (web3auth.provider) {
           setProvider(web3auth.provider);
         };
+            
+      console.log("end of init (user addr):", userAddress)
+
       } catch (error) {
         console.error(error);
       }
@@ -63,6 +66,10 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
     init();
   }, []);
+
+  useEffect(() => {
+    getAccounts()
+  }, [provider]);
 
   const toggle = async () => {
     if (provider) {
@@ -81,14 +88,14 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     setProvider(web3authProvider);
   };
 
-  // const getUserInfo = async () => {
-  //   if (!web3auth) {
-  //     // console.log("web3auth not initialized yet");
-  //     return;
-  //   }
-  //   const user = await web3auth.getUserInfo();
-  //   console.log(user);
-  // };
+  // // const getUserInfo = async () => {
+  // //   if (!web3auth) {
+  // //     // console.log("web3auth not initialized yet");
+  // //     return;
+  // //   }
+  // //   const user = await web3auth.getUserInfo();
+  // //   console.log(user);
+  // // };
 
   const logout = async () => {
     if (!web3auth) {
@@ -99,41 +106,45 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     setProvider(null);
   };
 
-  // const getChainId = async () => {
+  // // const getChainId = async () => {
+  // //   if (!provider) {
+  // //     // console.log("provider not initialized yet");
+  // //     return;
+  // //   }
+  // //   const rpc = new RPC(provider);
+  // //   const chainId = await rpc.getChainId();
+  // //   console.log(chainId);
+  // // };
+
+  const getAccounts = async () => {
+    console.log("getAccounts executed #1")
+    if (!provider) {
+      // console.log("provider not initialized yet");
+      return;
+    }
+    console.log("getAccounts executed #2")
+
+    const rpc = new RPC(provider);
+    const address = await rpc.getAccounts();
+    // console.log(address);
+    setUserAddress(address);
+    setShortenAddr(shortenAddress(address))
+    setEtherscanLink("https://goerli.etherscan.io/address/" + address);
+    console.log("getAccounts executed #3")
+  };
+  // getAccounts(); // bad 
+
+  // const getBalance = async () => {
   //   if (!provider) {
   //     // console.log("provider not initialized yet");
   //     return;
   //   }
   //   const rpc = new RPC(provider);
-  //   const chainId = await rpc.getChainId();
-  //   console.log(chainId);
+  //   const balance = await rpc.getBalance();
+  //   // console.log(balance);
+  //   setBal(Number(balance))
   // };
-
-  const getAccounts = async () => {
-    if (!provider) {
-      // console.log("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const address = await rpc.getAccounts();
-    // console.log(address);
-    setUserAddress(shortenAddress(address));
-    setEtherscanLink("https://goerli.etherscan.io/address/" + address);
-
-  };
-  getAccounts();
-
-  const getBalance = async () => {
-    if (!provider) {
-      // console.log("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const balance = await rpc.getBalance();
-    // console.log(balance);
-    setBal(Number(balance))
-  };
-  getBalance()
+  // getBalance()
 
   // const sendTransaction = async () => {
   //   if (!provider) {
@@ -178,7 +189,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
     userAddressBox={{
       props: {
-        children: (!provider ? "" : userAddress),
+        children: (!provider ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : userShortenAddr),
         href: etherscanLink
       }
     }}

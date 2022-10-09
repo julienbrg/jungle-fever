@@ -13,8 +13,10 @@ export type GlobalContent = {
     setUserAddress:(c: string) => void
     bal: number
     setBal:(c: number) => void
-    // userShortenAddr: string
-    // setShortenAddr:(c: string) => void
+    isOwner: boolean
+    setIsOwner: (c: boolean) => void
+    userShortenAddr: string
+    setShortenAddr:(c: string) => void
     // etherscanLink: string
     // setEtherscanLink:(c: string) => void
     // txHash: string
@@ -36,10 +38,12 @@ export const Web3Context = createContext<GlobalContent>({
     setUserAddress: () => {},
     bal: 0,
     setBal: () => {},
+    isOwner: false,
+    setIsOwner: () => {},
     // etherscanLink: "",
     // setEtherscanLink: () => {},
-    // userShortenAddr: "", 
-    // setShortenAddr: () => {},
+    userShortenAddr: "", 
+    setShortenAddr: () => {},
     // txHash: "",
     // setTxHash: () => {},
     // net: "",

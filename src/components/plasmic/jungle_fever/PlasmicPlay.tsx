@@ -32,7 +32,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
-import TextInput from "../../TextInput"; // plasmic-import: _oRzGL_a2z00t/component
 import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
@@ -43,7 +42,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: neKnaqAFQgtkJjtbXthdKd/projectcss
 import sty from "./PlasmicPlay.module.css"; // plasmic-import: GEPIXA075Fn-g/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: 9x2RT-jPTsI_B4/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QIFkDJ_ce_gClo/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: wIv3yetKUg72by/icon
 
@@ -62,9 +60,7 @@ export type PlasmicPlay__OverridesType = {
   header?: p.Flex<typeof Header>;
   section?: p.Flex<"section">;
   textBox?: p.Flex<"div">;
-  amountInput?: p.Flex<typeof TextInput>;
-  play?: p.Flex<typeof Button>;
-  action?: p.Flex<typeof Button>;
+  verify?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -145,44 +141,17 @@ function PlasmicPlay__RenderFunc(props: {
                       sty.textBox
                     )}
                   >
-                    {"\"We've got jungle fever, we're in love.\""}
+                    {"..."}
                   </div>
                 </div>
 
-                {true ? (
-                  <TextInput
-                    data-plasmic-name={"amountInput"}
-                    data-plasmic-override={overrides.amountInput}
-                    className={classNames("__wab_instance", sty.amountInput)}
-                    name={"amountInput" as const}
-                  />
-                ) : null}
-                {true ? (
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__rbH8K)}
-                  >
-                    <Button
-                      data-plasmic-name={"play"}
-                      data-plasmic-override={overrides.play}
-                      className={classNames("__wab_instance", sty.play)}
-                    >
-                      {"Verify"}
-                    </Button>
-
-                    {true ? (
-                      <Button
-                        data-plasmic-name={"action"}
-                        data-plasmic-override={overrides.action}
-                        className={classNames("__wab_instance", sty.action)}
-                        color={"blue" as const}
-                      >
-                        {"Action"}
-                      </Button>
-                    ) : null}
-                  </p.Stack>
-                ) : null}
+                <Button
+                  data-plasmic-name={"verify"}
+                  data-plasmic-override={overrides.verify}
+                  className={classNames("__wab_instance", sty.verify)}
+                >
+                  {"Verify NFT ownership"}
+                </Button>
               </p.Stack>
             </div>
           ) : null}
@@ -199,22 +168,11 @@ function PlasmicPlay__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "section",
-    "textBox",
-    "amountInput",
-    "play",
-    "action",
-    "footer"
-  ],
+  root: ["root", "header", "section", "textBox", "verify", "footer"],
   header: ["header"],
-  section: ["section", "textBox", "amountInput", "play", "action"],
+  section: ["section", "textBox", "verify"],
   textBox: ["textBox"],
-  amountInput: ["amountInput"],
-  play: ["play"],
-  action: ["action"],
+  verify: ["verify"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -225,9 +183,7 @@ type NodeDefaultElementType = {
   header: typeof Header;
   section: "section";
   textBox: "div";
-  amountInput: typeof TextInput;
-  play: typeof Button;
-  action: typeof Button;
+  verify: typeof Button;
   footer: typeof Footer;
 };
 
@@ -295,9 +251,7 @@ export const PlasmicPlay = Object.assign(
     header: makeNodeComponent("header"),
     section: makeNodeComponent("section"),
     textBox: makeNodeComponent("textBox"),
-    amountInput: makeNodeComponent("amountInput"),
-    play: makeNodeComponent("play"),
-    action: makeNodeComponent("action"),
+    verify: makeNodeComponent("verify"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicPlay
