@@ -45,7 +45,7 @@
   display: flex;
   width: 60%;
   height: auto;
-  padding-top: 156px;
+  padding-top: 39px;
 }
 .section > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -98,7 +98,7 @@
   align-items: center;
   justify-content: center;
   width: 728px;
-  height: 119px;
+  height: 389px;
   max-width: 100%;
   flex-shrink: 0;
   border-radius: 20px;
@@ -132,7 +132,7 @@
 .verify:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  margin-top: calc(58px + 16px) !important;
+  margin-top: 58px;
 }
 .svg__z5Bgz {
   position: relative;

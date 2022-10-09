@@ -19,7 +19,6 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
   const clientId = String(process.env.REACT_APP_WEB3_AUTH_CLIENT_ID);
   const endpoint = String(process.env.REACT_APP_GOERLI_RPC_URL);
-  // REACT_APP_YOUTUBE_VIDEO_ID=nNbM781v7M0
 
   const [etherscanLink, setEtherscanLink] = useState("");
 

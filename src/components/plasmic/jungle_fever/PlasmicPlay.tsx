@@ -144,15 +144,15 @@ function PlasmicPlay__RenderFunc(props: {
                     {"..."}
                   </div>
                 </div>
-
-                <Button
-                  data-plasmic-name={"verify"}
-                  data-plasmic-override={overrides.verify}
-                  className={classNames("__wab_instance", sty.verify)}
-                >
-                  {"Verify NFT ownership"}
-                </Button>
               </p.Stack>
+
+              <Button
+                data-plasmic-name={"verify"}
+                data-plasmic-override={overrides.verify}
+                className={classNames("__wab_instance", sty.verify)}
+              >
+                {"Verify NFT ownership"}
+              </Button>
             </div>
           ) : null}
 
@@ -170,7 +170,7 @@ function PlasmicPlay__RenderFunc(props: {
 const PlasmicDescendants = {
   root: ["root", "header", "section", "textBox", "verify", "footer"],
   header: ["header"],
-  section: ["section", "textBox", "verify"],
+  section: ["section", "textBox"],
   textBox: ["textBox"],
   verify: ["verify"],
   footer: ["footer"]
