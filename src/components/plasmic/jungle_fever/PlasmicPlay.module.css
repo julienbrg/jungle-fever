@@ -67,7 +67,7 @@
 @media (min-width: 0px) and (max-width: 350px) {
   .section {
     width: 95%;
-    padding-top: 55px;
+    padding-top: 77px;
   }
 }
 @media (min-width: 0px) and (max-width: 350px) {
@@ -103,7 +103,6 @@
   flex-shrink: 0;
   border-radius: 20px;
   padding: 0px 8px;
-  border: 4px solid var(--token-nHhgpMB0JLvcyx);
 }
 @media (min-width: 0px) and (max-width: 350px) {
   .freeBox__mebt6 {
@@ -125,88 +124,23 @@
 @media (min-width: 0px) and (max-width: 350px) {
   .textBox {
     font-size: 16px;
+    max-width: 230px;
+    width: 100%;
+    min-width: 0;
   }
 }
-.amountInput:global(.__wab_instance) {
+.verify:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  width: 311px;
-  margin-top: calc(30px + 16px) !important;
-  margin-bottom: 30px;
-  display: none;
+  margin-top: calc(58px + 16px) !important;
 }
-.svg___0LqCb {
+.svg__z5Bgz {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__ejFqt {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.freeBox__rbH8K {
-  flex-direction: row;
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.freeBox__rbH8K > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 20px);
-  width: calc(100% + 20px);
-}
-.freeBox__rbH8K > :global(.__wab_flex-container) > *,
-.freeBox__rbH8K > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__rbH8K > :global(.__wab_flex-container) > picture > img,
-.freeBox__rbH8K
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 20px;
-}
-.play:global(.__wab_instance) {
-  max-width: 100%;
-  height: 35px;
-  margin-top: 33px;
-}
-.svg__vm6AG {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg___8BCt {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.action:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 52px;
-  height: 27px;
-  flex-shrink: 0;
-  display: none;
-}
-.svg___93Dqk {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__r78A5 {
+.svg__wZw6B {
   position: relative;
   object-fit: cover;
   width: 1em;

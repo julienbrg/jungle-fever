@@ -1,49 +1,60 @@
 import * as React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import {
   PlasmicPlay,
   DefaultPlayProps
 } from "./plasmic/jungle_fever/PlasmicPlay";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import RPC from "../ethersRPC";
 import { useGlobalContext } from './Web3Context';
-
-// nNbM781v7M0 = YouTube ID of Jungle Fever by Stevie Wonder
 
 export interface PlayProps extends DefaultPlayProps {}
 
+const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
+
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
-  const [isOwner, setIsOwner] = useState(false);
+  // const [isOwner, setIsOwner] = useState("");
 
   const { 
-    bal,
-    provider
+    // bal,
+    // provider,
+    userAddress,
+    isOwner, setIsOwner
   } = useGlobalContext()
 
-  const verifyOwnership = async () => {
-    if (!provider) {
-      console.log("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const verifyOwnership = await rpc.verifyOwnership();
-    console.log("ownership verified:", verifyOwnership);
+  const action = async () => {
 
-    // setIsOwner(verifyOwnership);
+    console.log("clicked")
+
+    // if (!provider) {
+    //   console.log("provider not initialized yet");
+    //   return;
+    // }
+
+    // if (isOwner === false) {
+    //   setIsOwner(true)
+    // }
+
+      if (isOwner === false) {
+        setIsOwner(true)
+      } else {
+        setIsOwner(false)
+    }
+  console.log("userAddress:", userAddress)
+    
   }
 
   return <PlasmicPlay root={{ ref }} {...props} 
   
     textBox={{
       props: {
-        children: ( isOwner === true ? "You're the happy owner of the NFT" : "Current balance: " + bal + " ETH" )
+        children: (isOwner === true ? "You are the happy owner of the NFT! 🎉 \n \n ...so here's your vid, my friend: " + jungle + "" : "" )
       }
     }}
 
-    play={{
+    verify={{
       props: {
-        onClick: () => verifyOwnership()
+        onClick: () => action()
       }
     }}
   

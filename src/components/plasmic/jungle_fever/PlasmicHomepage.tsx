@@ -33,7 +33,6 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
-import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
@@ -42,9 +41,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: neKnaqAFQgtkJjtbXthdKd/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: ObYxGyTLMBD9Z/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QIFkDJ_ce_gClo/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: wIv3yetKUg72by/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -61,7 +57,6 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<typeof Header>;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
-  play?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -185,25 +180,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     effect={"fade" as const}
                     triggerOnce={true}
                   >
-                    {true ? (
-                      <Button
-                        data-plasmic-name={"play"}
-                        data-plasmic-override={overrides.play}
-                        className={classNames("__wab_instance", sty.play)}
-                        link={`/play`}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__seEpw
-                          )}
-                        >
-                          {"Watch"}
-                        </div>
-                      </Button>
-                    ) : null}
-
                     <div
                       className={classNames(
                         projectcss.all,
@@ -319,11 +295,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "section", "h1", "play", "footer"],
+  root: ["root", "header", "section", "h1", "footer"],
   header: ["header"],
   section: ["section", "h1"],
   h1: ["h1"],
-  play: ["play"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -334,7 +309,6 @@ type NodeDefaultElementType = {
   header: typeof Header;
   section: "section";
   h1: "h1";
-  play: typeof Button;
   footer: typeof Footer;
 };
 
@@ -402,7 +376,6 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
-    play: makeNodeComponent("play"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

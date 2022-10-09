@@ -177,27 +177,6 @@
   position: relative;
   margin-top: 39px;
 }
-.play:global(.__wab_instance) {
-  max-width: 100%;
-  width: 87px;
-  height: 40px;
-  display: none;
-}
-.svg__jT3G3 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.text__seEpw {
-  font-size: 20px;
-}
-.svg__i4Blo {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
 .text__lXmJs {
   position: relative;
   width: 100%;
