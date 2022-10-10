@@ -47,6 +47,7 @@
   width: 60%;
   height: auto;
   padding-top: 39px;
+  align-self: center;
 }
 .section > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -108,6 +109,10 @@
 @media (min-width: 0px) and (max-width: 421px) {
   .freeBox__mebt6 {
     height: 91px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: auto;
     flex-shrink: 0;
     padding: 69px 15px;
   }
@@ -126,8 +131,8 @@
   .textBox {
     font-size: 16px;
     max-width: 230px;
-    width: 100%;
-    min-width: 0;
+    width: auto;
+    align-self: center;
   }
 }
 .verify:global(.__wab_instance) {

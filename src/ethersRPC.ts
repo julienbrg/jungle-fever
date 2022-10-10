@@ -123,19 +123,21 @@ export default class EthereumRpc {
 
       let matching
 
-      for (let i=7;i<10;i++) {
+      for (let i=1;i<=42;i++) {
         const isOwner = await contract.ownerOf(i);
         console.log("isOwner: ", isOwner, "i: ", i)
         if (address === isOwner) {
           matching = true
+          return true
         } else {
           matching = false
+          return true
         }
       }
 
-      if (matching) {
-        return matching
-      }
+      // if (matching) {
+      //   return matching
+      // }
       
     } catch (error) {
       return error as any;

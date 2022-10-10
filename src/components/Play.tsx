@@ -19,8 +19,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   const [checked, setChecked] = useState("Please make sure you're connected with the wallet holding the required NFT and click on the button below.");
 
   const opts = {
-    height: '390',
-    width: window.innerWidth,
+    // height: '390',
+    // width: window.innerWidth,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
