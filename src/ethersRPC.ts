@@ -108,8 +108,9 @@ export default class EthereumRpc {
     }
   }
 
-  async verifyOwnership(nftNetwork:number, nftContractAddress:string, nftId:number): Promise<boolean> {
-    try {
+  // async verifyOwnership(nftNetwork:number, nftContractAddress:string, nftId:number): Promise<boolean> {
+    async verifyOwnership(nftNetwork:number, nftContractAddress:string): Promise<any> {
+      try {
       const ethersProvider = new ethers.providers.Web3Provider(this.provider);
       const signer = ethersProvider.getSigner();
 
@@ -120,14 +121,23 @@ export default class EthereumRpc {
 
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
 
-      const isOwner = await contract.ownerOf(nftId);
+      let matching
 
-      if (address === isOwner) {
-        return true
-      } else {
-        return false
+      for (let i=1;i<=42;i++) {
+        const isOwner = await contract.ownerOf(i);
+        console.log("isOwner: ", isOwner, "i: ", i)
+        if (address === isOwner) {
+          matching = true
+          return true
+        } else {
+          matching = false
+          return true
+        }
       }
-      
+
+      // if (matching) {
+      //   return matching
+      // }
       
     } catch (error) {
       return error as any;
