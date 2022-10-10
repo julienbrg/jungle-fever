@@ -26,6 +26,7 @@
 @media (min-width: 0px) and (max-width: 421px) {
   .header:global(.__wab_instance) {
     height: 114px;
+    margin-bottom: 34px;
     flex-shrink: 0;
   }
 }

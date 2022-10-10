@@ -128,7 +128,6 @@ function PlasmicSoon__RenderFunc(props: {
               <Reveal
                 big={true}
                 className={classNames("__wab_instance", sty.reveal___9PxSf)}
-                direction={"down" as const}
                 duration={5000 as const}
                 effect={"fade" as const}
                 triggerOnce={true}
