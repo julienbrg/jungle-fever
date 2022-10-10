@@ -12,10 +12,13 @@
   min-width: 0;
   padding: 8px 8px 60px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .root {
     padding-bottom: 0px;
     height: 104px;
+    max-width: 396px;
+    width: 100%;
+    min-width: 0;
   }
 }
 .freeBox__yAb7J {
@@ -44,13 +47,13 @@
   > img {
   margin-left: 15px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__yAb7J {
     display: flex;
     flex-direction: column;
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__yAb7J > :global(.__wab_flex-container) {
     flex-direction: column;
     justify-content: flex-start;
@@ -59,7 +62,7 @@
     width: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__yAb7J > :global(.__wab_flex-container) > *,
   .freeBox__yAb7J > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__yAb7J > :global(.__wab_flex-container) > picture > img,
@@ -83,7 +86,7 @@
   color: var(--token-nHhgpMB0JLvcyx);
   font-weight: 400;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .userAddressBox {
     font-size: 12px;
   }
@@ -115,7 +118,7 @@
   > img {
   margin-left: 15px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__y3Zwc {
     display: flex;
     flex-direction: column;
@@ -124,7 +127,7 @@
     padding-top: 0px;
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__y3Zwc > :global(.__wab_flex-container) {
     flex-direction: column;
     justify-content: center;
@@ -133,7 +136,7 @@
     width: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__y3Zwc > :global(.__wab_flex-container) > *,
   .freeBox__y3Zwc > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__y3Zwc > :global(.__wab_flex-container) > picture > img,
@@ -171,13 +174,13 @@
   > img {
   margin-left: 15px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__hjd5X {
     display: flex;
     flex-direction: column;
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__hjd5X > :global(.__wab_flex-container) {
     flex-direction: column;
     justify-content: flex-start;
@@ -186,7 +189,7 @@
     width: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__hjd5X > :global(.__wab_flex-container) > *,
   .freeBox__hjd5X > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__hjd5X > :global(.__wab_flex-container) > picture > img,
@@ -210,7 +213,7 @@
   color: var(--token-nHhgpMB0JLvcyx);
   font-weight: 400;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .userAddressBox2 {
     font-size: 12px;
   }
@@ -226,7 +229,7 @@
   max-width: 100%;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__jf90P {
     justify-content: center;
     align-items: flex-end;
@@ -238,7 +241,7 @@
   max-width: 800px;
   color: var(--token-UpYVGsqeDTxlKV);
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .link__pkXan {
     align-self: flex-end;
   }
@@ -265,9 +268,9 @@
   width: 56px;
   flex-shrink: 0;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .login:global(.__wab_instance) {
-    width: 44px;
+    width: 50px;
     height: 21px;
     margin-top: 6px;
     flex-shrink: 0;

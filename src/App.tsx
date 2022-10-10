@@ -14,8 +14,9 @@ function Index() {
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
   const [userAddress, setUserAddress] = useState<string>("")
   const [bal, setBal] = useState<number>(0);
+  const [isOwner, setIsOwner] = useState<boolean>(false);
 
-  // const [userShortenAddr, setShortenAddr] = useState<string>("")
+  const [userShortenAddr, setShortenAddr] = useState<string>("")
   // const [etherscanLink, setEtherscanLink] = useState("");
   // const [txHash, setTxHash] = useState("");
   // const [net, setNet] = useState("");
@@ -27,8 +28,9 @@ function Index() {
       web3auth, setWeb3auth,
       provider, setProvider,
       userAddress, setUserAddress,
-      bal, setBal
-      // userShortenAddr, setShortenAddr,
+      bal, setBal,
+      isOwner, setIsOwner,
+      userShortenAddr, setShortenAddr,
       // etherscanLink, setEtherscanLink,
       // txHash, setTxHash,
       // net, setNet,

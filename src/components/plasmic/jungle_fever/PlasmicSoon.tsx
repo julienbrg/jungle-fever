@@ -33,8 +33,6 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
-import TextInput from "../../TextInput"; // plasmic-import: _oRzGL_a2z00t/component
-import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
@@ -43,10 +41,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: neKnaqAFQgtkJjtbXthdKd/projectcss
 import sty from "./PlasmicSoon.module.css"; // plasmic-import: ODTH0GNSW1H/css
-
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: 9x2RT-jPTsI_B4/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QIFkDJ_ce_gClo/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: wIv3yetKUg72by/icon
 
 export type PlasmicSoon__VariantMembers = {};
 
@@ -61,12 +55,8 @@ export const PlasmicSoon__ArgProps = new Array<ArgPropType>();
 export type PlasmicSoon__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  textBox2?: p.Flex<"div">;
-  textBox?: p.Flex<"div">;
-  amountInput?: p.Flex<typeof TextInput>;
-  play?: p.Flex<typeof Button>;
-  amountInput2?: p.Flex<typeof TextInput>;
-  play2?: p.Flex<typeof Button>;
+  h1?: p.Flex<"h1">;
+  text?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -135,249 +125,47 @@ function PlasmicSoon__RenderFunc(props: {
             triggerOnce={true}
           >
             <div className={classNames(projectcss.all, sty.freeBox___8OdRt)}>
-              <div
-                data-plasmic-name={"textBox2"}
-                data-plasmic-override={overrides.textBox2}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.textBox2
-                )}
+              <Reveal
+                big={true}
+                className={classNames("__wab_instance", sty.reveal___9PxSf)}
+                direction={"down" as const}
+                duration={5000 as const}
+                effect={"fade" as const}
+                triggerOnce={true}
               >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "Coming soon"
-                  : (() => {
-                      try {
-                        return undefined;
-                      } catch (e) {
-                        if (e instanceof TypeError) {
-                          return "Coming soon..";
-                        }
-                        throw e;
-                      }
-                    })()}
-              </div>
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h1,
+                    projectcss.__wab_text,
+                    sty.h1
+                  )}
+                >
+                  {"Coming soon"}
+                </h1>
+              </Reveal>
             </div>
           </Reveal>
 
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : true) ? (
-            <div className={classNames(projectcss.all, sty.freeBox___2ZNPe)}>
-              <p.Stack
-                as={"section"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.section___87Yc)}
-              >
-                <Reveal
-                  className={classNames("__wab_instance", sty.reveal___9NJlX)}
-                  delay={500 as const}
-                  duration={5000 as const}
-                  triggerOnce={true}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pbsFn)}
-                  >
-                    <div
-                      data-plasmic-name={"textBox"}
-                      data-plasmic-override={overrides.textBox}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.textBox
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "Coming soon.."
-                        : "Coming soon."}
-                    </div>
-                  </div>
-                </Reveal>
-
-                {true ? (
-                  <TextInput
-                    data-plasmic-name={"amountInput"}
-                    data-plasmic-override={overrides.amountInput}
-                    className={classNames("__wab_instance", sty.amountInput)}
-                    name={"amountInput" as const}
-                  />
-                ) : null}
-
-                <Reveal
-                  className={classNames("__wab_instance", sty.reveal__wdvDe)}
-                  delay={6000 as const}
-                  direction={"vertical" as const}
-                  duration={1500 as const}
-                  effect={"fade" as const}
-                  triggerOnce={true}
-                >
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile") ? true : true
-                  ) ? (
-                    <Button
-                      data-plasmic-name={"play"}
-                      data-plasmic-override={overrides.play}
-                      className={classNames("__wab_instance", sty.play)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6Ec8U
-                        )}
-                      >
-                        {"Watch"}
-                      </div>
-                    </Button>
-                  ) : null}
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__lXmJs
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <a
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__hn7Iw
-                            )}
-                            href={
-                              "https://foundation.app/collection/mholefnc" as const
-                            }
-                            target={"_blank" as const}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "Foundation"
-                              : "Foundation"}
-                          </a>
-                        }
-                        <React.Fragment>{"\n"}</React.Fragment>
-                        {
-                          <a
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__qhJw
-                            )}
-                            href={
-                              "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
-                            }
-                            target={"_blank" as const}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "OpenSea"
-                              : "OpenSea"}
-                          </a>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
-                    ) : (
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <a
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__hn7Iw
-                            )}
-                            href={
-                              "https://foundation.app/collection/mholefnc" as const
-                            }
-                            target={"_blank" as const}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "Foundation"
-                              : "Foundation"}
-                          </a>
-                        }
-                        <React.Fragment>{" | "}</React.Fragment>
-                        {
-                          <a
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__qhJw
-                            )}
-                            href={
-                              "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
-                            }
-                            target={"_blank" as const}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "OpenSea"
-                              : "OpenSea"}
-                          </a>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
-                    )}
-                  </div>
-                </Reveal>
-              </p.Stack>
-            </div>
-          ) : null}
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <p.Stack
-              as={"section"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.section__yiAJv)}
-            >
-              {true ? (
-                <TextInput
-                  data-plasmic-name={"amountInput2"}
-                  data-plasmic-override={overrides.amountInput2}
-                  className={classNames("__wab_instance", sty.amountInput2)}
-                  name={"amountInput" as const}
-                />
-              ) : null}
-
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__wzUiD)}>
               <Reveal
-                className={classNames("__wab_instance", sty.reveal___1QHLn)}
+                className={classNames("__wab_instance", sty.reveal__mwdcD)}
                 delay={6000 as const}
                 direction={"vertical" as const}
                 duration={1500 as const}
                 effect={"fade" as const}
                 triggerOnce={true}
               >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : true
-                ) ? (
-                  <Button
-                    data-plasmic-name={"play2"}
-                    data-plasmic-override={overrides.play2}
-                    className={classNames("__wab_instance", sty.play2)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ldSm
-                      )}
-                    >
-                      {"Watch"}
-                    </div>
-                  </Button>
-                ) : null}
-
                 <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__lXmJs
+                    sty.text
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -390,7 +178,7 @@ function PlasmicSoon__RenderFunc(props: {
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__hn7Iw
+                            sty.link__gUfTr
                           )}
                           href={
                             "https://foundation.app/collection/mholefnc" as const
@@ -410,7 +198,7 @@ function PlasmicSoon__RenderFunc(props: {
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__qhJw
+                            sty.link___0GuGg
                           )}
                           href={
                             "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
@@ -434,7 +222,7 @@ function PlasmicSoon__RenderFunc(props: {
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__hn7Iw
+                            sty.link__sfLqr
                           )}
                           href={
                             "https://foundation.app/collection/mholefnc" as const
@@ -454,7 +242,7 @@ function PlasmicSoon__RenderFunc(props: {
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__qhJw
+                            sty.link__yQIq
                           )}
                           href={
                             "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
@@ -471,7 +259,7 @@ function PlasmicSoon__RenderFunc(props: {
                   )}
                 </div>
               </Reveal>
-            </p.Stack>
+            </div>
           ) : null}
 
           <Footer
@@ -486,24 +274,10 @@ function PlasmicSoon__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "textBox2",
-    "textBox",
-    "amountInput",
-    "play",
-    "amountInput2",
-    "play2",
-    "footer"
-  ],
+  root: ["root", "header", "h1", "text", "footer"],
   header: ["header"],
-  textBox2: ["textBox2"],
-  textBox: ["textBox"],
-  amountInput: ["amountInput"],
-  play: ["play"],
-  amountInput2: ["amountInput2"],
-  play2: ["play2"],
+  h1: ["h1"],
+  text: ["text"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -512,12 +286,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  textBox2: "div";
-  textBox: "div";
-  amountInput: typeof TextInput;
-  play: typeof Button;
-  amountInput2: typeof TextInput;
-  play2: typeof Button;
+  h1: "h1";
+  text: "div";
   footer: typeof Footer;
 };
 
@@ -583,12 +353,8 @@ export const PlasmicSoon = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    textBox2: makeNodeComponent("textBox2"),
-    textBox: makeNodeComponent("textBox"),
-    amountInput: makeNodeComponent("amountInput"),
-    play: makeNodeComponent("play"),
-    amountInput2: makeNodeComponent("amountInput2"),
-    play2: makeNodeComponent("play2"),
+    h1: makeNodeComponent("h1"),
+    text: makeNodeComponent("text"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicSoon
