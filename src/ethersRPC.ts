@@ -121,23 +121,28 @@ export default class EthereumRpc {
 
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
 
-      let matching
+      // let matching
 
-      for (let i=1;i<=42;i++) {
-        const isOwner = await contract.ownerOf(i);
-        console.log("isOwner: ", isOwner, "i: ", i)
-        if (address === isOwner) {
-          matching = true
-          return true
-        } else {
-          matching = false
-          return true
-        }
-      }
-
-      // if (matching) {
-      //   return matching
+      // for (let i=1;i<=42;i++) {
+      //   const isOwner = await contract.ownerOf(i);
+      //   console.log("isOwner: ", isOwner, "i: ", i)
+      //   if (address === isOwner) {
+      //     matching = true
+      //     return true
+      //   } else {
+      //     matching = false
+      //     return true
+      //   }
       // }
+
+      // const isOwner = await contract.balanceOf(address);
+
+
+      if (await contract.balanceOf(address) > 0) {
+        return true
+      } else {
+        return false
+      }
       
     } catch (error) {
       return error as any;
