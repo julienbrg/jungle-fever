@@ -20,7 +20,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
   const opts = {
     height: '390',
-    width: '640',
+    width: window.innerWidth,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -43,14 +43,15 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     // nft references
     const nftNetwork = 5 // Goerli
     const nftContractAddress = "0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1" // https://goerli.etherscan.io/address/0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1#code
-    const nftId = 8
+    // const nftId = 8
 
     if (!provider) {
       // console.log("provider not initialized yet");
       return;
     }
     const rpc = new RPC(provider);
-    const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress, nftId);
+    // const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress, nftId);
+    const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress);
     
     console.log(receipt);
     if (receipt === true) {

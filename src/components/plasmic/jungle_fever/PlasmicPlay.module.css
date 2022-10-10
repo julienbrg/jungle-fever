@@ -16,8 +16,9 @@
   position: relative;
   left: auto;
   top: auto;
+  width: 1520px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .header:global(.__wab_instance) {
     height: 55px;
     flex-shrink: 0;
@@ -64,13 +65,13 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .section {
     width: 95%;
     padding-top: 77px;
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -78,7 +79,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -104,11 +105,11 @@
   border-radius: 20px;
   padding: 0px 8px;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .freeBox__mebt6 {
     height: 91px;
     flex-shrink: 0;
-    padding: 15px;
+    padding: 69px 15px;
   }
 }
 .textBox {
@@ -121,7 +122,7 @@
   font-size: 32px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 421px) {
   .textBox {
     font-size: 16px;
     max-width: 230px;
