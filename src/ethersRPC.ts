@@ -117,10 +117,14 @@ export default class EthereumRpc {
       // Get user's Ethereum public address
       const address = await signer.getAddress();
 
-      
-
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
-
+      if(await contract.balanceOf(address) > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+      /*
       let matching
 
       for (let i=1;i<=42;i++) {
@@ -134,6 +138,7 @@ export default class EthereumRpc {
           return true
         }
       }
+      */
 
       // if (matching) {
       //   return matching
