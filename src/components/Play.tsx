@@ -41,6 +41,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     console.log('nftWatchCallback (from): ',from);
     console.log('nftWatchCallback (to): ',to);
     //console.log('nftWatchCallback (tokenId): ',tokenId);
+    verifyOwnership()
   }
 
   nftWatch(nftWatchCallback);
@@ -64,10 +65,10 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress);
     console.log(receipt);
     // for test, always return true
-    //setIsOwner(true)
+    setIsOwner(receipt)
 
     if (receipt === true) {
-      setIsOwner(receipt)
+      // setIsOwner(receipt)
       // start Contract monitoring
       //watchNft.start()
     } else {
