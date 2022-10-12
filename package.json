@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@eluvio/elv-client-js": "^3.2.32",
     "@plasmicapp/cli": "^0.1.186",
     "@plasmicapp/host": "^1.0.80",
     "@plasmicapp/react-web": "^0.2.112",
