@@ -30,37 +30,93 @@
     flex-shrink: 0;
   }
 }
-.reveal___5LJi:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-}
-.freeBox___8OdRt {
+.freeBox___5BVVh {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 728px;
-  height: 119px;
+  width: 100%;
   max-width: 100%;
-  border-radius: 20px;
-  padding: 238px 8px 0px;
+  left: auto;
+  top: auto;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 0px 8px 8px;
 }
 @media (min-width: 0px) and (max-width: 421px) {
-  .freeBox___8OdRt {
-    height: 91px;
-    padding: 0px;
+  .freeBox___5BVVh {
+    padding-top: 0px;
+    left: auto;
+    top: auto;
   }
 }
-.reveal___9PxSf:global(.__wab_instance) {
+.section {
+  flex-direction: column;
+  display: flex;
+  width: 60%;
+  height: auto;
+  padding-bottom: 0px;
+  transition-property: all;
+  transition-duration: 1s;
+  padding-top: 0px;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
+}
+.section > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.section > :global(.__wab_flex-container) > *,
+.section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.section > :global(.__wab_flex-container) > picture > img,
+.section
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 16px;
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .section {
+    width: 95%;
+    padding-top: 0px;
+    padding-bottom: 69px;
+  }
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .section > :global(.__wab_flex-container) {
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 0px);
+    height: calc(100% + 0px);
+  }
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .section > :global(.__wab_flex-container) > *,
+  .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .section > :global(.__wab_flex-container) > picture > img,
+  .section
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+.reveal__hhbdd:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
   transform-origin: -110% 50%;
 }
 @media (min-width: 0px) and (max-width: 421px) {
-  .reveal___9PxSf:global(.__wab_instance) {
+  .reveal__hhbdd:global(.__wab_instance) {
     text-align: center;
   }
 }
@@ -80,8 +136,7 @@
     font-size: 42px;
   }
 }
-.freeBox__wzUiD {
-  display: flex;
+.freeBox__bc56H {
   position: relative;
   flex-direction: row;
   align-items: center;
@@ -90,6 +145,60 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
+  padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .freeBox__bc56H {
+    padding-top: 0px;
+  }
+}
+.reveal___0CUe4:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  margin-top: 39px;
+}
+.text__ou8Np {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-size: 24px;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .text__ou8Np {
+    text-align: center;
+  }
+}
+.link___1A1Ci {
+  color: var(--token-7haCtBUPWgd76T);
+  font-weight: 700;
+}
+.link__heh3K {
+  color: var(--token-nHhgpMB0JLvcyx);
+  font-weight: 700;
+}
+.link__iw1Sj {
+  color: var(--token-7haCtBUPWgd76T);
+  font-weight: 700;
+}
+.link__bIy5P {
+  color: var(--token-nHhgpMB0JLvcyx);
+  font-weight: 700;
+}
+.freeBox__wzUiD {
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
   padding: 61px 8px 8px;
 }
 @media (min-width: 0px) and (max-width: 421px) {
@@ -103,7 +212,7 @@
   position: relative;
   margin-top: 39px;
 }
-.text {
+.text__sBwHn {
   position: relative;
   width: 100%;
   height: auto;
@@ -113,7 +222,7 @@
   min-width: 0;
 }
 @media (min-width: 0px) and (max-width: 421px) {
-  .text {
+  .text__sBwHn {
     text-align: center;
   }
 }

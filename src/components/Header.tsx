@@ -188,7 +188,8 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
     userAddressBox={{
       props: {
-        children: (!provider ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : userShortenAddr),
+        // children: (!provider ? <img style = {{maxHeight:30}} alt = "loader" src={loader} /> : userShortenAddr),
+        children: (!provider ? "" : userShortenAddr),
         href: etherscanLink
       }
     }}

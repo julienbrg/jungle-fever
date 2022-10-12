@@ -57,6 +57,7 @@ export type PlasmicAbout__OverridesType = {
   freeBox?: p.Flex<"div">;
   section?: p.Flex<"section">;
   text?: p.Flex<"div">;
+  link?: p.Flex<"a">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -144,6 +145,23 @@ function PlasmicAbout__RenderFunc(props: {
                     "I've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe can't love me, I can't love her\n'Cause they say we're the wrong color\nStaring, gloating, laughing, looking\nLike we've done something wrong\nBecause we show love strong, get real, come on\nCalling us names too bad to mention\nBut we pay them no attention\nFor color blind are inner feelings\nIf we feel happiness\nAnd know our love's the best, forget their mess\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nEveryone's created equal\nHell with all you ignorant people\nTrying to stereo type us\nYou really ought to quit\n'Cause you don't know jack, you make us sick\nGet off my jock, you're trying to ride me\nBecause I got my girl beside me\nYou'll only make yourself look stupid\nI love you're trying to dis\n'Cause we've got happiness, I bet you're pissed\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\n"
                   }
                 </div>
+
+                <a
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link
+                  )}
+                  href={
+                    "https://open.spotify.com/track/2SW1wqAFlWH6kGaG3lWtfI?si=539df40300964d85" as const
+                  }
+                  target={"_blank" as const}
+                >
+                  {"Stevie Wonder, Jungle Fever, 1991"}
+                </a>
               </p.Stack>
             </div>
           ) : null}
@@ -160,11 +178,12 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "freeBox", "section", "text", "footer"],
+  root: ["root", "header", "freeBox", "section", "text", "link", "footer"],
   header: ["header"],
-  freeBox: ["freeBox", "section", "text"],
-  section: ["section", "text"],
+  freeBox: ["freeBox", "section", "text", "link"],
+  section: ["section", "text", "link"],
   text: ["text"],
+  link: ["link"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -176,6 +195,7 @@ type NodeDefaultElementType = {
   freeBox: "div";
   section: "section";
   text: "div";
+  link: "a";
   footer: typeof Footer;
 };
 
@@ -244,6 +264,7 @@ export const PlasmicAbout = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     section: makeNodeComponent("section"),
     text: makeNodeComponent("text"),
+    link: makeNodeComponent("link"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout

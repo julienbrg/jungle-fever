@@ -42,6 +42,7 @@
   display: flex;
   width: 60%;
   height: auto;
+  padding-top: 146px;
 }
 .section > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -63,6 +64,7 @@
 @media (min-width: 0px) and (max-width: 421px) {
   .section {
     width: 95%;
+    padding-top: 42px;
   }
 }
 @media (min-width: 0px) and (max-width: 421px) {
@@ -90,15 +92,36 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 448px;
+  max-width: 707px;
   color: var(--token-UpYVGsqeDTxlKV);
-  font-size: 16px;
+  font-size: 24px;
   line-height: 2;
   min-width: 0;
 }
 @media (min-width: 0px) and (max-width: 421px) {
   .text {
     font-size: 14px;
+  }
+}
+.link {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 707px;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-size: 18px;
+  line-height: 2;
+  text-align: right;
+  padding-right: 64px;
+  font-style: italic;
+  padding-top: 40px;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 421px) {
+  .link {
+    font-size: 12px;
+    padding-top: 19px;
+    padding-right: 23px;
   }
 }
 .footer:global(.__wab_instance) {
