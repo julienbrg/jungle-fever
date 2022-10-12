@@ -8,12 +8,15 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useGlobalContext } from './Web3Context';
 import RPC from "../ethersRPC";
 import YouTube from 'react-youtube';
+import * as eluvio from "./eluvio";
 
 export interface PlayProps extends DefaultPlayProps {}
 
 const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
 
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
+
+  // console.log("eluvio: ", eluvio.privKey)
 
   // const [isOwner, setIsOwner] = useState("");
   const [checked, setChecked] = useState("Please make sure you're connected with the wallet holding the required NFT and click on the button below.");
@@ -66,7 +69,11 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   
     textBox={{
       props: {
-        children: (isOwner === true ? <YouTube videoId={jungle} opts={opts} /> : checked )
+        children: (isOwner === false ? <iframe width={854} height={480}
+          
+          src={"https://embed.v3.contentfabric.io//?net=demo&p&ct=h&vid=hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9&ath=acspjcB11eiKZ3u5ovZcp4om4bG737nEGfgFK8v9tLpKZd9z1uwS1Svj1Bwx2pfms4cYoYz6n3mXsRdwDKiVYH75Xmi6no7BNXbPip6nT4PcecpECce7ZySGXzvnh9VXAK99b9hp8FGhQmApqce2RLLDaSVQ24kq9xzz3vqDQFvDkoEXJenabCDfriPojv9HPRQuH7WAX5zr83nk9WCV7tqWsjkwyBpiwhyX21a8SkX7zwJYfJwyNZsLwN6RrGHdPuJXzCBZwtbQ1bpAVCJ4LVy8AD8CPBAjSmVcWfZ1vvQfaQCrDTVQUdzRfdxEZzYYR6tcqrVYiDAHSjpBqj1F1tLShCjUrLfqoGGManX8LL5oUXcLZfzsBn7VHFRYQ31Z58HAef3hCr5m9aP3txhpTbA51pfnrnoRfdnS2b8CCWVueKwSAhjVm3vyicpwn1TfgwrWcH7MHA2Xh3mURtSDPf3vGjjk"} /> 
+        
+        : checked )
       }
     }}
 
