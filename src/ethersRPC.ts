@@ -140,9 +140,13 @@ export default class EthereumRpc {
       }
       */
 
-      // if (matching) {
-      //   return matching
-      // }
+
+
+      if (await contract.balanceOf(address) > 0) {
+        return true
+      } else {
+        return false
+      }
       
     } catch (error) {
       return error as any;
