@@ -8,11 +8,13 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useGlobalContext } from './Web3Context';
 import RPC from "../ethersRPC";
 import YouTube from 'react-youtube';
+import { nftWatch } from "../nftWatch";
 import * as eluvio from "./eluvio";
 
 export interface PlayProps extends DefaultPlayProps {}
 
 const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
+
 
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
@@ -37,8 +39,17 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     isOwner, setIsOwner
   } = useGlobalContext()
 
-  const verifyOwnership = async () => {
+  const nftWatchCallback = async (contract:string, from:string, to:string, tokenId:string) => {
+    console.log('nftWatchCallback (contract): ',contract);
+    console.log('nftWatchCallback (from): ',from);
+    console.log('nftWatchCallback (to): ',to);
+    //console.log('nftWatchCallback (tokenId): ',tokenId);
+    verifyOwnership()
+  }
 
+  nftWatch(nftWatchCallback);
+
+  const verifyOwnership = async () => {
     console.log("clicked")
     console.log("userAddress:", userAddress)
     console.log("provider:", provider)
@@ -55,15 +66,19 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     const rpc = new RPC(provider);
     // const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress, nftId);
     const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress);
-    
     console.log(receipt);
+    // for test, always return true
+    setIsOwner(receipt)
+
     if (receipt === true) {
-      setIsOwner(receipt)
+      // setIsOwner(receipt)
+      // start Contract monitoring
+      //watchNft.start()
     } else {
       setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
     }
-    
-    };
+
+  };
     
   return <PlasmicPlay root={{ ref }} {...props} 
   

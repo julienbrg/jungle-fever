@@ -117,25 +117,29 @@ export default class EthereumRpc {
       // Get user's Ethereum public address
       const address = await signer.getAddress();
 
-      
-
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
+      if(await contract.balanceOf(address) > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+      /*
+      let matching
 
-      // let matching
+      for (let i=1;i<=42;i++) {
+        const isOwner = await contract.ownerOf(i);
+        console.log("isOwner: ", isOwner, "i: ", i)
+        if (address === isOwner) {
+          matching = true
+          return true
+        } else {
+          matching = false
+          return true
+        }
+      }
+      */
 
-      // for (let i=1;i<=42;i++) {
-      //   const isOwner = await contract.ownerOf(i);
-      //   console.log("isOwner: ", isOwner, "i: ", i)
-      //   if (address === isOwner) {
-      //     matching = true
-      //     return true
-      //   } else {
-      //     matching = false
-      //     return true
-      //   }
-      // }
-
-      // const isOwner = await contract.balanceOf(address);
 
 
       if (await contract.balanceOf(address) > 0) {

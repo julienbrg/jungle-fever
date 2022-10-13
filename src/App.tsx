@@ -21,7 +21,9 @@ function Index() {
   // const [txHash, setTxHash] = useState("");
   // const [net, setNet] = useState("");
   // const [firstName, setFirstName] = useState("anon");
-  // const [pfp, setPfp] = useState(loader); 
+  // const [pfp, setPfp] = useState(loader);
+
+  // start Contract monitoring
 
   return (
     <Web3Context.Provider value={{
@@ -39,7 +41,7 @@ function Index() {
     }}>
       <Router basename={'/'}>
         <Routes>
-          
+
           <Route path="/" element={<Homepage />} />
           <Route path="/play" element={<Play />} />
           <Route path="/about" element={<About />} />
