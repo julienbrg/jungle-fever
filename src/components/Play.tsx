@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   PlasmicPlay,
   DefaultPlayProps
@@ -7,37 +8,59 @@ import {
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useGlobalContext } from './Web3Context';
 import RPC from "../ethersRPC";
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 import { nftWatch } from "../nftWatch";
 import * as eluvio from "./eluvio";
 
 export interface PlayProps extends DefaultPlayProps {}
 
-const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
-
+// const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
 
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
-  // console.log("eluvio: ", eluvio.privKey)
+  const [checked, setChecked] = useState(
+    "Please make sure you're connected with the wallet holding the required NFT and click on the button below."
+  );
+  const [eluvioStream, setEluvioStream] = useState("");
 
-  // const [isOwner, setIsOwner] = useState("");
-  const [checked, setChecked] = useState("Please make sure you're connected with the wallet holding the required NFT and click on the button below.");
+  const vid = "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
 
-  const opts = {
-    // height: '390',
-    // width: window.innerWidth,
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
+  // const opts = {
+  //   // height: '390',
+  //   // width: window.innerWidth,
+  //   playerVars: {
+  //     // https://developers.google.com/youtube/player_parameters
+  //     autoplay: 1,
+  //   },
+  // };
 
-  const { 
-    // bal,
+  const {
+    // web3auth,
+    // setWeb3auth,
     provider,
+    setProvider,
     userAddress,
-    isOwner, setIsOwner
-  } = useGlobalContext()
+    isOwner,
+    setIsOwner
+    // setUserAddress,
+    // userShortenAddr,
+    // setShortenAddr,
+    // signer,
+    // setSigner,
+  } = useGlobalContext();
+
+  useEffect(() => {
+    nftWatch(nftWatchCallback);
+    verifyOwnership()
+    const accessToken = "placeholder" // placeholder
+    setEluvioStream(
+      "https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=" +
+        vid +
+        "&ath=" +
+        accessToken
+    );
+
+  }, [provider]);
 
   const nftWatchCallback = async (contract:string, from:string, to:string, tokenId:string) => {
     console.log('nftWatchCallback (contract): ',contract);
@@ -46,8 +69,6 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     //console.log('nftWatchCallback (tokenId): ',tokenId);
     verifyOwnership()
   }
-
-  nftWatch(nftWatchCallback);
 
   const verifyOwnership = async () => {
     console.log("clicked")
@@ -73,33 +94,36 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     if (receipt === true) {
       // setIsOwner(receipt)
       // start Contract monitoring
-      //watchNft.start()
+      // watchNft.start()
     } else {
       setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
     }
-
   };
+
+  console.log("isOwner:", isOwner)
     
-  return <PlasmicPlay root={{ ref }} {...props} 
-  
-    textBox={{
-      props: {
-        children: (isOwner === false ? <iframe width={854} height={480}
-          
-          src={"https://embed.v3.contentfabric.io//?net=demo&p&ct=h&vid=hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9&ath=acspjcB11eiKZ3u5ovZcp4om4bG737nEGfgFK8v9tLpKZd9z1uwS1Svj1Bwx2pfms4cYoYz6n3mXsRdwDKiVYH75Xmi6no7BNXbPip6nT4PcecpECce7ZySGXzvnh9VXAK99b9hp8FGhQmApqce2RLLDaSVQ24kq9xzz3vqDQFvDkoEXJenabCDfriPojv9HPRQuH7WAX5zr83nk9WCV7tqWsjkwyBpiwhyX21a8SkX7zwJYfJwyNZsLwN6RrGHdPuJXzCBZwtbQ1bpAVCJ4LVy8AD8CPBAjSmVcWfZ1vvQfaQCrDTVQUdzRfdxEZzYYR6tcqrVYiDAHSjpBqj1F1tLShCjUrLfqoGGManX8LL5oUXcLZfzsBn7VHFRYQ31Z58HAef3hCr5m9aP3txhpTbA51pfnrnoRfdnS2b8CCWVueKwSAhjVm3vyicpwn1TfgwrWcH7MHA2Xh3mURtSDPf3vGjjk"} /> 
-        
-        : checked )
-      }
-    }}
+  return (
+    <PlasmicPlay
+      root={{ ref }}
+      {...props}
+      videoBox={{
+        props: {
+          children: isOwner === false ? (
+            // <img src={loader} alt={loader} />
+            "no stream for you"
+          ) : (
+            <iframe
+              width={854}
+              height={480}
+              title="eluvioStream"
+              src={eluvioStream}
+            />
+          ),
+        },
+      }}
 
-    verify={{
-      props: {
-        onClick: () => verifyOwnership()
-      }
-    }}
-  
-  />;
+    />
+  );
 }
-
 const Play = React.forwardRef(Play_);
 export default Play;

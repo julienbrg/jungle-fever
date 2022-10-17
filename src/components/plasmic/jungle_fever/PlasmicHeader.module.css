@@ -10,7 +10,7 @@
   width: 100%;
   background: var(--token-t1_sTNhrs7H0ZQ);
   min-width: 0;
-  padding: 8px 8px 60px;
+  padding: 8px 8px 12px;
 }
 @media (min-width: 0px) and (max-width: 421px) {
   .root {

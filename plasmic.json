@@ -153,6 +153,19 @@
           "cssFilePath": "plasmic/jungle_fever/PlasmicSoon.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "Id1pWwT1rv",
+          "name": "Lyrics",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicLyrics.tsx",
+          "importSpec": {
+            "modulePath": "Lyrics.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicLyrics.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

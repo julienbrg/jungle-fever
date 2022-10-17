@@ -17,6 +17,8 @@ export type GlobalContent = {
     setIsOwner: (c: boolean) => void
     userShortenAddr: string
     setShortenAddr:(c: string) => void
+    signer: any | null
+    setSigner:(c: any | null) => void
     // etherscanLink: string
     // setEtherscanLink:(c: string) => void
     // txHash: string
@@ -44,6 +46,8 @@ export const Web3Context = createContext<GlobalContent>({
     // setEtherscanLink: () => {},
     userShortenAddr: "", 
     setShortenAddr: () => {},
+    signer: null, 
+    setSigner: () => {},
     // txHash: "",
     // setTxHash: () => {},
     // net: "",

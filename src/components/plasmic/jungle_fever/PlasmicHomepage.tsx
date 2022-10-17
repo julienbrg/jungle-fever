@@ -152,8 +152,10 @@ function PlasmicHomepage__RenderFunc(props: {
 
               {true ? (
                 <Reveal
+                  big={true}
                   className={classNames("__wab_instance", sty.reveal__kOnjS)}
-                  delay={4000 as const}
+                  delay={6000 as const}
+                  duration={3000 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
@@ -164,9 +166,30 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__aUcBt
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "Sit back, relax, \nand watch the show."
-                      : "Sit back, relax, and watch the show."}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      "Sit back, \nrelax, \nand watch the show."
+                    ) : (
+                      <React.Fragment>
+                        <React.Fragment>
+                          {"Sit back, relax, and "}
+                        </React.Fragment>
+                        {
+                          <a
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__njmHg
+                            )}
+                            href={`/play`}
+                          >
+                            {"watch the show"}
+                          </a>
+                        }
+                        <React.Fragment>{"."}</React.Fragment>
+                      </React.Fragment>
+                    )}
                   </div>
                 </Reveal>
               ) : null}

@@ -32,6 +32,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
@@ -54,8 +55,9 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  freeBox?: p.Flex<"div">;
   section?: p.Flex<"section">;
+  h1?: p.Flex<"h1">;
+  myDiv?: p.Flex<"div">;
   text?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
@@ -119,11 +121,7 @@ function PlasmicAbout__RenderFunc(props: {
           />
 
           {true ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__phaE8)}>
               <p.Stack
                 as={"section"}
                 data-plasmic-name={"section"}
@@ -131,20 +129,154 @@ function PlasmicAbout__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.section)}
               >
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text
-                  )}
+                <Reveal
+                  big={true}
+                  className={classNames("__wab_instance", sty.reveal__f4Nvi)}
+                  delay={1000 as const}
+                  duration={15000 as const}
+                  effect={"fade" as const}
+                  triggerOnce={true}
                 >
-                  {
-                    "I've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe can't love me, I can't love her\n'Cause they say we're the wrong color\nStaring, gloating, laughing, looking\nLike we've done something wrong\nBecause we show love strong, get real, come on\nCalling us names too bad to mention\nBut we pay them no attention\nFor color blind are inner feelings\nIf we feel happiness\nAnd know our love's the best, forget their mess\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nEveryone's created equal\nHell with all you ignorant people\nTrying to stereo type us\nYou really ought to quit\n'Cause you don't know jack, you make us sick\nGet off my jock, you're trying to ride me\nBecause I got my girl beside me\nYou'll only make yourself look stupid\nI love you're trying to dis\n'Cause we've got happiness, I bet you're pissed\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\n"
-                  }
-                </div>
+                  <h1
+                    data-plasmic-name={"h1"}
+                    data-plasmic-override={overrides.h1}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1
+                    )}
+                  >
+                    {"Coming soon"}
+                  </h1>
+                </Reveal>
               </p.Stack>
+
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__uwxXd)}
+                delay={10000 as const}
+                triggerOnce={true}
+              >
+                <div
+                  data-plasmic-name={"myDiv"}
+                  data-plasmic-override={overrides.myDiv}
+                  className={classNames(projectcss.all, sty.myDiv)}
+                  id={"myDiv" as const}
+                />
+              </Reveal>
+
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__unmp)}>
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__hfDcl)}
+                    delay={6000 as const}
+                    direction={"vertical" as const}
+                    duration={1500 as const}
+                    effect={"fade" as const}
+                    triggerOnce={true}
+                  >
+                    <div
+                      data-plasmic-name={"text"}
+                      data-plasmic-override={overrides.text}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__n0Jy6
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{"\n"}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__qr91A
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__cMeAk
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{" | "}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__zZyoN
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      )}
+                    </div>
+                  </Reveal>
+                </div>
+              ) : null}
             </div>
           ) : null}
 
@@ -160,10 +292,11 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "freeBox", "section", "text", "footer"],
+  root: ["root", "header", "section", "h1", "myDiv", "text", "footer"],
   header: ["header"],
-  freeBox: ["freeBox", "section", "text"],
-  section: ["section", "text"],
+  section: ["section", "h1"],
+  h1: ["h1"],
+  myDiv: ["myDiv"],
   text: ["text"],
   footer: ["footer"]
 } as const;
@@ -173,8 +306,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  freeBox: "div";
   section: "section";
+  h1: "h1";
+  myDiv: "div";
   text: "div";
   footer: typeof Footer;
 };
@@ -241,8 +375,9 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    freeBox: makeNodeComponent("freeBox"),
     section: makeNodeComponent("section"),
+    h1: makeNodeComponent("h1"),
+    myDiv: makeNodeComponent("myDiv"),
     text: makeNodeComponent("text"),
     footer: makeNodeComponent("footer"),
 

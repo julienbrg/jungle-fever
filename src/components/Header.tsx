@@ -28,11 +28,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     userAddress, setUserAddress,
     // bal, setBal,
     userShortenAddr, setShortenAddr,
-    // etherscanLink, setEtherscanLink,
-    // txHash, setTxHash,
-    // net, setNet,
-    // firstName, setFirstName,
-    // pfp, setPfp
+    setIsOwner
   } = useGlobalContext()
 
   useEffect(() => {
@@ -56,7 +52,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
           setProvider(web3auth.provider);
         };
             
-      console.log("end of init (user addr):", userAddress)
+      // console.log("end of init (user addr):", userAddress)
 
       } catch (error) {
         console.error(error);
@@ -103,6 +99,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     }
     await web3auth.logout();
     setProvider(null);
+    setIsOwner(false);
   };
 
   // // const getChainId = async () => {
@@ -116,12 +113,12 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
   // // };
 
   const getAccounts = async () => {
-    console.log("getAccounts executed #1")
+    // console.log("getAccounts executed #1")
     if (!provider) {
       // console.log("provider not initialized yet");
       return;
     }
-    console.log("getAccounts executed #2")
+    // console.log("getAccounts executed #2")
 
     const rpc = new RPC(provider);
     const address = await rpc.getAccounts();
@@ -129,7 +126,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     setUserAddress(address);
     setShortenAddr(shortenAddress(address))
     setEtherscanLink("https://goerli.etherscan.io/address/" + address);
-    console.log("getAccounts executed #3")
+    // console.log("getAccounts executed #3")
   };
   // getAccounts(); // bad 
 
@@ -188,7 +185,8 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
     userAddressBox={{
       props: {
-        children: (!provider ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : userShortenAddr),
+        // children: (!provider ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : userShortenAddr),
+        children: (!provider ? "" : userShortenAddr),
         href: etherscanLink
       }
     }}
