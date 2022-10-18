@@ -8,60 +8,91 @@ import {
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useGlobalContext } from './Web3Context';
 import RPC from "../ethersRPC";
-import { nftWatch } from "../nftWatch";
-import Pako from 'pako';
+import YouTube from 'react-youtube';
+import loader from './loader.svg';
+import Pako from 'pako'
 import { ElvClient } from "@eluvio/elv-client-js";
+import { ethers } from "ethers";
+import type { SafeEventEmitterProvider } from "@web3auth/base";
+
 
 const Utils = require("@eluvio/elv-client-js/src/Utils.js");
 
-export interface PlayProps extends DefaultPlayProps {}
+export interface PlayProps extends DefaultPlayProps {
+  videoBox?:any
+}
+
+
+
+const jungle = String(process.env.REACT_APP_YOUTUBE_VIDEO_ID); // "Jungle Fever" by Stevie Wonder
+//let _signer:any = null;
 
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
+  const [isOwner, setIsOwner] = useState("");
 
   const [checked, setChecked] = useState(
     "Please make sure you're connected with the wallet holding the required NFT and click on the button below."
   );
   const [eluvioStream, setEluvioStream] = useState("");
 
-  // const video = "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
-  const video = "hq__93SK4rgxMarq1ZeDSEu9WJkDoptTKYiA2GmYocK7inMthUssGkG6Q9BREBEhNtVCiCBFsPd4Gd";
+  const opts = {
+    // height: '390',
+    // width: window.innerWidth,
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
 
   const {
-    // web3auth,
-    // setWeb3auth,
+    web3auth,
+    setWeb3auth,
     provider,
-    // setProvider,
+    setProvider,
     userAddress,
-    isOwner,
-    setIsOwner
-    // setUserAddress,
-    // userShortenAddr,
-    // setShortenAddr,
-    // signer,
-    // setSigner,
+    setUserAddress,
+    userShortenAddr,
+    setShortenAddr,
+    signer,
+    setSigner,
   } = useGlobalContext();
 
-  /*
   useEffect(() => {
-    //nftWatch(nftWatchCallback);
-    verifyOwnership()
+    const init = async () => {
+      if (!provider) {
+        return;
+      }
 
-    const accessToken = "placeholder" // placeholder
-    setEluvioStream(
-      "https://embed.v3.contentfabric.io//?net=demo&p&ct=h&vid=" + // network = demo OU main
-        video +
-        "&ath=" +
-        accessToken
-    );
+      console.log("[useEffect] provider", provider);
 
+      const ethersProvider = new ethers.providers.Web3Provider(provider);
+      const signer = ethersProvider.getSigner();
+      setSigner(signer);
+      //_signer = signer;
+      console.log("[useEffect] signer", signer);
+
+      const rpc = new RPC(provider);
+      const signer2 = await rpc.getSigner();
+      console.log("[useEffect] signer2", await signer2.getAddress());
+
+      // console.log("privKey: ", getPrivateKey().then((value) => {console.log('privKey', value)}))
+    };
+
+    init();
   }, [provider]);
-  */
+
   useEffect(() => {
     if (userAddress === "") {
       return;
     }
+    //const ethersProvider = new ethers.providers.Web3Provider(provider);
+    //const signer = ethersProvider.getSigner();
+    //setSigner(signer);
+
+    //console.log("privKey: ", getPrivateKey().then((value) => {console.log('privKey', value)}))
     console.log('[useEffect] userAddress: ', userAddress);
     main();
+    
   }, [userAddress]);
 
   let client: any;
@@ -90,18 +121,15 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
     console.log("client.signer", signer);
     // Call the oracle cross-chain 'view' API 'balance'
-    // console.log("client.CurrentAccountAddress()", client.CurrentAccountAddress())
-
     let xcoResp = await XcoView({
       contentSpaceId: client.ContentSpaceId(),
       signer: signer,
     });
     console.log("[main] FABRIC ACCESS TOKEN: ", JSON.stringify(xcoResp));
     console.log("[main] FABRIC ACCESS TOKEN(2): ", xcoResp);
-    // console.log("xcoResp decoded: ", await client.utils.DecodeSignedToken(xcoResp));
 
     //setEluvioStream("https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9&ath=acspjc58ndqqEHAsmu5nhCfkxnLuNvZm5kRTRVZAbHfTzKwMze36uamVyhuVUu3xrrSq9gGxeYP6hXhGgGNX1gVkzuiLhx1Gy63AiKv3wRTCkWNuf1gUka8ZcNuMWBZsjaXStG9LpHR9USvfgFhHTnMoQEPeDrY6juNvEFNSwkZycuACQ6uDW8RK8GxiGuN91Li7GcdPpPjGAnayhzaBVW7F9UDj6f1zAKLW3c7gam8RyqSrTpMWasXDFNaCddgv42KmCf3yJN11eLRFJutVYofhe9LdwuQJtKzf");
-    const video =
+    const vid =
       "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
     // const vid = "hq__93SK4rgxMarq1ZeDSEu9WJkDoptTKYiA2GmYocK7inMthUssGkG6Q9BREBEhNtVCiCBFsPd4Gd";
 
@@ -109,38 +137,24 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     const accessToken = xcoResp.token;
     client.SetStaticToken({ token: accessToken });
 
-    // console.log( "[1] DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
-
     console.log("step 1");
     setEluvioStream(
       "https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=" +
-        video +
+        vid +
         "&ath=" +
         accessToken
     );
 
     console.log("eluvioStream:", eluvioStream);
-
-    console.log( "DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
     // const accessToken = xcoResp.token;
-  };
+  };;
+  //main();
 
-  const getPrivateKey = async () => {
-    if (!provider) {
-      console.log("provider not initialized yet");
-      return;
-    }
-    //const rpc = new RPC(provider);
-    //const privateKey = await rpc.getPrivateKey();
-    //console.log(privateKey);
-    //return privateKey;
-    return process.env.REACT_APP_PRIVATE_KEY;
-  };
-
+  
   /**
    * Create a signed authorization token used for calling the cross-chain oracle
    */
-   const CreateOracleAccessToken = async ({
+  const CreateOracleAccessToken = async ({
     duration,
     contentSpaceId,
     signer,
@@ -177,13 +191,12 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
         Buffer.from(compressedToken),
       ])
     )}`;
-
   };
 
   /**
    * Make a cross-chain oracle call
    */
-   const XcoView = async ({
+  const XcoView = async ({
     contentSpaceId,
     signer,
   }: {
@@ -201,20 +214,24 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     let xcoToken = await CreateOracleAccessToken({
       duration: 1 * 1000, // millisec
       contentSpaceId: contentSpaceId,
+      //address: signer.getAddress(),
+      // console.log(userAddress)
       signer: signer,
-      });
+
+      // address: ,
+      // signer: {}
+    });
     console.log("ORACLE ACCESS TOKEN", xcoToken);
 
     // Format cross-chain oracle request
     const xcoReq = {
         chain_type: "eip155",
-        chain_id: "5", // 5
-        // chain_id: "955305",
+        // chain_id: "955305", // 5
+        chain_id: "5",
         asset_type: "erc721",
         asset_id: "0xd4c8153372b0292b364dac40d0ade37da4c4869a", //0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1
-        method: "balanceOf"
+        method: "balance",
       };
-      console.log("xcoReq: ", xcoReq);
 
       // Call the cross-chain oracle 'view' API
     try {
@@ -229,85 +246,84 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
           },
         })
       );
-      console.log("ORACLE ACCESS TOKEN (res)", res);
-      return res;
+    console.log("ORACLE ACCESS TOKEN (res)", res);
+    return res;
     } catch (err) {
-      console.log("XcoView (res) error: ", err); // returns this: "POST https://host-76-74-28-227.contentfabric.io/as/xco/view 400 (Bad Request)""
+      console.log("XcoView (res) error: ", err);
       return null;
     }
 
   };
 
-
-  const nftWatchCallback = async (contract:string, from:string, to:string, tokenId:string) => {
-    console.log('nftWatchCallback (contract): ',contract);
-    console.log('nftWatchCallback (from): ',from);
-    console.log('nftWatchCallback (to): ',to);
-    //console.log('nftWatchCallback (tokenId): ',tokenId);
-    verifyOwnership();
-  }
-
-  const verifyOwnership = async () => {
-    console.log("clicked")
-    console.log("userAddress:", userAddress)
-    console.log("provider:", provider)
-
-    // nft references
-    const nftNetwork = 5 // Goerli
-    const nftContractAddress = "0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1" // https://goerli.etherscan.io/address/0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1#code
-    // const nftId = 8
-
+  const getPrivateKey = async () => {
     if (!provider) {
-      // console.log("provider not initialized yet");
+      console.log("provider not initialized yet");
       return;
     }
     const rpc = new RPC(provider);
-    // const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress, nftId);
-    const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress);
-    console.log("receipt: ", receipt);
-    // for test, always return true
-    setIsOwner(receipt)
-
-    if (receipt === true) {
-      // setIsOwner(receipt)
-      // start Contract monitoring
-      // watchNft.start()
-    } else {
-      setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
-    }
+    const privateKey = await rpc.getPrivateKey();
+    //console.log(privateKey);
+    return privateKey;
   };
 
-  console.log("isOwner:", isOwner)
-    
+  //console.log("privKey: ", await getPrivateKey())
+
+  // const verifyOwnership = async () => {
+  //   console.log("clicked");
+  //   console.log("userAddress:", userAddress);
+  //   console.log("provider:", provider);
+
+  //   // nft references
+  //   const nftNetwork = 5; // Goerli
+  //   const nftContractAddress = "0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1"; // https://goerli.etherscan.io/address/0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1#code
+  //   // const nftId = 8
+
+  //   if (!provider) {
+  //     // console.log("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   // const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress, nftId);
+  //   const receipt = await rpc.verifyOwnership(nftNetwork, nftContractAddress);
+
+  //   console.log(receipt);
+  //   if (receipt === true) {
+  //     // setIsOwner(receipt)
+  //   } else {
+  //     setChecked(
+  //       "Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien."
+  //     );
+  //   }
+  // };
+
   return (
     <PlasmicPlay
       root={{ ref }}
       {...props}
       videoBox={{
         props: {
-          children: isOwner === false ? (
+          children: eluvioStream === "" ? (
             // <img src={loader} alt={loader} />
-            "no stream for you"
-           
+            ""
           ) : (
             <iframe
-              // https://stackoverflow.com/questions/217776/how-to-apply-css-to-iframe
-              // width={100}
-              // height={480}
-              // frameborder="0" 
-              // border="0" 
-              // cellspacing="0"
-              //style={{"border-style: none;width: 100%; height: 120px"}}
+              width={854}
+              height={480}
               title="eluvioStream"
               src={eluvioStream}
             />
-
           ),
         },
       }}
 
+      // verify={{
+      //   props: {
+      //     onClick: () => verifyOwnership()
+      //   }
+      // }}
     />
   );
 }
+
 const Play = React.forwardRef(Play_);
 export default Play;
