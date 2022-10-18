@@ -50,7 +50,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   } = useGlobalContext();
 
   useEffect(() => {
-    nftWatch(nftWatchCallback);
+    //nftWatch(nftWatchCallback);
     verifyOwnership()
     const accessToken = "placeholder" // placeholder
     setEluvioStream(
