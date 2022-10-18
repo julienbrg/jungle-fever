@@ -23,7 +23,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   );
   const [eluvioStream, setEluvioStream] = useState("");
 
-  const vid = "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
+  //const video = "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
+  const video = "hq__93SK4rgxMarq1ZeDSEu9WJkDoptTKYiA2GmYocK7inMthUssGkG6Q9BREBEhNtVCiCBFsPd4Gd";
 
   // const opts = {
   //   // height: '390',
@@ -55,7 +56,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     const accessToken = "placeholder" // placeholder
     setEluvioStream(
       "https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=" +
-        vid +
+        video +
         "&ath=" +
         accessToken
     );
@@ -113,8 +114,13 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
             "no stream for you"
           ) : (
             <iframe
-              width={854}
-              height={480}
+              // https://stackoverflow.com/questions/217776/how-to-apply-css-to-iframe
+              // width={100}
+              // height={480}
+              // frameborder="0" 
+              // border="0" 
+              // cellspacing="0"
+              // style={"border-style: none;width: 100%; height: 120px"}
               title="eluvioStream"
               src={eluvioStream}
             />
