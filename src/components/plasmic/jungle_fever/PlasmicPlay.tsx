@@ -33,7 +33,6 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
 import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
-import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
 
@@ -63,7 +62,6 @@ export type PlasmicPlay__OverridesType = {
   videoBox?: p.Flex<"div">;
   textBox?: p.Flex<"div">;
   verify?: p.Flex<typeof Button>;
-  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultPlayProps {
@@ -169,12 +167,6 @@ function PlasmicPlay__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
-
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -189,16 +181,14 @@ const PlasmicDescendants = {
     "section",
     "videoBox",
     "textBox",
-    "verify",
-    "footer"
+    "verify"
   ],
   header: ["header"],
   freeBox: ["freeBox", "section", "videoBox", "textBox", "verify"],
   section: ["section", "videoBox", "textBox"],
   videoBox: ["videoBox", "textBox"],
   textBox: ["textBox"],
-  verify: ["verify"],
-  footer: ["footer"]
+  verify: ["verify"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -211,7 +201,6 @@ type NodeDefaultElementType = {
   videoBox: "div";
   textBox: "div";
   verify: typeof Button;
-  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -281,7 +270,6 @@ export const PlasmicPlay = Object.assign(
     videoBox: makeNodeComponent("videoBox"),
     textBox: makeNodeComponent("textBox"),
     verify: makeNodeComponent("verify"),
-    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicPlay
     internalVariantProps: PlasmicPlay__VariantProps,
