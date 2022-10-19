@@ -17,8 +17,9 @@
   left: auto;
   top: auto;
   width: 1520px;
-  height: 66px;
+  height: 35px;
   flex-shrink: 0;
+  margin: 14px;
 }
 @media (min-width: 0px) and (max-width: 421px) {
   .header:global(.__wab_instance) {
@@ -57,7 +58,7 @@
   height: 100%;
   min-width: 0;
   min-height: 0;
-  padding: 10px;
+  padding: 0px 0px 10px;
 }
 .section > :global(.__wab_flex-container) {
   flex-direction: column;
