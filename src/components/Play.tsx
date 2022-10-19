@@ -61,80 +61,82 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
       return;
     }
     console.log('[useEffect] userAddress: ', userAddress);
-    main();
-  }, [userAddress]);
+    verifyOwnership()
+    
+  }, [provider, userAddress]);
 
   let client: any;
 
   const main = async () => {
     console.log("main func executed");
     console.log("provider:", provider);
-    //const ethersProvider = new ethers.providers.Web3Provider(provider);
-    //const signer = ethersProvider.getSigner();
-
-    //console.log("signer:", signer);
-
-    // networkName: "main",
     const networkName = "main";
     client = await ElvClient.FromNetworkName({ networkName });
-    // client = await ElvClient.FromNetworkName({networkName});
 
-    let wallet = client.GenerateWallet();
-    let signer = wallet.AddAccount({
-      privateKey: await getPrivateKey(),
-    });
-    console.log("privKey:", await getPrivateKey());
-    client.SetSigner({ signer });
-    //client.SetSigner(signer);
-    client.ToggleLogging(false);
+    // temporary: use a fixed known node w/ chain_id 5 available:
+    client.authServiceURIs = ["https://host-154-14-211-98.contentfabric.io"];
+    client.AuthHttpClient.uris = client.authServiceURIs;
 
-    console.log("client.signer", signer);
-    // Call the oracle cross-chain 'view' API 'balance'
-    // console.log("client.CurrentAccountAddress()", client.CurrentAccountAddress())
-
-    let xcoResp = await XcoView({
-      contentSpaceId: client.ContentSpaceId(),
-      signer: signer,
-    });
-    console.log("[main] FABRIC ACCESS TOKEN: ", JSON.stringify(xcoResp));
-    console.log("[main] FABRIC ACCESS TOKEN(2): ", xcoResp);
-    // console.log("xcoResp decoded: ", await client.utils.DecodeSignedToken(xcoResp));
-
-    //setEluvioStream("https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9&ath=acspjc58ndqqEHAsmu5nhCfkxnLuNvZm5kRTRVZAbHfTzKwMze36uamVyhuVUu3xrrSq9gGxeYP6hXhGgGNX1gVkzuiLhx1Gy63AiKv3wRTCkWNuf1gUka8ZcNuMWBZsjaXStG9LpHR9USvfgFhHTnMoQEPeDrY6juNvEFNSwkZycuACQ6uDW8RK8GxiGuN91Li7GcdPpPjGAnayhzaBVW7F9UDj6f1zAKLW3c7gam8RyqSrTpMWasXDFNaCddgv42KmCf3yJN11eLRFJutVYofhe9LdwuQJtKzf");
-    const video =
-      "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
-    // const vid = "hq__93SK4rgxMarq1ZeDSEu9WJkDoptTKYiA2GmYocK7inMthUssGkG6Q9BREBEhNtVCiCBFsPd4Gd";
-
-    //const token = JSON.stringify(xcoResp);
-    const accessToken = xcoResp.token;
-    client.SetStaticToken({ token: accessToken });
-
-    // console.log( "[1] DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
-
-    console.log("step 1");
-    setEluvioStream(
-      "https://embed.v3.contentfabric.io//?net=main&p&ct=h&vid=" +
-        video +
-        "&ath=" +
-        accessToken
-    );
-
-    console.log("eluvioStream:", eluvioStream);
-
-    console.log( "DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
-    // const accessToken = xcoResp.token;
-  };
-
-  const getPrivateKey = async () => {
     if (!provider) {
-      console.log("provider not initialized yet");
+      console.log("ERROR! no provider!")
       return;
     }
-    //const rpc = new RPC(provider);
-    //const privateKey = await rpc.getPrivateKey();
-    //console.log(privateKey);
-    //return privateKey;
-    return process.env.REACT_APP_PRIVATE_KEY;
+
+    // set signDigest
+    const signDigest = async (message:string) => {
+      console.log('requesting personal_sign in signDigest');
+      return await provider.request({
+        method: 'personal_sign',
+        params: [userAddress, message],
+      });
+    };
+    client.signDigest = signDigest;
+    client.signer.signDigest = signDigest;
+    client.ToggleLogging(false);
+    console.log("client", client);
+
+    // Call the oracle cross-chain 'view' API 'balance'
+    let xcoResp = await XcoView({
+      contentSpaceId: client.ContentSpaceId(),
+      signer: client,
+    });
+    console.log("[main] XCO RESPONSE: ", JSON.stringify(xcoResp));
+
+    const videos = {
+      "1": {
+        name: "paramax - Title Mezzanines > Title - Test - Agent 327 MEZ",
+        hash: "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9"
+      },
+      "2": {
+        name: "paramax - Title Mezzanines > MusicHole_UHD_SDR_4444XQ_REC709_25_51-20_FR-XX_20220930.mov MEZ",
+        hash: "hq__3a4imE8JGGvcKpUN6C8Cs5TPNQ5kD4yB624TUj9rj5Rrpuzqg3kTNSSSvhxsVx1wUnUquSxsgB",
+      },
+      "3": {
+        name: "paramax - Title Mezzanines > MusicHole_UHD_HDR10_4444XQ_P3D65_25_51-20_FR-XX_20221005.mov MEZ",
+        hash: "hq__FuY4Tnz54sSchdu3eCCj6Toc8EyfGnY15rkgmGdNVTGfQ14xvnejCFGV6De9R8ppzsRUQfDyZV"
+      }
+    };
+
+    const video = videos["3"];
+    console.log("using video", video);
+
+    const accessToken = xcoResp?.token;
+    console.log("accessToken", accessToken);
+    if (accessToken) {
+      client.SetStaticToken({ token: accessToken });
+      console.log("step 1");
+      console.log("https://embed.v3.contentfabric.io/?net=main&p&ct=h&vid=" + video.hash + "&ath=" + accessToken);
+      setEluvioStream(
+          "https://embed.v3.contentfabric.io/?net=main&p&ct=h&vid=" +
+          video.hash +
+          "&ath=" +
+          accessToken
+      );
+      console.log("eluvioStream:", eluvioStream);
+      console.log("DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
+    } else {
+      console.log("error getting access token from xcoResp");
+    }
   };
 
   /**
@@ -149,8 +151,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     contentSpaceId: string;
     signer: any;
   }) => {
-    const address = await signer.getAddress();
-    // const address = userAddress;
+    //const address = await signer.getAddress();
+    const address = userAddress;
 
     console.log("[CreateOracleAccessToken] userAddress: ", address);
 
@@ -166,7 +168,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
       token
     )}`;
 
-    const signature = await signer.signMessage(message);
+    console.log("signer", );
+    const signature = await signer.signDigest(message);
 
     const compressedToken = Pako.deflateRaw(
       Buffer.from(JSON.stringify(token), "utf-8")
@@ -192,44 +195,40 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
   }) => {
     console.log("provider xcoview:", provider);
 
-    // const ethersProvider = new ethers.providers.Web3Provider(provider);
-    // const signer = ethersProvider.getSigner();
-
-    // await client.SetSignerFromWeb3Provider(ethersProvider);
-
     // Create a client-signed access token  in order to access the cross-chain oracle API
     let xcoToken = await CreateOracleAccessToken({
       duration: 1 * 1000, // millisec
       contentSpaceId: contentSpaceId,
       signer: signer,
-      });
+    });
     console.log("ORACLE ACCESS TOKEN", xcoToken);
+    console.log("ORACLE TOKEN DECODED", JSON.stringify(client.utils.DecodeSignedToken(xcoToken), null, 2));
+
 
     // Format cross-chain oracle request
     const xcoReq = {
-        chain_type: "eip155",
-        chain_id: "5", // 5
-        // chain_id: "955305",
-        asset_type: "erc721",
-        asset_id: "0xd4c8153372b0292b364dac40d0ade37da4c4869a", //0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1
-        method: "balanceOf"
-      };
-      console.log("xcoReq: ", xcoReq);
+      chain_type: "eip155",
+      chain_id: "5",
+      asset_type: "erc721",
+      asset_id: "0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1",
+      method: "balance"
+    };
+    console.log("xcoReq: ", xcoReq);
 
-      // Call the cross-chain oracle 'view' API
+    // Call the cross-chain oracle 'view' API
     try {
       let res = await Utils.ResponseToFormat(
         "json",
         client.authClient.MakeAuthServiceRequest({
           method: "POST",
-          path: "/as/xco/view", // On main/dev net /as/xco/view
+          path: "/as/xco/view",
           body: xcoReq,
           headers: {
             Authorization: `Bearer ${xcoToken}`,
           },
         })
       );
-      console.log("ORACLE ACCESS TOKEN (res)", res);
+      console.log("XCO RESPONSE", res);
       return res;
     } catch (err) {
       console.log("XcoView (res) error: ", err); // returns this: "POST https://host-76-74-28-227.contentfabric.io/as/xco/view 400 (Bad Request)""
@@ -272,6 +271,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
       // setIsOwner(receipt)
       // start Contract monitoring
       // watchNft.start()
+      main();
     } else {
       setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
     }
@@ -292,13 +292,18 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
           ) : (
             <iframe
               // https://stackoverflow.com/questions/217776/how-to-apply-css-to-iframe
+              // width={window.innerWidth}
+              // height={window.innerHeight}
               // width={100}
               // height={480}
-              // frameborder="0" 
+              width={"100%"}
+              height={"100%"}
+              frameBorder="0"
               // border="0" 
               // cellspacing="0"
               //style={{"border-style: none;width: 100%; height: 120px"}}
               title="eluvioStream"
+              // src={"https://embed.v3.contentfabric.io/?net=main&p&ct=h&vid=hq__FuY4Tnz54sSchdu3eCCj6Toc8EyfGnY15rkgmGdNVTGfQ14xvnejCFGV6De9R8ppzsRUQfDyZV&ath=acspjc2xTABgKqLcPa3Cv4oHiuPjwD4iu6QcAVeF95Z3hdWXtj9hpFKKVCUqn82wNrRM3wScs7BX6DmpUHAsv8ehzuZZRUw7i9ES7w5RJHqzarQrmuqbyw2Tbwnu5597Bein3CDNttKH4WgJpyoycX4P4YwjPyywEbcFjhPCz41jM26PGvzrnL7En9Y8r8WzARRrT2HHzBuu81zFmQ5HB4B5cgeC8kGgVkC4UkjW8uavN3ByoyS4PyjYskTdA3BQ31zdojRSdNTra8ThyRqnkrppEj9phRv5EvmhCogJb7eFR4GwdiGytDJJQUo9CWRpSps1rycmi6xGLqMZok5Xp2G2DTzYXKjJQMCiwuSDwhYQvwxYSaW467q3NqMNXsUFPkrWqXff63KiRCTQkKgTed7RQ57mxosvuGdoodHaxDomLSxXpc23QBM73mKMhD6Wfi5t66xW"}
               src={eluvioStream}
             />
 
