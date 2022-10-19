@@ -11,6 +11,7 @@ import RPC from "../ethersRPC";
 import { nftWatch } from "../nftWatch";
 import Pako from 'pako';
 import { ElvClient } from "@eluvio/elv-client-js";
+import loader from './loader.svg';
 
 const Utils = require("@eluvio/elv-client-js/src/Utils.js");
 
@@ -286,8 +287,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
       videoBox={{
         props: {
           children: isOwner === false ? (
-            // <img src={loader} alt={loader} />
-            "no stream for you"
+            <img src={loader} alt={loader} />
+            // "no stream for you"
            
           ) : (
             <iframe
