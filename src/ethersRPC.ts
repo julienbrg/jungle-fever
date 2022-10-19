@@ -114,8 +114,12 @@ export default class EthereumRpc {
       const ethersProvider = new ethers.providers.Web3Provider(this.provider);
       const signer = ethersProvider.getSigner();
 
+      console.log("[ethersRPC] signer", signer)
+
       // Get user's Ethereum public address
       const address = await signer.getAddress();
+      console.log("[ethersRPC] address", address)
+
 
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
       if(await contract.balanceOf(address) > 0) {

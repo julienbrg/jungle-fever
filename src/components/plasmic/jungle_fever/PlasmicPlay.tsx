@@ -142,17 +142,19 @@ function PlasmicPlay__RenderFunc(props: {
                   data-plasmic-override={overrides.videoBox}
                   className={classNames(projectcss.all, sty.videoBox)}
                 >
-                  <div
-                    data-plasmic-name={"textBox"}
-                    data-plasmic-override={overrides.textBox}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.textBox
-                    )}
-                  >
-                    {"..."}
-                  </div>
+                  {true ? (
+                    <div
+                      data-plasmic-name={"textBox"}
+                      data-plasmic-override={overrides.textBox}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.textBox
+                      )}
+                    >
+                      {"..."}
+                    </div>
+                  ) : null}
                 </div>
               </p.Stack>
 
