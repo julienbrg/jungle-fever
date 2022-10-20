@@ -166,6 +166,32 @@
           "cssFilePath": "plasmic/jungle_fever/PlasmicLyrics.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "5OgwKt-TBxM",
+          "name": "Films",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicFilms.tsx",
+          "importSpec": {
+            "modulePath": "Films.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicFilms.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "XTZgJz7paK",
+          "name": "Buy",
+          "type": "managed",
+          "projectId": "neKnaqAFQgtkJjtbXthdKd",
+          "renderModuleFilePath": "plasmic/jungle_fever/PlasmicBuy.tsx",
+          "importSpec": {
+            "modulePath": "Buy.tsx"
+          },
+          "cssFilePath": "plasmic/jungle_fever/PlasmicBuy.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -195,6 +221,11 @@
           "id": "xJ1YuS0U87ZcpE",
           "name": "favicon.png",
           "filePath": "plasmic/jungle_fever/images/faviconpng.png"
+        },
+        {
+          "id": "xXl-4wHnk",
+          "name": "music-hole.jpeg",
+          "filePath": "plasmic/jungle_fever/images/musicHolejpeg.jpeg"
         }
       ],
       "indirect": false,

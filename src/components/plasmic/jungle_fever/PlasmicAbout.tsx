@@ -55,10 +55,7 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  section?: p.Flex<"section">;
-  h1?: p.Flex<"h1">;
-  myDiv?: p.Flex<"div">;
-  text?: p.Flex<"div">;
+  reveal?: p.Flex<typeof Reveal>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -122,53 +119,12 @@ function PlasmicAbout__RenderFunc(props: {
 
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__phaE8)}>
-              <p.Stack
-                as={"section"}
-                data-plasmic-name={"section"}
-                data-plasmic-override={overrides.section}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.section)}
-              >
-                <Reveal
-                  big={true}
-                  className={classNames("__wab_instance", sty.reveal__f4Nvi)}
-                  delay={1000 as const}
-                  duration={15000 as const}
-                  effect={"fade" as const}
-                  triggerOnce={true}
-                >
-                  <h1
-                    data-plasmic-name={"h1"}
-                    data-plasmic-override={overrides.h1}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1
-                    )}
-                  >
-                    {"Coming soon"}
-                  </h1>
-                </Reveal>
-              </p.Stack>
-
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__uwxXd)}
-                delay={10000 as const}
-                triggerOnce={true}
-              >
-                <div
-                  data-plasmic-name={"myDiv"}
-                  data-plasmic-override={overrides.myDiv}
-                  className={classNames(projectcss.all, sty.myDiv)}
-                  id={"myDiv" as const}
-                />
-              </Reveal>
-
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox__unmp)}>
                   <Reveal
-                    className={classNames("__wab_instance", sty.reveal__hfDcl)}
+                    data-plasmic-name={"reveal"}
+                    data-plasmic-override={overrides.reveal}
+                    className={classNames("__wab_instance", sty.reveal)}
                     delay={6000 as const}
                     direction={"vertical" as const}
                     duration={1500 as const}
@@ -176,12 +132,10 @@ function PlasmicAbout__RenderFunc(props: {
                     triggerOnce={true}
                   >
                     <div
-                      data-plasmic-name={"text"}
-                      data-plasmic-override={overrides.text}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text
+                        sty.text__hWwsd
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -277,6 +231,18 @@ function PlasmicAbout__RenderFunc(props: {
                   </Reveal>
                 </div>
               ) : null}
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__e1Dwn
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "Film Streaming has been the last successor of DVD and BluRay. Since then, true ownership has not been offered to people who enjoy watching films. This time is over now thanks to blockchain technology.\n\nJungle Fever offers to its users the power to purchase NFT’s which gives them full ownership AND streaming access to their films. Users can grow a collection or resell their film anytime they want.\n\nEach film has a limited number of copies. Users will be able to access their NFT film on any device, any screen, any phone, any laptop + in the JungleFever upcoming Metaverse.\n\nAs its first film, Jungle Fever releases in NFT Music Hole, the provocative comedy coproduced by Rockstone Films and Luc Besson.\n\nJungle Fever is a revolutionary platform bridging a marketplace and a video player powered through the blockchain to own and stream films.\n\nIn the wild world of content, Jungle Fever will give you the NFT Fever in the most sustainable way for the planet to watch content!"
+                  : "Film Streaming has been the last successor of DVD and BluRay. Since then, true ownership has not been offered to people who enjoy watching films. This time is over now thanks to blockchain technology.\n\nJungle Fever offers to its users the power to purchase NFT’s which gives them full ownership AND streaming access to their films. Users can grow a collection or resell their film anytime they want.\n\nEach film has a limited number of copies. Users will be able to access their NFT film on any device, any screen, any phone, any laptop + in the JungleFever upcoming Metaverse.\n\nAs its first film, Jungle Fever releases in NFT Music Hole, the provocative comedy coproduced by Rockstone Films and Luc Besson.\n\nJungle Fever is a revolutionary platform bridging a marketplace and a video player powered through the blockchain to own and stream films.\n\nIn the wild world of content, Jungle Fever will give you the NFT Fever in the most sustainable way for the planet to watch content!"}
+              </div>
             </div>
           ) : null}
 
@@ -292,12 +258,9 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "section", "h1", "myDiv", "text", "footer"],
+  root: ["root", "header", "reveal", "footer"],
   header: ["header"],
-  section: ["section", "h1"],
-  h1: ["h1"],
-  myDiv: ["myDiv"],
-  text: ["text"],
+  reveal: ["reveal"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -306,10 +269,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  section: "section";
-  h1: "h1";
-  myDiv: "div";
-  text: "div";
+  reveal: typeof Reveal;
   footer: typeof Footer;
 };
 
@@ -375,10 +335,7 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    section: makeNodeComponent("section"),
-    h1: makeNodeComponent("h1"),
-    myDiv: makeNodeComponent("myDiv"),
-    text: makeNodeComponent("text"),
+    reveal: makeNodeComponent("reveal"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout
@@ -387,7 +344,7 @@ export const PlasmicAbout = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Jungle Fever - About",
       description: "",
       ogImageSrc: "",
       canonical: ""

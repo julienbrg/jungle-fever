@@ -60,7 +60,6 @@ export type PlasmicPlay__OverridesType = {
   freeBox?: p.Flex<"div">;
   section?: p.Flex<"section">;
   videoBox?: p.Flex<"div">;
-  textBox?: p.Flex<"div">;
   verify?: p.Flex<typeof Button>;
 };
 
@@ -139,21 +138,7 @@ function PlasmicPlay__RenderFunc(props: {
                   data-plasmic-name={"videoBox"}
                   data-plasmic-override={overrides.videoBox}
                   className={classNames(projectcss.all, sty.videoBox)}
-                >
-                  {true ? (
-                    <div
-                      data-plasmic-name={"textBox"}
-                      data-plasmic-override={overrides.textBox}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.textBox
-                      )}
-                    >
-                      {"..."}
-                    </div>
-                  ) : null}
-                </div>
+                />
               </p.Stack>
 
               {true ? (
@@ -174,20 +159,11 @@ function PlasmicPlay__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "freeBox",
-    "section",
-    "videoBox",
-    "textBox",
-    "verify"
-  ],
+  root: ["root", "header", "freeBox", "section", "videoBox", "verify"],
   header: ["header"],
-  freeBox: ["freeBox", "section", "videoBox", "textBox", "verify"],
-  section: ["section", "videoBox", "textBox"],
-  videoBox: ["videoBox", "textBox"],
-  textBox: ["textBox"],
+  freeBox: ["freeBox", "section", "videoBox", "verify"],
+  section: ["section", "videoBox"],
+  videoBox: ["videoBox"],
   verify: ["verify"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -199,7 +175,6 @@ type NodeDefaultElementType = {
   freeBox: "div";
   section: "section";
   videoBox: "div";
-  textBox: "div";
   verify: typeof Button;
 };
 
@@ -268,7 +243,6 @@ export const PlasmicPlay = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     section: makeNodeComponent("section"),
     videoBox: makeNodeComponent("videoBox"),
-    textBox: makeNodeComponent("textBox"),
     verify: makeNodeComponent("verify"),
 
     // Metadata about props expected for PlasmicPlay
@@ -277,7 +251,7 @@ export const PlasmicPlay = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Music Hole",
       description: "",
       ogImageSrc: "",
       canonical: ""
