@@ -69,8 +69,8 @@
 }
 @media (min-width: 0px) and (max-width: 421px) {
   .section {
-    width: 95%;
-    padding-top: 77px;
+    width: 100%;
+    padding-top: 26px;
     margin-top: 0px;
   }
 }
@@ -115,25 +115,6 @@
     width: auto;
     flex-shrink: 0;
     padding: 69px 15px;
-  }
-}
-.textBox {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  text-align: center;
-  color: var(--token-UpYVGsqeDTxlKV);
-  font-size: 32px;
-  min-width: 0;
-  display: none;
-}
-@media (min-width: 0px) and (max-width: 421px) {
-  .textBox {
-    font-size: 16px;
-    max-width: 230px;
-    width: auto;
-    align-self: center;
   }
 }
 .verify:global(.__wab_instance) {

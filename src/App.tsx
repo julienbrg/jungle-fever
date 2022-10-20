@@ -1,4 +1,5 @@
 import Homepage from "./components/Homepage";
+import Films from "./components/Films";
 import Play from "./components/Play";
 import About from "./components/About";
 import Soon from "./components/Soon";
@@ -44,6 +45,7 @@ function Index() {
         <Routes>
           
           <Route path="/" element={<Homepage />} />
+          <Route path="/films" element={<Films />} />
           <Route path="/play" element={<Play />} />
           <Route path="/about" element={<About />} />
           <Route path="/soon" element={<Soon />} />

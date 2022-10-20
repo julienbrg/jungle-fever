@@ -273,7 +273,7 @@ export const PlasmicLyrics = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Jungle Fever - The lyrics",
       description: "",
       ogImageSrc: "",
       canonical: ""
