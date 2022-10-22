@@ -17,7 +17,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .header:global(.__wab_instance) {
     flex-shrink: 0;
   }
@@ -37,7 +37,7 @@
   min-height: 0;
   padding: 158px 0px 172px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox__phaE8 {
     padding-top: 39px;
     left: auto;
@@ -59,7 +59,7 @@
   display: none;
   padding: 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox__unmp {
     padding-top: 0px;
   }
@@ -79,7 +79,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__hWwsd {
     text-align: center;
   }
@@ -109,7 +109,7 @@
   line-height: 2;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__e1Dwn {
     font-size: 14px;
   }

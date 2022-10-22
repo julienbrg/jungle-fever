@@ -226,6 +226,11 @@
           "id": "xXl-4wHnk",
           "name": "music-hole.jpeg",
           "filePath": "plasmic/jungle_fever/images/musicHolejpeg.jpeg"
+        },
+        {
+          "id": "CZfMHjxm0",
+          "name": "image",
+          "filePath": "plasmic/jungle_fever/images/image.png"
         }
       ],
       "indirect": false,

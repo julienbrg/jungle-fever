@@ -23,7 +23,7 @@ export function ScreenVariantProvider(props: React.PropsWithChildren) {
 }
 
 export const useScreenVariants = p.createUseScreenVariants(true, {
-  mobile: "(min-width:0px) and (max-width:421px)",
+  mobile: "(min-width:0px) and (max-width:320px)",
 });
 
 export default ScreenContext;

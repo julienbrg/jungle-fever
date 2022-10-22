@@ -17,7 +17,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .header:global(.__wab_instance) {
     flex-shrink: 0;
   }
@@ -37,7 +37,7 @@
   min-height: 0;
   padding: 0px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox__rmw1Q {
     padding-top: 0px;
     left: auto;
@@ -73,14 +73,14 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section {
     width: 95%;
     padding-top: 0px;
     padding-bottom: 69px;
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -88,7 +88,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -107,7 +107,7 @@
   position: relative;
   transform-origin: -110% 50%;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .reveal___39KnM:global(.__wab_instance) {
     text-align: center;
   }
@@ -122,7 +122,7 @@
   text-align: center;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .h1 {
     text-align: center;
     font-size: 42px;
@@ -134,7 +134,7 @@
   position: relative;
   display: flex;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .reveal__kOnjS:global(.__wab_instance) {
     width: 302px;
   }
@@ -149,7 +149,7 @@
   text-align: center;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__aUcBt {
     font-size: 24px;
   }
@@ -169,7 +169,7 @@
   display: none;
   padding: 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox___5Ud8 {
     padding-top: 0px;
   }
@@ -189,7 +189,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__lXmJs {
     text-align: center;
   }

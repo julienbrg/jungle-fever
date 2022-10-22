@@ -7,6 +7,12 @@
   justify-content: flex-start;
   align-items: center;
   background: var(--token-t1_sTNhrs7H0ZQ);
+  padding-top: 0px;
+}
+@media (min-width: 0px) and (max-width: 320px) {
+  .root {
+    padding-top: 0px;
+  }
 }
 .buyBox {
   display: flex;
@@ -18,25 +24,31 @@
   width: 60%;
   padding: 65px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .buyBox {
     align-self: center;
     padding-top: 0px;
     max-width: none;
     width: 100%;
+    margin-top: 0px;
     min-width: 0;
   }
 }
 .img {
   position: relative;
   object-fit: cover;
-  max-width: 50%;
+  max-width: 60%;
 }
 .img > picture > img {
   object-fit: cover;
 }
 .img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 320px) {
+  .img {
+    max-width: 100%;
+  }
 }
 .text__ww6D3 {
   width: 100%;
@@ -48,7 +60,7 @@
   min-width: 0;
   display: block;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__ww6D3 {
     font-size: 16px;
     padding-top: 26px;
@@ -66,7 +78,7 @@
   min-width: 0;
   display: block;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__kCVc1 {
     font-size: 16px;
     max-width: 230px;
@@ -103,4 +115,13 @@
   max-width: 100%;
   min-width: 0;
   padding: 8px 8px 95px;
+}
+.text___29Uqs {
+  position: relative;
+  plasmic-display-none: true;
+}
+@media (min-width: 0px) and (max-width: 320px) {
+  .text___29Uqs {
+    display: block;
+  }
 }
