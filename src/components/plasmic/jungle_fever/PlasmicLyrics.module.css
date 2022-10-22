@@ -17,7 +17,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .header:global(.__wab_instance) {
     flex-shrink: 0;
   }
@@ -61,13 +61,13 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section {
     width: 95%;
     padding-top: 42px;
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -75,7 +75,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -98,7 +98,7 @@
   line-height: 2;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text {
     font-size: 14px;
   }
@@ -117,7 +117,7 @@
   padding-top: 40px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .link {
     font-size: 12px;
     padding-top: 19px;

@@ -11,7 +11,7 @@
   min-height: 0;
   padding: 0px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .root {
     justify-content: flex-start;
     align-items: center;
@@ -23,7 +23,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .header:global(.__wab_instance) {
     height: 114px;
     margin-bottom: 34px;
@@ -45,7 +45,7 @@
   min-height: 0;
   padding: 0px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox___5BVVh {
     padding-top: 0px;
     left: auto;
@@ -81,14 +81,14 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section {
     width: 95%;
     padding-top: 0px;
     padding-bottom: 69px;
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -96,7 +96,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -115,7 +115,7 @@
   position: relative;
   transform-origin: -110% 50%;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .reveal__hhbdd:global(.__wab_instance) {
     text-align: center;
   }
@@ -130,7 +130,7 @@
   text-align: center;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .h1 {
     text-align: center;
     font-size: 42px;
@@ -148,7 +148,7 @@
   display: none;
   padding: 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox__bc56H {
     padding-top: 0px;
   }
@@ -168,7 +168,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__ou8Np {
     text-align: center;
   }
@@ -201,7 +201,7 @@
   display: none;
   padding: 61px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .freeBox__wzUiD {
     padding-top: 0px;
   }
@@ -221,7 +221,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 320px) {
   .text__sBwHn {
     text-align: center;
   }

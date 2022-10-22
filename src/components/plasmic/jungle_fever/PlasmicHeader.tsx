@@ -196,7 +196,7 @@ function PlasmicHeader__RenderFunc(props: {
                   : `/films`
               }
             >
-              {"My Films"}
+              {"Library"}
             </a>
           </div>
         ) : null}

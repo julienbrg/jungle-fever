@@ -40,6 +40,7 @@ import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: n
 import sty from "./PlasmicFilms.module.css"; // plasmic-import: 5OgwKt-TBxM/css
 
 import musicHolejpegXXl4WHnk from "./images/musicHolejpeg.jpeg"; // plasmic-import: xXl-4wHnk/picture
+import imageCZfMHjxm0 from "./images/image.png"; // plasmic-import: CZfMHjxm0/picture
 
 export type PlasmicFilms__VariantMembers = {};
 
@@ -175,7 +176,7 @@ function PlasmicFilms__RenderFunc(props: {
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__vvdy0)}
+                    className={classNames(sty.img__kiZq1)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -184,7 +185,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -198,7 +199,14 @@ function PlasmicFilms__RenderFunc(props: {
                       sty.text__awxNs
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -206,13 +214,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__rdL6M
+                    sty.link___0Avyv
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__mHtMk)}
+                    className={classNames(sty.img__x8Eu0)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -221,7 +229,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -232,10 +240,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__bq5S
+                      sty.text__nf1A
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -243,13 +258,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__hIYf
+                    sty.link__l9Abd
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img___5ZHEg)}
+                    className={classNames(sty.img__aPv0R)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -258,7 +273,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -269,10 +284,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__igzp0
+                      sty.text__ukAmb
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -280,13 +302,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__auWhy
+                    sty.link__caoY
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__gyTxz)}
+                    className={classNames(sty.img__tn0Qu)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -295,7 +317,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -306,10 +328,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text___4SKow
+                      sty.text__ys4Z5
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -317,13 +346,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__ezoAp
+                    sty.link__h0EN
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__lV34W)}
+                    className={classNames(sty.img__ppcLn)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -332,7 +361,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -343,10 +372,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__bz7W0
+                      sty.text__yqtdb
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -354,13 +390,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link___4RQ7
+                    sty.link__bqXei
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__pzDj6)}
+                    className={classNames(sty.img__nDz1F)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -369,7 +405,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -380,10 +416,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__oBDkM
+                      sty.text__qn8Oy
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -391,13 +434,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__zQz3I
+                    sty.link__mtTwD
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__mLyFz)}
+                    className={classNames(sty.img__xwRs)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -406,7 +449,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -417,10 +460,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__qGctf
+                      sty.text__sbOa
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -428,13 +478,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__qfGuu
+                    sty.link___7Zuo6
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__hD2It)}
+                    className={classNames(sty.img__vsRdk)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -443,7 +493,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -454,10 +504,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__j0W5O
+                      sty.text__fetU
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -465,13 +522,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__vaEuD
+                    sty.link__ffcZ6
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__rfHTd)}
+                    className={classNames(sty.img__f078Y)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -480,7 +537,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -491,10 +548,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__nFa2D
+                      sty.text__ztgIl
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -502,13 +566,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__zz7Ej
+                    sty.link__tbExw
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__mvxuX)}
+                    className={classNames(sty.img__kKmsw)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -517,7 +581,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -528,10 +592,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text___2KvnC
+                      sty.text__z8ENf
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
 
@@ -539,13 +610,13 @@ function PlasmicFilms__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__zmm6D
+                    sty.link__ryaDq
                   )}
                   href={`/play`}
                 >
                   <p.PlasmicImg
                     alt={""}
-                    className={classNames(sty.img__tgjMg)}
+                    className={classNames(sty.img__nsjpT)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -554,7 +625,7 @@ function PlasmicFilms__RenderFunc(props: {
                     displayWidth={"auto" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: musicHolejpegXXl4WHnk,
+                      src: imageCZfMHjxm0,
                       fullWidth: 1198,
                       fullHeight: 1600,
                       aspectRatio: undefined
@@ -565,10 +636,17 @@ function PlasmicFilms__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text___8TqV5
+                      sty.text__zQnQ3
                     )}
                   >
-                    {"Music Hole"}
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Soon"}
+                      </span>
+                    </React.Fragment>
                   </div>
                 </a>
               </div>
