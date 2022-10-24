@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: flex-start;
   height: auto;
-  width: 60%;
+  width: 80%;
   padding: 65px 8px 8px;
 }
 @media (min-width: 0px) and (max-width: 320px) {
@@ -66,27 +66,47 @@
     padding-top: 26px;
   }
 }
-.text__kCVc1 {
+.msgBox {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   color: var(--token-UpYVGsqeDTxlKV);
   font-size: 24px;
-  padding-top: 40px;
+  padding-top: 24px;
   padding-bottom: 0px;
   min-width: 0;
   display: block;
 }
 @media (min-width: 0px) and (max-width: 320px) {
-  .text__kCVc1 {
+  .msgBox {
     font-size: 16px;
     max-width: 230px;
     width: auto;
     padding-top: 14px;
   }
 }
-.button:global(.__wab_instance) {
+.text__umAJ {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  text-align: center;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-size: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  min-width: 0;
+  display: block;
+}
+@media (min-width: 0px) and (max-width: 320px) {
+  .text__umAJ {
+    font-size: 16px;
+    max-width: 230px;
+    width: auto;
+    padding-top: 14px;
+  }
+}
+.buyButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-bottom: 20px;
