@@ -18,7 +18,8 @@ export interface HeaderProps extends DefaultHeaderProps {}
 function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
   const clientId = String(process.env.REACT_APP_WEB3_AUTH_CLIENT_ID);
-  const endpoint = String(process.env.REACT_APP_GOERLI_RPC_URL);
+  // const endpoint = String(process.env.REACT_APP_GOERLI_RPC_URL);
+  const endpoint = String(process.env.REACT_APP_MAINNET_RPC_URL);
 
   const [etherscanLink, setEtherscanLink] = useState("");
 
@@ -39,7 +40,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
         clientId,
         chainConfig: {
           chainNamespace: CHAIN_NAMESPACES.EIP155,
-          chainId: "0x5",
+          chainId: "0x1",
           rpcTarget: endpoint,
         },
       });

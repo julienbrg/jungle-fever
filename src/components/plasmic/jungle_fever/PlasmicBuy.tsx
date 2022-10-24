@@ -58,7 +58,8 @@ export type PlasmicBuy__OverridesType = {
   root?: p.Flex<"div">;
   buyBox?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
-  button?: p.Flex<typeof Button>;
+  msgBox?: p.Flex<"div">;
+  buyButton?: p.Flex<typeof Button>;
   freeBox?: p.Flex<"div">;
 };
 
@@ -155,10 +156,23 @@ function PlasmicBuy__RenderFunc(props: {
           ) : null}
           {true ? (
             <div
+              data-plasmic-name={"msgBox"}
+              data-plasmic-override={overrides.msgBox}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__kCVc1
+                sty.msgBox
+              )}
+            >
+              {"msgBox"}
+            </div>
+          ) : null}
+          {true ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__umAJ
               )}
             >
               {"Price: 0.0042 ETH"}
@@ -166,9 +180,9 @@ function PlasmicBuy__RenderFunc(props: {
           ) : null}
 
           <Button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames("__wab_instance", sty.button)}
+            data-plasmic-name={"buyButton"}
+            data-plasmic-override={overrides.buyButton}
+            className={classNames("__wab_instance", sty.buyButton)}
           >
             {"Buy the NFT"}
           </Button>
@@ -196,10 +210,11 @@ function PlasmicBuy__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "buyBox", "img", "button", "freeBox"],
-  buyBox: ["buyBox", "img", "button", "freeBox"],
+  root: ["root", "buyBox", "img", "msgBox", "buyButton", "freeBox"],
+  buyBox: ["buyBox", "img", "msgBox", "buyButton", "freeBox"],
   img: ["img"],
-  button: ["button"],
+  msgBox: ["msgBox"],
+  buyButton: ["buyButton"],
   freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -209,7 +224,8 @@ type NodeDefaultElementType = {
   root: "div";
   buyBox: "div";
   img: typeof p.PlasmicImg;
-  button: typeof Button;
+  msgBox: "div";
+  buyButton: typeof Button;
   freeBox: "div";
 };
 
@@ -276,7 +292,8 @@ export const PlasmicBuy = Object.assign(
     // Helper components rendering sub-elements
     buyBox: makeNodeComponent("buyBox"),
     img: makeNodeComponent("img"),
-    button: makeNodeComponent("button"),
+    msgBox: makeNodeComponent("msgBox"),
+    buyButton: makeNodeComponent("buyButton"),
     freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicBuy

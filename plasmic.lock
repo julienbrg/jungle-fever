@@ -18,7 +18,7 @@
       "projectId": "neKnaqAFQgtkJjtbXthdKd",
       "version": "latest",
       "dependencies": {
-        "58GpZjZCWTaJ8AUhpCwt2K": "3.5.0"
+        "58GpZjZCWTaJ8AUhpCwt2K": "3.6.0"
       },
       "lang": "ts",
       "fileLocks": [
@@ -160,12 +160,12 @@
         {
           "type": "renderModule",
           "assetId": "XTZgJz7paK",
-          "checksum": "a8c2f287e7f371e81c0019387ad07a76"
+          "checksum": "74714bc54877a108fde9a040bd60c1a8"
         },
         {
           "type": "cssRules",
           "assetId": "XTZgJz7paK",
-          "checksum": "a8c2f287e7f371e81c0019387ad07a76"
+          "checksum": "74714bc54877a108fde9a040bd60c1a8"
         },
         {
           "type": "image",
