@@ -210,9 +210,9 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     // Format cross-chain oracle request
     const xcoReq = {
       chain_type: "eip155",
-      chain_id: "5",
+      chain_id: "1",
       asset_type: "erc721",
-      asset_id: "0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1",
+      asset_id: "0x6ab72024c73de3a7358233328c7ce94abb007ac1",
       method: "balance"
     };
     console.log("xcoReq: ", xcoReq);
@@ -254,8 +254,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     console.log("provider:", provider)
 
     // nft references
-    const nftNetwork = 5 // Goerli
-    const nftContractAddress = "0x8d5229b3C84CF9157db6e72932BcEf2FcEc92fD1" // https://goerli.etherscan.io/address/0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1#code
+    const nftNetwork = 1 
+    const nftContractAddress = "0x6ab72024c73de3a7358233328c7ce94abb007ac1" // https://goerli.etherscan.io/address/0x8d5229b3c84cf9157db6e72932bcef2fcec92fd1#code
     // const nftId = 8
 
     if (!provider) {
