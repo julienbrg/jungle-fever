@@ -4,13 +4,12 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useState, useEffect } from "react";
 import { useGlobalContext } from './Web3Context';
 import RPC from "../ethersRPC";
-// import { mnemonicToEntropy } from "ethers/lib/utils";
+import { mnemonicToEntropy } from "ethers/lib/utils";
 import { useNavigate } from "react-router-dom";
 import loader from './loader.svg';
 
 export interface BuyProps extends DefaultBuyProps {
-  msgBox?:any
-  buyButton?:any
+
 }
 
 function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
