@@ -21,7 +21,7 @@
   flex-shrink: 0;
   margin: 14px;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .header:global(.__wab_instance) {
     height: 100px;
     flex-shrink: 0;
@@ -44,7 +44,7 @@
   min-width: 0;
   min-height: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .freeBox {
     justify-content: flex-start;
     align-items: center;
@@ -67,7 +67,7 @@
   min-width: 0;
   min-height: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section {
     width: 100%;
     padding-top: 0px;
@@ -76,7 +76,7 @@
     padding-bottom: 801px;
   }
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section > :global(.__wab_flex-container) {
     justify-content: flex-start;
     align-items: center;
@@ -86,7 +86,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -110,7 +110,7 @@
   border-radius: 8px;
   padding: 0px 8px;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .videoBox {
     height: 91px;
     justify-content: center;

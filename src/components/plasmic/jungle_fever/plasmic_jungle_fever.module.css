@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
 
 .plasmic_tokens {
   --token-7haCtBUPWgd76T: #8c1c84;
@@ -516,7 +516,7 @@
 :where(.root_reset .code),
 :where(.root_reset :global(.__wab_expr_html_text) code),
 :where(.root_reset.plasmic_default__code) {
-  background: var(--mixin-OnPWNKgN9F8Ho_background);
+  background: #f8f8f8;
   font-family: var(--mixin-OnPWNKgN9F8Ho_font-family);
   border-radius: var(--mixin-OnPWNKgN9F8Ho_border-top-left-radius)
     var(--mixin-OnPWNKgN9F8Ho_border-top-right-radius)
@@ -555,7 +555,7 @@
 :where(.root_reset .pre),
 :where(.root_reset :global(.__wab_expr_html_text) pre),
 :where(.root_reset.plasmic_default__pre) {
-  background: var(--mixin-EolfjUVnkyzPF_background);
+  background: #f8f8f8;
   font-family: var(--mixin-EolfjUVnkyzPF_font-family);
   border-radius: var(--mixin-EolfjUVnkyzPF_border-top-left-radius)
     var(--mixin-EolfjUVnkyzPF_border-top-right-radius)

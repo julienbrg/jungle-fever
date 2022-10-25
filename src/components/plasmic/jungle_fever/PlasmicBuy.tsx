@@ -122,11 +122,15 @@ function PlasmicBuy__RenderFunc(props: {
             data-plasmic-override={overrides.img}
             alt={""}
             className={classNames(sty.img)}
-            displayHeight={"auto" as const}
+            displayHeight={
+              hasVariant(globalVariants, "screen", "mobile")
+                ? ("206px" as const)
+                : ("auto" as const)
+            }
             displayMaxHeight={"none" as const}
             displayMaxWidth={
               hasVariant(globalVariants, "screen", "mobile")
-                ? ("100%" as const)
+                ? ("80%" as const)
                 : ("60%" as const)
             }
             displayMinHeight={"0" as const}
@@ -192,17 +196,6 @@ function PlasmicBuy__RenderFunc(props: {
             data-plasmic-override={overrides.freeBox}
             className={classNames(projectcss.all, sty.freeBox)}
           />
-        </div>
-      ) : null}
-      {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text___29Uqs
-          )}
-        >
-          {"421px"}
         </div>
       ) : null}
     </div>
