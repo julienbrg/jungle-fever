@@ -126,7 +126,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     // console.log(address);
     setUserAddress(address);
     setShortenAddr(shortenAddress(address))
-    setEtherscanLink("https://goerli.etherscan.io/address/" + address);
+    setEtherscanLink("https://etherscan.io/address/" + address);
     // console.log("getAccounts executed #3")
   };
   // getAccounts(); // bad 

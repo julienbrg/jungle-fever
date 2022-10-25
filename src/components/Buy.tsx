@@ -8,6 +8,8 @@ import { mnemonicToEntropy } from "ethers/lib/utils";
 import { useNavigate } from "react-router-dom";
 import loader from './loader.svg';
 
+import './buy.css';
+
 export interface BuyProps extends DefaultBuyProps {
 
 }
@@ -17,7 +19,9 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState<boolean>(false)
-  const [msg, setMsg] = useState<string>("")
+  //const [msg, setMsg] = useState<string>("")
+  const [msgId, setMsgId] = useState<number>(0)
+  //let message = [""]
   
   const {
     // web3auth,
@@ -28,7 +32,7 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
     isOwner,
     setIsOwner,
     bal,
-    setBal
+    setBal,
     // setUserAddress,
     // userShortenAddr,
     // setShortenAddr,
@@ -42,7 +46,8 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
 
     if (!provider) {
       console.log("provider not initialized yet");
-      setMsg("Please login first.")
+      //setMsg("Please login first.")
+      setMsgId(1);
       setLoading(false)
       return;
 
@@ -53,12 +58,15 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
     console.log("newBal:", newBal)
 
     if (newBal === 0) {
-      setMsg("Please get yourself a handful of ETH at https://buy.moonpay.com")
+      const myMsg = "You currently don’t have enough ETH. \n\n Your ETH wallet address is: \n\n"+ userAddress + "\n\n" + "Please fund your account using" + '<a target="blank" style={{color:"red", fontWeight: "bold"}} href="https://buy.moonpay.com">Moonpay</a>'
+      //setMsg(myMsg)
+      setMsgId(2);
       setLoading(false)
       return;
     }
 
-    setMsg("")
+    //setMsg("")
+    setMsgId(0);
 
     const nftContractAddress = "0x6ab72024c73de3a7358233328c7ce94abb007ac1"
 
@@ -88,11 +96,22 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
     return balanceRaw;
   };
 
-  return <PlasmicBuy root={{ ref }} {...props} 
+  return <PlasmicBuy root={{ ref }}
   
   msgBox={{
     props: {
-      children: <p style={{color:"red", fontWeight: 'bold'}}>{msg}</p>
+      //children: <p style={{color:"red", fontWeight: 'bold'}}>{msg}</p>
+      // children: (msg !== "" ? <><p style={{color:"red", fontWeight: 'bold'}}>{msg}</p><p><a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://buy.moonpay.com'>https://buy.moonpay.com</a></p></> : "")
+
+      children: (
+        msgId === 0 ? <p style={{color:"red", fontWeight: 'bold'}}></p> :
+        msgId === 1 ? <p style={{color:"red", fontWeight: 'bold'}}>Please login first.</p> :
+        msgId === 2 && <p style={{color:"red", fontWeight: 'bold'}}>
+          You currently don’t have enough ETH.<br/>Your ETH wallet address is:<br/>{userAddress}<br/>Please fund your account using <br />
+          <a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://buy.moonpay.com'>https://buy.moonpay.com</a>
+          </p>
+      )
+
     }
   }}
 
@@ -101,7 +120,13 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
       children: (loading ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : "Buy"),
       onClick: () => buy()
     },
-  }}  
+  }}
+
+  // img={{
+  //   props: {
+  //     marginTop:"0px"
+  //   } as any
+  // }}
   
   
   />;
