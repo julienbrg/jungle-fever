@@ -147,6 +147,16 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {"Jungle Fever"}
                   </h1>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uRhZb
+                    )}
+                  >
+                    {"THE NFT FILMS LIBRARY"}
+                  </div>
                 </Reveal>
               </p.Stack>
 
@@ -167,7 +177,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile") ? (
-                      "Sit back, \nrelax, \nand watch the show."
+                      "Sit back, relax, \nand watch the show."
                     ) : (
                       <React.Fragment>
                         <React.Fragment>

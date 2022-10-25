@@ -35,7 +35,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     // setProvider,
     userAddress,
     isOwner,
-    setIsOwner
+    setIsOwner,
+    // bal
     // setUserAddress,
     // userShortenAddr,
     // setShortenAddr,
@@ -298,12 +299,9 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
                 // height={480}
                 width={"100%"}
                 height={"100%"}
-
                 frameBorder="0"
-                // border="0" 
-                // cellspacing="0"
-                //style={{"border-style: none;width: 100%; height: 120px"}}
-                allow="autoplay; encrypted-media" 
+                // robustness={"SW_SECURE_CRYPTO"}
+                allow="autoplay; encrypted-media; payment" 
                 allowFullScreen
                 title="eluvioStream"
                 // src={"https://embed.v3.contentfabric.io/?net=main&p&ct=h&vid=hq__FuY4Tnz54sSchdu3eCCj6Toc8EyfGnY15rkgmGdNVTGfQ14xvnejCFGV6De9R8ppzsRUQfDyZV&ath=acspjc2xTABgKqLcPa3Cv4oHiuPjwD4iu6QcAVeF95Z3hdWXtj9hpFKKVCUqn82wNrRM3wScs7BX6DmpUHAsv8ehzuZZRUw7i9ES7w5RJHqzarQrmuqbyw2Tbwnu5597Bein3CDNttKH4WgJpyoycX4P4YwjPyywEbcFjhPCz41jM26PGvzrnL7En9Y8r8WzARRrT2HHzBuu81zFmQ5HB4B5cgeC8kGgVkC4UkjW8uavN3ByoyS4PyjYskTdA3BQ31zdojRSdNTra8ThyRqnkrppEj9phRv5EvmhCogJb7eFR4GwdiGytDJJQUo9CWRpSps1rycmi6xGLqMZok5Xp2G2DTzYXKjJQMCiwuSDwhYQvwxYSaW467q3NqMNXsUFPkrWqXff63KiRCTQkKgTed7RQ57mxosvuGdoodHaxDomLSxXpc23QBM73mKMhD6Wfi5t66xW"}

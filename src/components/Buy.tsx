@@ -48,12 +48,11 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
 
     }
 
-    await getBalance()
+    const newBal = await getBalance()
 
-    console.log("bal:", bal)
+    console.log("newBal:", newBal)
 
-
-    if (bal === 0) {
+    if (newBal === 0) {
       setMsg("Please get yourself a handful of ETH at https://buy.moonpay.com")
       setLoading(false)
       return;
@@ -71,7 +70,8 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
     const receipt = await rpc.mint(nftContractAddress);
     console.log(receipt);
     
-    navigate("/play")
+    window.location.reload();
+    setLoading(false)
   };
 
   const getBalance = async () => {
@@ -83,7 +83,9 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
     const balanceRaw = await rpc.getBalance();
     // const balanceFormatted = Number(balanceRaw).toFixed(5);
     // const balance = String(balanceFormatted) + " ETH"
+    console.log("balanceRaw", balanceRaw)
     setBal(balanceRaw);
+    return balanceRaw;
   };
 
   return <PlasmicBuy root={{ ref }} {...props} 

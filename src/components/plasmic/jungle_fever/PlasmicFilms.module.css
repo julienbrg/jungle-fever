@@ -17,7 +17,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .header:global(.__wab_instance) {
     flex-shrink: 0;
   }
@@ -38,7 +38,7 @@
   min-height: 0;
   padding: 0px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .freeBox___8QceR {
     padding-top: 0px;
     left: auto;
@@ -55,7 +55,7 @@
   min-width: 0;
   padding: 55px 23px 27px;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .h1 {
     font-size: 48px;
     text-align: center;
@@ -66,14 +66,14 @@
 .freeBox__hoD6L {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
   padding: 8px;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .freeBox__hoD6L {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -112,7 +112,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__eNyN {
     font-size: 24px;
   }
@@ -151,7 +151,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__awxNs {
     font-size: 16px;
   }
@@ -190,7 +190,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__nf1A {
     font-size: 16px;
   }
@@ -229,7 +229,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__ukAmb {
     font-size: 16px;
   }
@@ -268,7 +268,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__ys4Z5 {
     font-size: 16px;
   }
@@ -307,7 +307,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__yqtdb {
     font-size: 16px;
   }
@@ -346,7 +346,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__qn8Oy {
     font-size: 16px;
   }
@@ -385,7 +385,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__sbOa {
     font-size: 16px;
   }
@@ -424,7 +424,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__fetU {
     font-size: 16px;
   }
@@ -463,7 +463,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__ztgIl {
     font-size: 16px;
   }
@@ -502,7 +502,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__z8ENf {
     font-size: 16px;
   }
@@ -541,7 +541,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__zQnQ3 {
     font-size: 16px;
   }
