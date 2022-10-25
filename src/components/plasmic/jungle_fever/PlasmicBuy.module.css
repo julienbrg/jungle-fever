@@ -3,16 +3,19 @@
   flex-direction: column;
   position: relative;
   width: auto;
-  height: auto;
   justify-content: flex-start;
   align-items: center;
-  background: var(--token-t1_sTNhrs7H0ZQ);
-  padding-top: 0px;
+  background: none;
+  padding-top: 97px;
+  flex-shrink: 1;
 }
 @media (min-width: 0px) and (max-width: 420px) {
   .root {
     padding-top: 0px;
   }
+}
+.rootmobile {
+  padding-top: 0px;
 }
 .buyBox {
   display: flex;
@@ -21,7 +24,8 @@
   align-items: center;
   justify-content: flex-start;
   width: 80%;
-  padding: 107px 8px 8px;
+  height: auto;
+  padding: 0px 8px 8px;
 }
 @media (min-width: 0px) and (max-width: 420px) {
   .buyBox {
@@ -55,6 +59,9 @@
     margin-top: 764px;
     flex-shrink: 0;
   }
+}
+.imgmobile {
+  margin: 0px;
 }
 .text__ww6D3 {
   width: 100%;
@@ -141,4 +148,8 @@
   max-width: 100%;
   min-width: 0;
   padding: 8px 8px 95px;
+}
+.text__mmJ8 {
+  position: relative;
+  plasmic-display-none: true;
 }

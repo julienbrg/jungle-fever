@@ -48,6 +48,7 @@
   .freeBox {
     justify-content: flex-start;
     align-items: center;
+    padding-top: 0px;
   }
 }
 .section {
@@ -73,7 +74,7 @@
     padding-top: 0px;
     margin-top: 0px;
     height: auto;
-    padding-bottom: 801px;
+    padding-bottom: 0px;
   }
 }
 @media (min-width: 0px) and (max-width: 420px) {
@@ -112,14 +113,14 @@
 }
 @media (min-width: 0px) and (max-width: 420px) {
   .videoBox {
-    height: 91px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-self: center;
-    width: auto;
-    margin-top: calc(209px + 0px) !important;
-    flex-shrink: 0;
-    padding: 69px 15px;
+    width: 100%;
+    margin-top: calc(0px + 0px) !important;
+    height: auto;
+    min-width: 0;
+    padding: 0px 15px;
   }
 }
 .verify:global(.__wab_instance) {

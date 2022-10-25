@@ -44,11 +44,16 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QIF
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: wIv3yetKUg72by/icon
 import musicHolejpegXXl4WHnk from "./images/musicHolejpeg.jpeg"; // plasmic-import: xXl-4wHnk/picture
 
-export type PlasmicBuy__VariantMembers = {};
+export type PlasmicBuy__VariantMembers = {
+  mobile: "mobile";
+};
 
-export type PlasmicBuy__VariantsArgs = {};
+export type PlasmicBuy__VariantsArgs = {
+  mobile?: SingleBooleanChoiceArg<"mobile">;
+};
+
 type VariantPropType = keyof PlasmicBuy__VariantsArgs;
-export const PlasmicBuy__VariantProps = new Array<VariantPropType>();
+export const PlasmicBuy__VariantProps = new Array<VariantPropType>("mobile");
 
 export type PlasmicBuy__ArgsType = {};
 type ArgPropType = keyof PlasmicBuy__ArgsType;
@@ -64,6 +69,7 @@ export type PlasmicBuy__OverridesType = {
 };
 
 export interface DefaultBuyProps {
+  mobile?: SingleBooleanChoiceArg<"mobile">;
   className?: string;
 }
 
@@ -108,7 +114,8 @@ function PlasmicBuy__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        { [sty.rootmobile]: hasVariant(variants, "mobile", "mobile") }
       )}
     >
       {true ? (
@@ -121,7 +128,9 @@ function PlasmicBuy__RenderFunc(props: {
             data-plasmic-name={"img"}
             data-plasmic-override={overrides.img}
             alt={""}
-            className={classNames(sty.img)}
+            className={classNames(sty.img, {
+              [sty.imgmobile]: hasVariant(variants, "mobile", "mobile")
+            })}
             displayHeight={
               hasVariant(globalVariants, "screen", "mobile")
                 ? ("206px" as const)
@@ -196,6 +205,17 @@ function PlasmicBuy__RenderFunc(props: {
             data-plasmic-override={overrides.freeBox}
             className={classNames(projectcss.all, sty.freeBox)}
           />
+        </div>
+      ) : null}
+      {false ? (
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__mmJ8
+          )}
+        >
+          {"909px"}
         </div>
       ) : null}
     </div>
