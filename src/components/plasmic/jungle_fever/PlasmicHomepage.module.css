@@ -17,7 +17,7 @@
   left: auto;
   top: auto;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .header:global(.__wab_instance) {
     flex-shrink: 0;
   }
@@ -27,7 +27,7 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   max-width: 100%;
   left: auto;
@@ -37,7 +37,7 @@
   min-height: 0;
   padding: 0px 8px 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .freeBox__rmw1Q {
     padding-top: 0px;
     left: auto;
@@ -52,7 +52,7 @@
   padding-bottom: 41px;
   transition-property: all;
   transition-duration: 1s;
-  padding-top: 231px;
+  padding-top: 0px;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
 }
@@ -73,14 +73,14 @@
   > img {
   margin-top: 16px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section {
     width: 95%;
-    padding-top: 69px;
-    padding-bottom: 69px;
+    padding-top: 0px;
+    padding-bottom: 35px;
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section > :global(.__wab_flex-container) {
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -88,7 +88,7 @@
     height: calc(100% + 0px);
   }
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .section > :global(.__wab_flex-container) > *,
   .section > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .section > :global(.__wab_flex-container) > picture > img,
@@ -107,7 +107,7 @@
   position: relative;
   transform-origin: -110% 50%;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .reveal___39KnM:global(.__wab_instance) {
     text-align: center;
   }
@@ -122,21 +122,44 @@
   text-align: center;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .h1 {
     text-align: center;
     font-size: 42px;
+  }
+}
+.text__uRhZb {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-weight: 400;
+  text-align: center;
+  font-size: 36px;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 420px) {
+  .text__uRhZb {
+    text-align: center;
+    font-size: 16px;
+    padding-top: 6px;
+    width: 224px;
+    font-weight: 300;
   }
 }
 .reveal__kOnjS:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
+  text-align: center;
   display: flex;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .reveal__kOnjS:global(.__wab_instance) {
     width: 302px;
+    text-align: center;
+    align-self: center;
   }
 }
 .text__aUcBt {
@@ -149,13 +172,45 @@
   text-align: center;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__aUcBt {
     font-size: 24px;
   }
 }
+.link__njmHg {
+  color: var(--token-UpYVGsqeDTxlKV);
+}
+.reveal__yij05:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin-top: 30px;
+}
+.svg__ipEll {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.text__kqvZ {
+  text-align: center;
+}
+@media (min-width: 0px) and (max-width: 420px) {
+  .text__kqvZ {
+    text-align: center;
+  }
+}
+.svg__n4Wh2 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .freeBox___5Ud8 {
-  display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
@@ -164,9 +219,10 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .freeBox___5Ud8 {
     padding-top: 0px;
   }
@@ -186,7 +242,7 @@
   font-size: 24px;
   min-width: 0;
 }
-@media (min-width: 0px) and (max-width: 421px) {
+@media (min-width: 0px) and (max-width: 420px) {
   .text__lXmJs {
     text-align: center;
   }
