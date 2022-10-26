@@ -5,7 +5,7 @@
   width: auto;
   justify-content: flex-start;
   align-items: center;
-  background: none;
+  background: var(--token-t1_sTNhrs7H0ZQ);
   padding-top: 97px;
   flex-shrink: 1;
 }
@@ -36,6 +36,9 @@
     margin-top: 0px;
     min-width: 0;
   }
+}
+.buyBoxmobile {
+  width: 100%;
 }
 .img {
   position: relative;
@@ -78,6 +81,13 @@
     font-size: 16px;
     padding-top: 26px;
   }
+}
+.desktopOnly {
+  color: #8c1c84;
+  background: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-width: 0px;
 }
 .msgBox {
   width: 100%;

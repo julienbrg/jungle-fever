@@ -43,6 +43,7 @@
     max-width: 100%;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
   }
 }
 .freeBox__unmp {
@@ -110,6 +111,7 @@
 @media (min-width: 0px) and (max-width: 420px) {
   .text__e1Dwn {
     font-size: 14px;
+    width: 100%;
   }
 }
 .footer:global(.__wab_instance) {
