@@ -63,6 +63,7 @@ export type PlasmicBuy__OverridesType = {
   root?: p.Flex<"div">;
   buyBox?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
+  desktopOnly?: p.Flex<"code">;
   msgBox?: p.Flex<"div">;
   buyButton?: p.Flex<typeof Button>;
   freeBox?: p.Flex<"div">;
@@ -122,7 +123,9 @@ function PlasmicBuy__RenderFunc(props: {
         <div
           data-plasmic-name={"buyBox"}
           data-plasmic-override={overrides.buyBox}
-          className={classNames(projectcss.all, sty.buyBox)}
+          className={classNames(projectcss.all, sty.buyBox, {
+            [sty.buyBoxmobile]: hasVariant(variants, "mobile", "mobile")
+          })}
         >
           <p.PlasmicImg
             data-plasmic-name={"img"}
@@ -162,9 +165,33 @@ function PlasmicBuy__RenderFunc(props: {
                 sty.text__ww6D3
               )}
             >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "Storyline: Francis, a little accountant officiating in a shady cabaret has marital concerns with his wife. After a violent argument, he wakes up to discover a surprise. It's the macabre and zany starting point of a burlesque thriller.\n\nDirected by Gaetan Liekens & David Mutzenmacher\n\nStarring Vanessa Guide, Wim Willaert & Laurent Regairaz\n\nProduced by Rockstone Films. Luc Besson, Elgolive & Swisskiss\n\nThe design is the original lithography from Music Hole's unique poster. The NFT gives the owner the right to watch the film Music Hole on https://junglefever.io and future metaverse cinemas owned by Jungle Fever.\n"
-                : "Storyline: Francis, a little accountant officiating in a shady cabaret has marital concerns with his wife. After a violent argument, he wakes up to discover a surprise. It's the macabre and zany starting point of a burlesque thriller.\n\nDirected by Gaetan Liekens & David Mutzenmacher\n\nStarring Vanessa Guide, Wim Willaert & Laurent Regairaz\n\nProduced by Rockstone Films. Luc Besson, Elgolive & Swisskiss\n\nThe design is the original lithography from Music Hole's unique poster.\n\nThe NFT gives the owner the right to watch the film Music Hole on https://junglefever.io and future metaverse cinemas owned by Jungle Fever.\n"}
+              {hasVariant(globalVariants, "screen", "mobile") ? (
+                "Storyline: Francis, a little accountant officiating in a shady cabaret has marital concerns with his wife. After a violent argument, he wakes up to discover a surprise. It's the macabre and zany starting point of a burlesque thriller.\n\nDirected by Gaetan Liekens & David Mutzenmacher\n\nStarring Vanessa Guide, Wim Willaert & Laurent Regairaz\n\nProduced by Rockstone Films. Luc Besson, Elgolive & Swisskiss\n\nThe design is the original lithography from Music Hole's unique poster. The NFT gives the owner the right to watch the film Music Hole on https://junglefever.io and future metaverse cinemas owned by Jungle Fever.\n"
+              ) : (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "Storyline: Francis, a little accountant officiating in a shady cabaret has marital concerns with his wife. After a violent argument, he wakes up to discover a surprise. It's the macabre and zany starting point of a burlesque thriller.\n\nDirected by Gaetan Liekens & David Mutzenmacher\n\nStarring Vanessa Guide, Wim Willaert & Laurent Regairaz\n\nProduced by Rockstone Films. Luc Besson, Elgolive & Swisskiss\n\nThe design is the original lithography from Music Hole's unique poster.\n\nThe NFT gives the owner the right to watch the film Music Hole on https://junglefever.io and future metaverse cinemas owned by Jungle Fever.\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <code
+                      data-plasmic-name={"desktopOnly"}
+                      data-plasmic-override={overrides.desktopOnly}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.code,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.desktopOnly
+                      )}
+                    >
+                      {"Video streaming for desktop browsers only."}
+                    </code>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              )}
             </div>
           ) : null}
           {true ? (
@@ -223,9 +250,18 @@ function PlasmicBuy__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "buyBox", "img", "msgBox", "buyButton", "freeBox"],
-  buyBox: ["buyBox", "img", "msgBox", "buyButton", "freeBox"],
+  root: [
+    "root",
+    "buyBox",
+    "img",
+    "desktopOnly",
+    "msgBox",
+    "buyButton",
+    "freeBox"
+  ],
+  buyBox: ["buyBox", "img", "desktopOnly", "msgBox", "buyButton", "freeBox"],
   img: ["img"],
+  desktopOnly: ["desktopOnly"],
   msgBox: ["msgBox"],
   buyButton: ["buyButton"],
   freeBox: ["freeBox"]
@@ -237,6 +273,7 @@ type NodeDefaultElementType = {
   root: "div";
   buyBox: "div";
   img: typeof p.PlasmicImg;
+  desktopOnly: "code";
   msgBox: "div";
   buyButton: typeof Button;
   freeBox: "div";
@@ -305,6 +342,7 @@ export const PlasmicBuy = Object.assign(
     // Helper components rendering sub-elements
     buyBox: makeNodeComponent("buyBox"),
     img: makeNodeComponent("img"),
+    desktopOnly: makeNodeComponent("desktopOnly"),
     msgBox: makeNodeComponent("msgBox"),
     buyButton: makeNodeComponent("buyButton"),
     freeBox: makeNodeComponent("freeBox"),
