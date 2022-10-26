@@ -192,11 +192,11 @@ function PlasmicHeader__RenderFunc(props: {
               )}
               href={
                 hasVariant(globalVariants, "screen", "mobile")
-                  ? `/play`
-                  : `/soon`
+                  ? `/films`
+                  : `/films`
               }
             >
-              {"My Films"}
+              {"Library"}
             </a>
           </div>
         ) : null}

@@ -33,7 +33,6 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
 import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
-import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
 
@@ -58,10 +57,10 @@ export const PlasmicPlay__ArgProps = new Array<ArgPropType>();
 export type PlasmicPlay__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  freeBox?: p.Flex<"div">;
   section?: p.Flex<"section">;
-  textBox?: p.Flex<"div">;
+  videoBox?: p.Flex<"div">;
   verify?: p.Flex<typeof Button>;
-  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultPlayProps {
@@ -123,7 +122,11 @@ function PlasmicPlay__RenderFunc(props: {
           />
 
           {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__ktqm0)}>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
               <p.Stack
                 as={"section"}
                 data-plasmic-name={"section"}
@@ -131,36 +134,24 @@ function PlasmicPlay__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.section)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__mebt6)}>
-                  <div
-                    data-plasmic-name={"textBox"}
-                    data-plasmic-override={overrides.textBox}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.textBox
-                    )}
-                  >
-                    {"..."}
-                  </div>
-                </div>
+                <div
+                  data-plasmic-name={"videoBox"}
+                  data-plasmic-override={overrides.videoBox}
+                  className={classNames(projectcss.all, sty.videoBox)}
+                />
               </p.Stack>
 
-              <Button
-                data-plasmic-name={"verify"}
-                data-plasmic-override={overrides.verify}
-                className={classNames("__wab_instance", sty.verify)}
-              >
-                {"Verify NFT ownership"}
-              </Button>
+              {true ? (
+                <Button
+                  data-plasmic-name={"verify"}
+                  data-plasmic-override={overrides.verify}
+                  className={classNames("__wab_instance", sty.verify)}
+                >
+                  {"Verify NFT ownership"}
+                </Button>
+              ) : null}
             </div>
           ) : null}
-
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -168,12 +159,12 @@ function PlasmicPlay__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "section", "textBox", "verify", "footer"],
+  root: ["root", "header", "freeBox", "section", "videoBox", "verify"],
   header: ["header"],
-  section: ["section", "textBox"],
-  textBox: ["textBox"],
-  verify: ["verify"],
-  footer: ["footer"]
+  freeBox: ["freeBox", "section", "videoBox", "verify"],
+  section: ["section", "videoBox"],
+  videoBox: ["videoBox"],
+  verify: ["verify"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -181,10 +172,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  freeBox: "div";
   section: "section";
-  textBox: "div";
+  videoBox: "div";
   verify: typeof Button;
-  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -249,10 +240,10 @@ export const PlasmicPlay = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    freeBox: makeNodeComponent("freeBox"),
     section: makeNodeComponent("section"),
-    textBox: makeNodeComponent("textBox"),
+    videoBox: makeNodeComponent("videoBox"),
     verify: makeNodeComponent("verify"),
-    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicPlay
     internalVariantProps: PlasmicPlay__VariantProps,
@@ -260,7 +251,7 @@ export const PlasmicPlay = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Music Hole",
       description: "",
       ogImageSrc: "",
       canonical: ""

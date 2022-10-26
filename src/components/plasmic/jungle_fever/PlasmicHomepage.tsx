@@ -33,6 +33,7 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
+import Button from "../../Button"; // plasmic-import: TmMHvKz8624iV/component
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
@@ -41,6 +42,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_jungle_fever.module.css"; // plasmic-import: neKnaqAFQgtkJjtbXthdKd/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: ObYxGyTLMBD9Z/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QIFkDJ_ce_gClo/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: wIv3yetKUg72by/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -57,6 +61,7 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<typeof Header>;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
+  button?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -131,7 +136,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   big={true}
                   className={classNames("__wab_instance", sty.reveal___39KnM)}
                   direction={"down" as const}
-                  duration={5000 as const}
+                  duration={2000 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
@@ -147,6 +152,16 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {"Jungle Fever"}
                   </h1>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uRhZb
+                    )}
+                  >
+                    {"THE NFT FILM LIBRARY"}
+                  </div>
                 </Reveal>
               </p.Stack>
 
@@ -154,8 +169,8 @@ function PlasmicHomepage__RenderFunc(props: {
                 <Reveal
                   big={true}
                   className={classNames("__wab_instance", sty.reveal__kOnjS)}
-                  delay={6000 as const}
-                  duration={3000 as const}
+                  delay={3000 as const}
+                  duration={500 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
@@ -167,7 +182,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile") ? (
-                      "Sit back, \nrelax, \nand watch the show."
+                      "Sit back, relax, \nand watch the show."
                     ) : (
                       <React.Fragment>
                         <React.Fragment>
@@ -182,7 +197,11 @@ function PlasmicHomepage__RenderFunc(props: {
                               projectcss.plasmic_default__inline,
                               sty.link__njmHg
                             )}
+<<<<<<< HEAD
                             href={`/soon`}
+=======
+                            href={`/play`}
+>>>>>>> 8c0f5c24d687768636f53d37b007e497f460daf5
                           >
                             {"watch the show"}
                           </a>
@@ -193,6 +212,31 @@ function PlasmicHomepage__RenderFunc(props: {
                   </div>
                 </Reveal>
               ) : null}
+
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__yij05)}
+                delay={3000 as const}
+                duration={500 as const}
+                triggerOnce={true}
+              >
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  link={`/films`}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kqvZ
+                    )}
+                  >
+                    {"Pick your film"}
+                  </div>
+                </Button>
+              </Reveal>
+
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox___5Ud8)}>
                   <Reveal
@@ -318,10 +362,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "section", "h1", "footer"],
+  root: ["root", "header", "section", "h1", "button", "footer"],
   header: ["header"],
   section: ["section", "h1"],
   h1: ["h1"],
+  button: ["button"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -332,6 +377,7 @@ type NodeDefaultElementType = {
   header: typeof Header;
   section: "section";
   h1: "h1";
+  button: typeof Button;
   footer: typeof Footer;
 };
 
@@ -399,6 +445,7 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
+    button: makeNodeComponent("button"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

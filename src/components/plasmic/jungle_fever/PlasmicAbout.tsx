@@ -32,6 +32,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: -5kvBjMJU6nse/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import Footer from "../../Footer"; // plasmic-import: LYimf7BcZyc4G/component
 
 import { useScreenVariants as useScreenVariantsw2FpJ6DWBvL } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: W2fpJ_6d-WBvL/globalVariant
@@ -54,10 +55,7 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  freeBox?: p.Flex<"div">;
-  section?: p.Flex<"section">;
-  text?: p.Flex<"div">;
-  link?: p.Flex<"a">;
+  reveal?: p.Flex<typeof Reveal>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -120,49 +118,131 @@ function PlasmicAbout__RenderFunc(props: {
           />
 
           {true ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
-              <p.Stack
-                as={"section"}
-                data-plasmic-name={"section"}
-                data-plasmic-override={overrides.section}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.section)}
-              >
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text
-                  )}
-                >
-                  {
-                    "I've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe can't love me, I can't love her\n'Cause they say we're the wrong color\nStaring, gloating, laughing, looking\nLike we've done something wrong\nBecause we show love strong, get real, come on\nCalling us names too bad to mention\nBut we pay them no attention\nFor color blind are inner feelings\nIf we feel happiness\nAnd know our love's the best, forget their mess\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nEveryone's created equal\nHell with all you ignorant people\nTrying to stereo type us\nYou really ought to quit\n'Cause you don't know jack, you make us sick\nGet off my jock, you're trying to ride me\nBecause I got my girl beside me\nYou'll only make yourself look stupid\nI love you're trying to dis\n'Cause we've got happiness, I bet you're pissed\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\nI've got jungle fever, she's got jungle fever\nWe've got jungle fever, we're in love\nShe's gone black-boy crazy, I've gone white-girl hazy\nAin't no thinking maybe, we're in love\nShe's got jungle fever, I've got jungle fever\nWe've got jungle fever, we're in love\nI've gone white-girl crazy, she's gone black-boy hazy\nWe're each other's baby, we're in love\n"
-                  }
+            <div className={classNames(projectcss.all, sty.freeBox__phaE8)}>
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__unmp)}>
+                  <Reveal
+                    data-plasmic-name={"reveal"}
+                    data-plasmic-override={overrides.reveal}
+                    className={classNames("__wab_instance", sty.reveal)}
+                    delay={6000 as const}
+                    direction={"vertical" as const}
+                    duration={1500 as const}
+                    effect={"fade" as const}
+                    triggerOnce={true}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hWwsd
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__n0Jy6
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{"\n"}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__qr91A
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__cMeAk
+                              )}
+                              href={
+                                "https://foundation.app/collection/mholefnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "Foundation"
+                                : "Foundation"}
+                            </a>
+                          }
+                          <React.Fragment>{" | "}</React.Fragment>
+                          {
+                            <a
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__zZyoN
+                              )}
+                              href={
+                                "https://opensea.io/collection/music-hole-ai-jungle-fever-fnc" as const
+                              }
+                              target={"_blank" as const}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "OpenSea"
+                                : "OpenSea"}
+                            </a>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      )}
+                    </div>
+                  </Reveal>
                 </div>
+              ) : null}
 
-                <a
-                  data-plasmic-name={"link"}
-                  data-plasmic-override={overrides.link}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link
-                  )}
-                  href={
-                    "https://open.spotify.com/track/2SW1wqAFlWH6kGaG3lWtfI?si=539df40300964d85" as const
-                  }
-                  target={"_blank" as const}
-                >
-                  {"Stevie Wonder, Jungle Fever, 1991"}
-                </a>
-              </p.Stack>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__e1Dwn
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "Film Streaming has been the last successor of DVD and BluRay. Since then, true ownership has not been offered to people who enjoy watching films. This time is over now thanks to blockchain technology.\n\nJungle Fever offers to its users the power to purchase NFT’s which gives them full ownership AND streaming access to their films. Users can grow a collection or resell their film anytime they want.\n\nEach film has a limited number of copies. Users will be able to access their NFT film on any device, any screen, any phone, any laptop + in the JungleFever upcoming Metaverse.\n\nAs its first film, Jungle Fever releases in NFT Music Hole, the provocative comedy coproduced by Rockstone Films and Luc Besson.\n\nJungle Fever is a revolutionary platform bridging a marketplace and a video player powered through the blockchain to own and stream films.\n\nIn the wild world of content, Jungle Fever will give you the NFT Fever in the most sustainable way for the planet to watch content!"
+                  : "Film Streaming has been the last successor of DVD and BluRay. Since then, true ownership has not been offered to people who enjoy watching films. This time is over now thanks to blockchain technology.\n\nJungle Fever offers to its users the power to purchase NFT’s which gives them full ownership AND streaming access to their films. Users can grow a collection or resell their film anytime they want.\n\nEach film has a limited number of copies. Users will be able to access their NFT film on any device, any screen, any phone, any laptop + in the JungleFever upcoming Metaverse.\n\nAs its first film, Jungle Fever releases in NFT Music Hole, the provocative comedy coproduced by Rockstone Films and Luc Besson.\n\nJungle Fever is a revolutionary platform bridging a marketplace and a video player powered through the blockchain to own and stream films.\n\nIn the wild world of content, Jungle Fever will give you the NFT Fever in the most sustainable way for the planet to watch content!"}
+              </div>
             </div>
           ) : null}
 
@@ -178,12 +258,9 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "freeBox", "section", "text", "link", "footer"],
+  root: ["root", "header", "reveal", "footer"],
   header: ["header"],
-  freeBox: ["freeBox", "section", "text", "link"],
-  section: ["section", "text", "link"],
-  text: ["text"],
-  link: ["link"],
+  reveal: ["reveal"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -192,10 +269,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  freeBox: "div";
-  section: "section";
-  text: "div";
-  link: "a";
+  reveal: typeof Reveal;
   footer: typeof Footer;
 };
 
@@ -261,10 +335,7 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    freeBox: makeNodeComponent("freeBox"),
-    section: makeNodeComponent("section"),
-    text: makeNodeComponent("text"),
-    link: makeNodeComponent("link"),
+    reveal: makeNodeComponent("reveal"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout
@@ -273,7 +344,7 @@ export const PlasmicAbout = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Jungle Fever - About",
       description: "",
       ogImageSrc: "",
       canonical: ""

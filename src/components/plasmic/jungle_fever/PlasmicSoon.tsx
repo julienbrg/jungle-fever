@@ -474,7 +474,7 @@ export const PlasmicSoon = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Soon come.",
       description: "",
       ogImageSrc: "",
       canonical: ""
