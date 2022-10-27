@@ -107,11 +107,11 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     const videos = {
       "SDR": {
         name: "paramax - Title Mezzanines > MusicHole_UHD_SDR_4444XQ_REC709_25_51-20_FR-XX_20220930.mov MEZ",
-        hash: "hq__8KVtG8gsm7K69e6euWvQMxrPQA1z1jkg8N7wGxSEJ8iaZyZqBdH7T5stGWrSFZaFMuk1fyL3A7", // was "hq__3a4imE...",
+        hash: "hq__K4aE8ERTT2xmEg4cRXLS4axTfNZk19hxU7QgXZXvhMoNUn5QPjUhZdsXnyDDNHgvLoEXWtmPN7", // was "hq__3a4imE...",
       },
       "HDR": {
         name: "paramax - Title Mezzanines > MusicHole_UHD_HDR10_4444XQ_P3D65_25_51-20_FR-XX_20221005.mov MEZ",
-        hash: "hq__5gG4xxtPv7Qcxw81KKoVov332weB6msNTa4LotUTCw8PAnm1NqpZCcM2AeLzzZ4tM32MQmU5rT", // was "hq__FuY4Tn..."
+        hash: "hq__GUuEYqqEnKMPuPzbfQukNJV5EA5Wc6TSgxjCVa6Gjemt1hC1UJYSBMia9r6f2tfL8FvL39ezu9", // was "hq__FuY4Tn..."
       }
     };
     const video = videos["SDR"]; // select based on which play button is used

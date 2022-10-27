@@ -217,7 +217,9 @@ function PlasmicBuy__RenderFunc(props: {
                 sty.text__umAJ
               )}
             >
-              {"Price: 0.0042 ETH"}
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "Price: 0.02 ETH"
+                : "Price: 0.02 ETH"}
             </div>
           ) : null}
 
