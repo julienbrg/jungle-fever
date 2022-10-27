@@ -615,7 +615,7 @@ export default class EthereumRpc {
       const contract = new ethers.Contract(nftContractAddress, abi, signer)
 
       // Convert 1 ether to wei
-      const msgValue = ethers.utils.parseEther("0.042");
+      const msgValue = ethers.utils.parseEther("0.02");
 
       // Submit transaction to the blockchain
       const tx = await contract.mint({
@@ -668,6 +668,10 @@ export default class EthereumRpc {
       const signer = ethersProvider.getSigner();
 
       console.log("[ethersRPC] signer", signer)
+
+      const gasPrice = await ethersProvider.getGasPrice()
+
+      console.log("gasPrice:", gasPrice.toNumber())
 
       // Get user's Ethereum public address
       const address = await signer.getAddress();

@@ -20,13 +20,10 @@ export interface PlayProps extends DefaultPlayProps {}
 
 function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
 
-  const [checked, setChecked] = useState(
-    "Please make sure you're connected with the wallet holding the required NFT and click on the button below."
-  );
+  // const [checked, setChecked] = useState(
+  //   "Please make sure you're connected with the wallet holding the required NFT and click on the button below."
+  // );
   const [eluvioStream, setEluvioStream] = useState("");
-
-  // const video = "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9";
-  const video = "hq__93SK4rgxMarq1ZeDSEu9WJkDoptTKYiA2GmYocK7inMthUssGkG6Q9BREBEhNtVCiCBFsPd4Gd";
 
   const {
     // web3auth,
@@ -108,21 +105,16 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
     console.log("[main] XCO RESPONSE: ", JSON.stringify(xcoResp));
 
     const videos = {
-      "1": {
-        name: "paramax - Title Mezzanines > Title - Test - Agent 327 MEZ",
-        hash: "hq__DXT6WtfrVeg7bC3jgMoLpcRHLFDnu9xYHyLqWZH3K5C4LJfErBuedrqUGqmLWF8FwTqLqo6m9"
-      },
-      "2": {
+      "SDR": {
         name: "paramax - Title Mezzanines > MusicHole_UHD_SDR_4444XQ_REC709_25_51-20_FR-XX_20220930.mov MEZ",
-        hash: "hq__3a4imE8JGGvcKpUN6C8Cs5TPNQ5kD4yB624TUj9rj5Rrpuzqg3kTNSSSvhxsVx1wUnUquSxsgB",
+        hash: "hq__4tN1gcRsL6n5HxpBKhAPiBQQ8Lb4SEYKaUcueh3awYqBrYxw2rCiBEz4kuzk9r46p9XYqP8QMM",
       },
-      "3": {
+      "HDR": {
         name: "paramax - Title Mezzanines > MusicHole_UHD_HDR10_4444XQ_P3D65_25_51-20_FR-XX_20221005.mov MEZ",
-        hash: "hq__FuY4Tnz54sSchdu3eCCj6Toc8EyfGnY15rkgmGdNVTGfQ14xvnejCFGV6De9R8ppzsRUQfDyZV"
+        hash: "hq__5m4nGgQk4J5uXaHJgxJ5fS2M2EHDBRtXVM3ZU9mpzQhC46SbiWZv6QjaUS5syNgHNVKpJnbjAj", 
       }
     };
-
-    const video = videos["3"];
+    const video = videos["SDR"]; // select based on which play button is used
     console.log("using video", video);
 
     const accessToken = xcoResp?.token;
@@ -135,7 +127,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
           "https://embed.v3.contentfabric.io/?net=main&p&ct=h&vid=" +
           video.hash +
           "&ath=" +
-          accessToken
+          accessToken +
+          "&nwm=(\"no watermark\")"
       );
       console.log("eluvioStream:", eluvioStream);
       console.log("DecodeSignedToken(xcoResp):", client.utils.DecodeSignedToken(accessToken));
@@ -278,7 +271,7 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
       // watchNft.start()
       main();
     } else {
-      setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
+      // setChecked("Sorry, it seems like you're not the owner of the required NFT. 😿 \n \n To get one, just ask Julien.")
     }
   };
 
@@ -306,7 +299,8 @@ function Play_(props: PlayProps, ref: HTMLElementRefOf<"div">) {
                 allow-same-origin
                 allow-scripts
                 allow-top-navigation"
-                allow="encrypted-media *"
+                allow="encrypted-media *; autoplay; fullscreen; clipboard-read; clipboard-write"
+                
               />
             ) : (
               <Buy />

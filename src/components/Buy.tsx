@@ -8,11 +8,7 @@ import { mnemonicToEntropy } from "ethers/lib/utils";
 import { useNavigate } from "react-router-dom";
 import loader from './loader.svg';
 
-import './buy.css';
-
-export interface BuyProps extends DefaultBuyProps {
-
-}
+export interface BuyProps extends DefaultBuyProps {}
 
 function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
 
@@ -100,15 +96,12 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
   
   msgBox={{
     props: {
-      //children: <p style={{color:"red", fontWeight: 'bold'}}>{msg}</p>
-      // children: (msg !== "" ? <><p style={{color:"red", fontWeight: 'bold'}}>{msg}</p><p><a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://buy.moonpay.com'>https://buy.moonpay.com</a></p></> : "")
-
       children: (
-        msgId === 0 ? <p style={{color:"red", fontWeight: 'bold'}}></p> :
+        msgId === 0 ? <p style={{color:"red"}}></p> :
         msgId === 1 ? <p style={{color:"red", fontWeight: 'bold'}}>Please login first.</p> :
-        msgId === 2 && <p style={{color:"red", fontWeight: 'bold'}}>
-          You currently don’t have enough ETH.<br/>Your ETH wallet address is:<br/>{userAddress}<br/>Please fund your account using <br />
-          <a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://buy.moonpay.com'>https://buy.moonpay.com</a>
+        msgId === 2 && <p style={{color:"red"}}>
+          You currently don’t have enough ETH.<br/><br/>Your ETH wallet address is:<br/><p style={{color:"red", textAlign:'center'}} >{userAddress}</p>You can use any exchange to fund your wallet (Coinbase, Binance, Mexc, FTX, Citex, ...)<br /><p style={{color:"red", textAlign:'center'}}>If you want to fund your wallet with Visa or Mastercard, you can buy <strong>0.027 ETH</strong> using Moonpay:</p>
+          <p><a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://www.moonpay.com/buy/eth'>https://www.moonpay.com/buy/eth</a></p>
           </p>
       )
 
@@ -120,14 +113,7 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
       children: (loading ? <img style = {{maxHeight:26}} alt = "loader" src={loader} /> : "Buy"),
       onClick: () => buy()
     },
-  }}
-
-  // img={{
-  //   props: {
-  //     marginTop:"0px"
-  //   } as any
-  // }}
-  
+  }}  
   
   />;
 }

@@ -14,9 +14,6 @@
     padding-top: 0px;
   }
 }
-.rootmobile {
-  padding-top: 0px;
-}
 .buyBox {
   display: flex;
   position: relative;
@@ -30,20 +27,18 @@
 @media (min-width: 0px) and (max-width: 420px) {
   .buyBox {
     align-self: center;
-    padding-top: 32px;
+    padding-top: 0px;
     max-width: none;
     width: 100%;
     margin-top: 0px;
     min-width: 0;
   }
 }
-.buyBoxmobile {
-  width: 100%;
-}
 .img {
   position: relative;
   object-fit: cover;
-  max-width: 60%;
+  max-width: 80%;
+  border-radius: 20px;
 }
 .img > picture > img {
   object-fit: cover;
@@ -59,12 +54,9 @@
     left: auto;
     top: auto;
     position: relative;
-    margin-top: 764px;
+    margin-top: 0px;
     flex-shrink: 0;
   }
-}
-.imgmobile {
-  margin: 0px;
 }
 .text__ww6D3 {
   width: 100%;
@@ -82,12 +74,25 @@
     padding-top: 26px;
   }
 }
-.desktopOnly {
-  color: #8c1c84;
-  background: none;
-  font-family: "Inter", sans-serif;
+.text__geiUt {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  color: var(--token-UpYVGsqeDTxlKV);
+  font-size: 24px;
+  plasmic-display-none: false;
+  padding-top: 79px;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 420px) {
+  .text__geiUt {
+    font-size: 16px;
+    padding-top: 26px;
+  }
+}
+.span {
+  color: var(--token-7haCtBUPWgd76T);
   font-weight: 500;
-  border-width: 0px;
 }
 .msgBox {
   width: 100%;
@@ -105,8 +110,9 @@
   .msgBox {
     font-size: 16px;
     max-width: 230px;
-    width: auto;
+    width: 100%;
     padding-top: 14px;
+    min-width: 0;
   }
 }
 .text__umAJ {
