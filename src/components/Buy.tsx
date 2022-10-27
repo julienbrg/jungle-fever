@@ -100,8 +100,8 @@ function Buy_(props: BuyProps, ref: HTMLElementRefOf<"div">) {
         msgId === 0 ? <p style={{color:"red"}}></p> :
         msgId === 1 ? <p style={{color:"red", fontWeight: 'bold'}}>Please login first.</p> :
         msgId === 2 && <p style={{color:"red"}}>
-          You currently don’t have enough ETH.<br/><br/>Your ETH wallet address is:<br/><p style={{color:"red", fontWeight: 'bold', textAlign:'center'}} >{userAddress}</p>You can use any exchange to fund your wallet (Coinbase, Binance, Mexc, FTX, Citex, ...)<br /><p style={{color:"red", fontWeight: 'bold', textAlign:'center'}}>If you want to fund your wallet with Visa, Mastercard please use:</p><br />
-          <a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://buy.moonpay.com'>https://buy.moonpay.com</a>
+          You currently don’t have enough ETH.<br/><br/>Your ETH wallet address is:<br/><p style={{color:"red", textAlign:'center'}} >{userAddress}</p>You can use any exchange to fund your wallet (Coinbase, Binance, Mexc, FTX, Citex, ...)<br /><p style={{color:"red", textAlign:'center'}}>If you want to fund your wallet with Visa or Mastercard, you can buy <strong>0.027 ETH</strong> using Moonpay:</p>
+          <p><a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://www.moonpay.com/buy/eth'>https://www.moonpay.com/buy/eth</a></p>
           </p>
       )
 

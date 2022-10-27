@@ -669,6 +669,10 @@ export default class EthereumRpc {
 
       console.log("[ethersRPC] signer", signer)
 
+      const gasPrice = await ethersProvider.getGasPrice()
+
+      console.log("gasPrice:", gasPrice.toNumber())
+
       // Get user's Ethereum public address
       const address = await signer.getAddress();
       console.log("[ethersRPC] address", address)
